@@ -2,8 +2,8 @@ header {
   background-color: #141d2f;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 1em;
+  padding: 1em 3em;
+  justify-content: space-between;
   nav {
     display: flex;
     align-items: center;
@@ -13,5 +13,15 @@ header {
   ul {
     display: flex;
     gap: 1em;
+  }
+
+  button {
+    background-color: #70e61c;
+    border-radius: 4px;
+    outline: solid 2px #70e61c;
+    &:hover {
+      background-color: #9747ff;
+      outline: solid 2px #9747ff    ;
+    }
   }
 }
