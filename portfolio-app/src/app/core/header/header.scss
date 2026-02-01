@@ -1,0 +1,17 @@
+header {
+  background-color: #141d2f;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1em;
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+  }
+
+  ul {
+    display: flex;
+    gap: 1em;
+  }
+}
