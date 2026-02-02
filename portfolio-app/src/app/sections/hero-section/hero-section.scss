@@ -11,17 +11,14 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  h1 {
-    margin: 0;
-    font-size: 4rem;
-  }
+  gap: 10px;
+  padding-top: 6em;
 }
 
 .hero-subtitle-vert {
   writing-mode: sideways-lr;
   display: flex;
-  font-size: 3rem;
+  font-size: 6rem;
   margin: 0;
   justify-content: center;
 }
@@ -29,8 +26,14 @@ section {
 .hero-title {
   display: flex;
   flex-direction: column;
+
+  h1 {
+    margin: 0;
+    font-size: 8rem;
+  }
+
   p {
-    font-size: 2rem;
+    font-size: 4rem;
     margin: 0;
     color: #9747ff;
   }
@@ -39,6 +42,7 @@ section {
 .hero-cta-button {
   display: flex;
   justify-content: center;
+  padding-bottom: 3em;
   padding-top: 3em;
 }
 

@@ -4,10 +4,9 @@ header {
   align-items: center;
   padding: 1em 3em;
   justify-content: space-between;
-  nav {
-    display: flex;
-    align-items: center;
-    gap: 2em;
+
+  a {
+    font-size: 2rem;
   }
 
   ul {
@@ -21,7 +20,12 @@ header {
     outline: solid 2px #70e61c;
     &:hover {
       background-color: #9747ff;
-      outline: solid 2px #9747ff    ;
+      outline: solid 2px #9747ff;
     }
   }
+}
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2em;
 }
