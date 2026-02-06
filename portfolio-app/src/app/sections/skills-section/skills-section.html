@@ -1,1 +1,14 @@
-<p>skills-section works!</p>
+<section>
+  <div class="skills-icons">
+    @for (icon of skillIcons; track icon.src) {
+      <img [src]="icon.src" [alt]="icon.alt" class="skill-icon" loading="lazy" />
+    }
+  </div>
+  <div>
+    <h2>Skills</h2>
+    <p></p>
+    <h3></h3>
+    <p></p>
+    <button>get in touch</button>
+  </div>
+</section>
