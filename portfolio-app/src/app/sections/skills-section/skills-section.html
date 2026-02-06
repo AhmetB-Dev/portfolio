@@ -1,7 +1,8 @@
 <section>
   <div class="skills-icons">
-    @for (icon of skillIcons; track icon.src) {
-      <img [src]="icon.src" [alt]="icon.alt" class="skill-icon" loading="lazy" />
+    @for (skill of skills; track skill.src) {
+      <img [src]="skill.src" [alt]="skill.name" class="skill-icon" loading="lazy" />
+      <p>{{ skill.name }}</p>
     }
   </div>
   <div>
