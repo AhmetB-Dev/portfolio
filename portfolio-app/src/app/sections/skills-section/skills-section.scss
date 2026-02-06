@@ -1,6 +1,7 @@
 section {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: baseline;
   gap: 16em;
 }
 
@@ -12,13 +13,31 @@ section {
 
 .skills-icons {
   display: grid;
-  gap: 4em;
-  grid-template-columns: repeat(4, 1fr);
   align-content: start;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4em;
+  padding-left: 2em;
 }
+
 .title-line {
+  position: relative;
+  bottom: 1em;
   background-color: #70e61c;
   border: #70e61d;
   height: 3px;
   width: 4em;
+}
+
+.title-skills {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 7em;
+
+  h2 {
+    font-size: 6rem;
+    margin: 0;
+    margin-bottom: 40px;
+  }
 }
