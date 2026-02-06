@@ -1,15 +1,23 @@
 <section>
   <div class="skills-icons">
     @for (skill of skills; track skill.src) {
-      <img [src]="skill.src" [alt]="skill.name" class="skill-icon" loading="lazy" />
-      <p>{{ skill.name }}</p>
+      <div class="skills-grid">
+        <img [src]="skill.src" [alt]="skill.name" class="skill-icon" loading="lazy" />
+        <p>{{ skill.name }}</p>
+      </div>
     }
   </div>
   <div>
-    <h2>Skills</h2>
-    <p></p>
-    <h3></h3>
-    <p></p>
+    <div>
+      <h2>My Skills</h2>
+      <div class="title-line"></div>
+    </div>
+    <p>
+      A selection of technologies I’ve used in my projects—focused on clean, maintainable, and
+      scalable web development.
+    </p>
+    <h3>Looking for another skill?</h3>
+    <p>I learn fast and enjoy expanding my stack—especially when it helps build better products.</p>
     <button>get in touch</button>
   </div>
 </section>

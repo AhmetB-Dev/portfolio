@@ -3,3 +3,22 @@ section {
   justify-content: center;
   gap: 16em;
 }
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-icons {
+  display: grid;
+  gap: 4em;
+  grid-template-columns: repeat(4, 1fr);
+  align-content: start;
+}
+.title-line {
+  background-color: #70e61c;
+  border: #70e61d;
+  height: 3px;
+  width: 4em;
+}
