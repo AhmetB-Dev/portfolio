@@ -10,3 +10,22 @@
 .pf-display {
   display: flex;
 }
+
+.portfolio-grid {
+  display: flex;
+  gap: 33px;
+}
+
+.portfolio-card {
+  padding: 1pc;
+  border: 1px solid #70e61c;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 480px;
+    object-fit: contain;
+    height: 340px;
+  }
+}
