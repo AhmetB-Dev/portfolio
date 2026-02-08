@@ -1,10 +1,55 @@
-<header>
-  <a href="#hero">Ahmet</a>
+<header class="site-header">
+  <a routerLink="/" fragment="hero">Ahmet</a>
+
   <nav>
     <ul>
-      <li><a href="#about">About me</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Portfolio</a></li>
+      <li>
+        <a
+          routerLink="/"
+          fragment="about"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{
+            paths: 'exact',
+            queryParams: 'ignored',
+            matrixParams: 'ignored',
+            fragment: 'exact',
+          }"
+        >
+          About me
+        </a>
+      </li>
+
+      <li>
+        <a
+          routerLink="/"
+          fragment="skills"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{
+            paths: 'exact',
+            queryParams: 'ignored',
+            matrixParams: 'ignored',
+            fragment: 'exact',
+          }"
+        >
+          Skills
+        </a>
+      </li>
+
+      <li>
+        <a
+          routerLink="/"
+          fragment="projects"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{
+            paths: 'exact',
+            queryParams: 'ignored',
+            matrixParams: 'ignored',
+            fragment: 'exact',
+          }"
+        >
+          Portfolio
+        </a>
+      </li>
     </ul>
     <div style="display: flex; gap: 10px"><button>DE</button><button>EN</button></div>
   </nav>

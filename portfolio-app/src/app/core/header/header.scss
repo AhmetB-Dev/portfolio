@@ -12,6 +12,9 @@ header {
   ul {
     display: flex;
     gap: 1em;
+    li {
+      display: unset;
+    }
   }
 
   button {
@@ -24,12 +27,18 @@ header {
     }
   }
 }
+
+.site-header {
+  position: sticky;
+  top: 0;
+}
+
 nav {
   display: flex;
   align-items: center;
   gap: 2em;
 }
 
-li {
-  display: unset;
+.is-active {
+  border-bottom: 2px solid #9747ff;
 }
