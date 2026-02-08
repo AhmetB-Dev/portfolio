@@ -19,6 +19,13 @@ section {
   padding-left: 2em;
 }
 
+.title-content {
+  text-align: end;
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+}
+
 .title-line {
   position: relative;
   bottom: 1em;

@@ -7,12 +7,11 @@
         Explore a selection of my work here - Interact with projects to see my skills in action.
       </p>
       <div class="portfolio-grid">
-        <div class="portfolio-card">
-          <img src="/assets/img/portfolio/sharkie_cover.png" alt="" />
-        </div>
-        <div class="portfolio-card">
-          <img src="/assets/img/portfolio/join_cover.png" alt="" />
-        </div>
+        @for (cover of covers; track cover.src) {
+          <div class="portfolio-card">
+            <img [src]="cover.src" [alt]="cover.name" />
+          </div>
+        }
       </div>
     </div>
   </div>
