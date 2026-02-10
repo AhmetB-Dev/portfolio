@@ -12,7 +12,7 @@ type Cover = {
 })
 export class ProjectsSection {
   readonly covers: Cover[] = [
-    { src: 'assets/img/portfolio/join_cover.png', name: 'Join360' }, 
-    { src: 'assets/img/portfolio/sharkie_cover.png', name: 'Sharkie' },
+    { src: 'assets/img/portfolio/join_cover.webp', name: 'Join360' },
+    { src: 'assets/img/portfolio/sharkie_cover.webp', name: 'Sharkie' },
   ];
 }
