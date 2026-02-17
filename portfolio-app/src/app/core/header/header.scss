@@ -21,11 +21,21 @@ header {
     background-color: transparent;
     border-radius: 4px;
     outline: solid 2px #70e61c;
-    &:hover {
+
+    &.is-active-lang {
       background-color: #9747ff;
       outline: solid 2px #9747ff;
     }
   }
+}
+
+.lang-switch {
+  display: flex;
+  gap: 10px;
+}
+
+.is-active {
+  border-bottom: 2px solid #9747ff;
 }
 
 .site-header {
@@ -37,8 +47,4 @@ nav {
   display: flex;
   align-items: center;
   gap: 2em;
-}
-
-.is-active {
-  border-bottom: 2px solid #9747ff;
 }

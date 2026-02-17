@@ -51,6 +51,14 @@
         </a>
       </li>
     </ul>
-    <div style="display: flex; gap: 10px"><button>DE</button><button>EN</button></div>
+    @for (l of lang.supported; track l.code) {
+      <button
+        type="button"
+        [class.is-active-lang]="lang.current() === l.code"
+        (click)="lang.set(l.code)"
+      >
+        {{ l.short }}
+      </button>
+    }
   </nav>
 </header>

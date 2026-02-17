@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLinkActive, RouterLinkWithHref } from '@angular/router';
+import { Language } from '../services/language';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,6 @@ import { RouterLinkActive, RouterLinkWithHref } from '@angular/router';
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {}
+export class Header {
+  readonly lang = inject(Language);
+}
