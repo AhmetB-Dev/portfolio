@@ -36,7 +36,16 @@ button {
 }
 
 .is-active {
-  border-bottom: 2px solid #9747ff;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    width: 55px;
+    border-bottom: 2px solid #9747ff;
+  }
 }
 
 .site-header {
