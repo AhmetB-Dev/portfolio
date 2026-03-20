@@ -9,6 +9,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .skills-icons {
@@ -27,10 +28,7 @@ section {
 }
 
 .title-line {
-  position: relative;
-  bottom: 1em;
-  background-color: #70e61c;
-  border: #70e61d;
+  background: #70e61c;
   height: 3px;
   width: 4em;
 }

@@ -58,6 +58,13 @@ button {
   }
 }
 
+a {
+  transition: transform 300ms ease;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
 .hero-meta {
   display: flex;
   justify-content: space-between;

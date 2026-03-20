@@ -4,6 +4,7 @@ header {
   align-items: center;
   padding: 1em 3em;
   justify-content: space-between;
+  z-index: 10;
 
   a {
     font-size: 2rem;
@@ -16,16 +17,16 @@ header {
       display: unset;
     }
   }
+}
 
-  button {
-    background-color: transparent;
-    border-radius: 4px;
-    outline: solid 2px #70e61c;
+button {
+  background-color: transparent;
+  border-radius: 4px;
+  outline: solid 2px #70e61c;
 
-    &.is-active-lang {
-      background-color: #9747ff;
-      outline: solid 2px #9747ff;
-    }
+  &.is-active-lang {
+    background-color: #9747ff;
+    outline: solid 2px #9747ff;
   }
 }
 
@@ -47,4 +48,12 @@ nav {
   display: flex;
   align-items: center;
   gap: 2em;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.logo-end {
+  color: #9747ff;
 }
