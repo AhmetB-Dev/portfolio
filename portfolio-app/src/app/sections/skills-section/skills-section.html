@@ -10,17 +10,15 @@
   <div class="title-content">
     <div class="title-skills">
       <div>
-        <h2>Skills</h2>
+        <h2>{{ text().title }}</h2>
+        <p>{{ text().lead }}</p>
+        <h3>{{ text().otherSkillTitle }}</h3>
         <p>
-          A selection of technologies I've used in my projects—focused<br />
-          on clean, maintainable, and scalable web development.
+          {{ text().otherSkillText }}
         </p>
-        <h3>Looking for another skill?</h3>
-        <p>
-          I learn fast and enjoy expanding <br />
-          my stack—especially when it helps build better products.
-        </p>
-        <button>get in touch</button>
+        <button>
+          <a href="#contact"> {{ text().cta }}</a>
+        </button>
       </div>
     </div>
     <div>

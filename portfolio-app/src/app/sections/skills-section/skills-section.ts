@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
+import { Language } from '../../core/services/language';
 
 type SkillIcon = {
   src: string;
@@ -12,6 +13,8 @@ type SkillIcon = {
   styleUrl: './skills-section.scss',
 })
 export class SkillsSection {
+  readonly lang = inject(Language);
+  readonly text = computed(() => this.lang.texts().skills);
   readonly skills: SkillIcon[] = [
     { src: 'assets/icon/skills/html.svg', name: 'HTML' },
     { src: 'assets/icon/skills/css.svg', name: 'CSS' },

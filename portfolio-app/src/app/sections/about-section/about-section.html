@@ -1,26 +1,20 @@
 <section>
-  <h2>About me</h2>
+  <h2>{{ text().title }}</h2>
   <div class="about-content">
     <div>
       <div>
-        <p>
-          I am a motivated software developer with a strong focus on clean structures, maintainable
-          code, and practical solutions. I work analytically and in a self-organized manner,
-          breaking down complex problems into manageable steps while placing great emphasis on clear
-          architecture and readable code. Through personal projects, I continuously expand my
-          technical knowledge and apply new concepts directly in practice.
-        </p>
+        <p>{{ text().lead }}</p>
       </div>
       <div>
         <ul>
-          <li>Angular • TypeScript • REST APIs</li>
-          <li>Component architecture, maintainable CSS</li>
-          <li>Problem-solving: analytical, persistent, collaborative</li>
+          <li>{{ text().stack1 }}</li>
+          <li>{{ text().stack2 }}</li>
+          <li>{{ text().stack3 }}</li>
         </ul>
       </div>
-      <button>Projects</button>
-      <button>contact</button>
-      <button>GitHUb</button>
+      <button>{{ text().projectsCta }}</button>
+      <button>{{ text().contactCta }}</button>
+      <button>{{ text().githubCta }}</button>
     </div>
 
     <div class="background-image-left"></div>
@@ -29,25 +23,17 @@
       <div class="about-card">
         <img src="./assets/icon/about/location.svg" alt="" />
         <p>
-          I work in a structured and self-organized way and feel most productive in remote
-          environments. At the same time, I'm open to well-designed hybrid setups, especially during
-          onboarding or for key team sessions.
+          {{ text().cardLocation }}
         </p>
       </div>
       <div class="about-card">
         <img src="./assets/icon/about/puzzle-desktop.svg" alt="" />
-        <p>
-          I work in a structured, reliable, and self-driven way. I approach challenges methodically:
-          clarifying requirements, breaking them into manageable steps, implementing solutions
-          cleanly, and iterating when needed. I value clear communication, understandable
-          structures, and code that remains maintainable over time.
-        </p>
+        <p>{{ text().cardWorkStyle }}</p>
       </div>
       <div class="about-card">
         <img src="./assets/icon/about/bulb-desktop.svg" alt="" />
         <p>
-          I'm open-minded and enjoy learning new technologies. Through hands-on projects, best
-          practices, and iterative improvements, I continuously develop my skills.
+          {{ text().cardLearning }}
         </p>
       </div>
     </div>

@@ -91,7 +91,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       lead: 'Eine Auswahl an Technologien, die ich in meinen Projekten verwendet habe – mit Fokus auf saubere, wartbare und skalierbare Webentwicklung.',
       otherSkillTitle: 'Du suchst noch einen anderen Skill?',
       otherSkillText:
-        'Ich lerne schnell und erweitere meinen Stack gerne – besonders wenn es hilft, bessere Produkte zu bauen.',
+        'Ich lerne schnell und erweitere meinen Stack gerne besonders wenn es hilft, bessere Produkte zu bauen.',
       cta: 'Kontakt aufnehmen',
     },
     projects: {
@@ -108,7 +108,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       privacyPrefix: 'Ich habe die ',
       privacyLink: 'Datenschutzerklärung',
       privacySuffix: ' gelesen und stimme der Verarbeitung meiner Daten zu.',
-      button: 'Nachricht senden',
+      button: 'Nachricht senden :)',
       goUpLabel: 'Nach oben',
     },
     footer: {
@@ -163,7 +163,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       privacyPrefix: `I've read the `,
       privacyLink: 'privacy policy',
       privacySuffix: ' and agree to the processing of my data.',
-      button: 'Send message',
+      button: 'Send messagne :)',
       goUpLabel: 'Back to top',
     },
     footer: {

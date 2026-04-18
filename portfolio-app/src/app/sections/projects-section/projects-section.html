@@ -1,10 +1,10 @@
 <section>
   <div class="pf-display">
     <div class="line"></div>
-    <div style="padding-left: 2em">
-      <h2>Portfolio</h2>
+    <div class="descri-pf">
+      <h2>{{ text().title }}</h2>
       <p>
-        Explore a selection of my work here - Interact with projects to see my skills in action.
+        {{ text().lead }}
       </p>
       <div class="portfolio-grid">
         @for (cover of covers; track cover.src) {

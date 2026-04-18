@@ -1,41 +1,43 @@
 <section>
-  <div style="display: flex; justify-content: center; align-items: center">
+  <div class="contact-title">
     <div>
-      <h2 style="font-size: 6rem">Contact</h2>
+      <h2>{{ text().title }}</h2>
     </div>
     <div>
-      <p style="background: #70e61c; height: 3px; width: 19em; position: absolute; right: 0px"></p>
+      <p></p>
     </div>
   </div>
 
-  <div style="display: flex; gap: 6em; justify-content: space-between">
-    <div style="display: flex; gap: 2em">
-      <p style="background: #70e61c; height: 3px; margin-top: 1.8em; width: 2em"></p>
+  <div class="descri-contact">
+    <div class="descri-text">
+      <p class="descri-line"></p>
       <div>
-        <h3>Got a problem to solve?</h3>
+        <h3>{{ text().headline }}</h3>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur officiis numquam,
+          {{ text().text }}
         </p>
       </div>
     </div>
 
-    <div style="display: flex; flex-direction: column; gap: 2em">
-      <input type="text" placeholder="Your name" />
-      <input type="text" placeholder="Your email" />
-      <input type="text" placeholder="Your Message" />
-      <div style="display: flex; align-items: center; gap: 8px">
+    <div class="contact-form">
+      <input type="text" placeholder="{{ text().namePlaceholder }} " />
+      <input type="text" placeholder="{{ text().emailPlaceholder }} " />
+      <input type="text" placeholder="{{ text().messagePlaceholder }} " />
+      <div class="privacy-content">
         <input class="checkbox" type="checkbox" />
         <p>
-          I've read the <a>privacy policy </a>and agree to the processing of my data as outlined.
+          {{ text().privacyPrefix }}
+          <a> {{ text().privacyLink }} </a>
+          {{ text().privacySuffix }}
         </p>
       </div>
-      <div style="display: flex; justify-content: center">
-        <button>Send message :)</button>
+      <div class="contact-button">
+        <button>{{ text().button }}</button>
       </div>
 
-      <div style="display: flex; justify-content: flex-end; padding-right: 3em">
-        <a style="display: flex; justify-content: flex-end" href="/">
-          <img style="width: 26px" src="/assets/icon/contact/go-up-button.svg" alt="" />
+      <div class="up-button">
+        <a href="#hero">
+          <img src="/assets/icon/contact/go-up-button.svg" alt="{{ text().goUpLabel }}" />
         </a>
       </div>
     </div>
