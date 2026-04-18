@@ -1,6 +1,6 @@
-import { Injectable, effect, signal } from '@angular/core';
+import { Injectable, computed, effect, signal } from '@angular/core';
+import { LangCode, translations, TranslationModel } from '../i18n/translation';
 
-export type LangCode = 'de' | 'en';
 export type LangOption = { code: LangCode; short: string; label: string };
 
 @Injectable({ providedIn: 'root' })
@@ -13,6 +13,8 @@ export class Language {
   ];
 
   readonly current = signal<LangCode>(this.readInitial());
+
+  readonly texts = computed<TranslationModel>(() => translations[this.current()]);
 
   constructor() {
     effect(() => {

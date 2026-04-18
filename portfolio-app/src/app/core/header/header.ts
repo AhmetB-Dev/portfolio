@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 import { Language } from '../services/language';
 
@@ -10,4 +10,5 @@ import { Language } from '../services/language';
 })
 export class Header {
   readonly lang = inject(Language);
+  readonly text = computed(() => this.lang.texts().header);
 }

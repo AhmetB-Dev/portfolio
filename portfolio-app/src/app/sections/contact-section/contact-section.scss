@@ -1,0 +1,63 @@
+input {
+  border: #9747ff solid 2px;
+  background-color: #141d2f;
+  border-radius: 9px;
+  height: 2.8em;
+  width: 28em;
+  padding-left: 1.5em;
+  color: #fff;
+  &:hover {
+    border: #1cdae6 solid 2px;
+    //#70E61C diese farbe wenn das feld gefüllt ist
+    //#E61C40 diese farbe wenn das feld leer ist
+    //
+  }
+}
+
+// input[type='checkbox'] {
+//   border: #70e61c solid 2px;
+//   transition: none;
+// }
+$checkbox-color: #70e61c;
+$checkbox-size: 20px;
+
+input[type='checkbox'] {
+  appearance: none;
+  width: 20px;
+  height: 18px;
+  margin: 0;
+  /* background-color: transparent; */
+  border: 2px solid #70e61c;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: '';
+    width: 6px;
+    height: 10px;
+    border-right: 2px solid $checkbox-color;
+    border-bottom: 2px solid $checkbox-color;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.12s ease;
+    margin-bottom: 4px;
+  }
+
+  &:checked::after {
+    transform: rotate(45deg) scale(1);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $checkbox-color;
+    outline-offset: 2px;
+  }
+}
+
+button {
+  background-color: #70e61c;
+  padding: 1em 2em;
+  border-radius: 10px;
+  font-size: 1.4rem;
+}

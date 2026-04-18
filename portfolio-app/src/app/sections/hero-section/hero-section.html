@@ -1,15 +1,15 @@
 <section>
   <div class="hero">
-    <p class="hero-subtitle-vert">I am</p>
+    <p class="hero-subtitle-vert">{{ text().intro }}</p>
     <div class="hero-title">
       <h1>Ahmet Balci</h1>
-      <p>Frontend Developer</p>
+      <p>{{ text().role }}</p>
     </div>
   </div>
 
   <div class="hero-cta-button">
     <button>
-      <a href="#contact">Let's talk</a>
+      <a href="#contact">{{ text().cta }}</a>
     </button>
   </div>
 
@@ -18,13 +18,13 @@
       <div class="hero-social-link">
         <div class="space-line"></div>
         <a href=""><img src="./assets/icon/hero/github-btn.svg" alt="Github Link" /></a>
-        <a href=""><img src="./assets/icon/hero/email-btn.svg" alt="Email Link" /> </a>
-        <a href=""> <img src="./assets/icon/hero/linkedin-btn.svg" alt="Linkedin Link" /></a>
+        <a href=""><img src="./assets/icon/hero/email-btn.svg" alt="Email Link" /></a>
+        <a href=""><img src="./assets/icon/hero/linkedin-btn.svg" alt="Linkedin Link" /></a>
       </div>
     </div>
 
     <div class="hero-scroll">
-      <p>Scroll down <img src="./assets/icon/hero/arrow-down-line.svg" alt="" /></p>
+      <p>{{ text().scroll }} <img src="./assets/icon/hero/arrow-down-line.svg" alt="" /></p>
     </div>
   </div>
 </section>
