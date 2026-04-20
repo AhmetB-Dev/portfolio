@@ -1,15 +1,43 @@
 <section>
-  <div class="pf-display">
+  <div class="project-display">
     <div class="line"></div>
-    <div class="descri-pf">
+
+    <div class="descri-project">
       <h2>{{ text().title }}</h2>
-      <p>
-        {{ text().lead }}
-      </p>
-      <div class="portfolio-grid">
-        @for (cover of covers; track cover.src) {
-          <div class="portfolio-card">
-            <img [src]="cover.src" [alt]="cover.name" />
+      <p>{{ text().lead }}</p>
+
+      <div class="project-grid">
+        @for (project of projects(); track project.id) {
+          <div class="project-card">
+            <img [src]="project.src" [alt]="project.name" class="project-image" />
+
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a
+                  [href]="project.liveUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-btn"
+                >
+                  {{ text().liveBtn }}
+                </a>
+
+                <a
+                  [href]="project.githubUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-btn"
+                >
+                  {{ text().githubBtn }}
+                </a>
+              </div>
+
+              <div class="overlay-descr">
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.description }}</p>
+                <p>{{ project.technologies }}</p>
+              </div>
+            </div>
           </div>
         }
       </div>

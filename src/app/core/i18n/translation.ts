@@ -6,6 +6,8 @@ Injectable({
 
 export type LangCode = 'de' | 'en';
 
+type ProjectId = 'join' | 'sharkie' | 'memory' | 'app';
+
 export type TranslationModel = {
   header: {
     about: string;
@@ -41,6 +43,14 @@ export type TranslationModel = {
   projects: {
     title: string;
     lead: string;
+    liveBtn: string;
+    githubBtn: string;
+    items: Record<
+      ProjectId,
+      {
+        description: string;
+      }
+    >;
   };
   contact: {
     title: string;
@@ -97,6 +107,26 @@ export const translations: Record<LangCode, TranslationModel> = {
     projects: {
       title: 'Portfolio',
       lead: 'Hier findest du eine Auswahl meiner Arbeiten – interagiere mit den Projekten und sieh meine Skills in Aktion.',
+      liveBtn: 'Live Test',
+      githubBtn: 'GitHub',
+      items: {
+        join: {
+          description:
+            'Ein Kanban-Task-Management-Tool zum Erstellen, Organisieren und Verwalten von Aufgaben im Team.',
+        },
+        sharkie: {
+          description:
+            'Ein 2D-Jump-and-Run-Spiel mit einer Unterwasserwelt, Gegnern und sammelbaren Objekten.',
+        },
+        memory: {
+          description:
+            'Ein klassisches Memory-Spiel, bei dem passende Kartenpaare gefunden werden müssen.',
+        },
+        app: {
+          description:
+            'Eine Produktivitäts-App, die Nutzer dabei unterstützt, Aufgaben zu verwalten und organisiert zu bleiben.',
+        },
+      },
     },
     contact: {
       title: 'Kontakt',
@@ -152,6 +182,24 @@ export const translations: Record<LangCode, TranslationModel> = {
     projects: {
       title: 'Portfolio',
       lead: 'Explore a selection of my work here - interact with projects to see my skills in action.',
+      liveBtn: 'Live Test',
+      githubBtn: 'GitHub',
+      items: {
+        join: {
+          description:
+            'A Kanban task management tool for creating, organizing, and managing tasks in a team.',
+        },
+        sharkie: {
+          description:
+            'A 2D platformer game with an underwater world, enemies, and collectible items.',
+        },
+        memory: {
+          description: 'A classic memory game where players flip cards to find matching pairs.',
+        },
+        app: {
+          description: 'A productivity app that helps users manage their tasks and stay organized.',
+        },
+      },
     },
     contact: {
       title: 'Contact',
