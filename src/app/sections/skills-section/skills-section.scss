@@ -46,7 +46,7 @@ section {
 .skills-heading {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .skills-text {
@@ -63,7 +63,7 @@ section {
 .title-line {
   background: #1cdae6;
   height: 3px;
-  width: 20em;
+  width: 10em;
 }
 
 .title-skills {

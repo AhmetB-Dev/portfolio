@@ -8,6 +8,9 @@ header {
 
   a {
     font-size: 2rem;
+    &:hover {
+      color: #70e61c;
+    }
   }
 
   ul {
@@ -42,6 +45,8 @@ button {
 
 .is-active {
   position: relative;
+  color: #70e61c;
+  font-size: clamp;
 
   &::after {
     content: '';
@@ -51,8 +56,6 @@ button {
     width: 55px;
     border-bottom: 2px solid #9747ff;
   }
-
-  font-size: clamp;
 }
 
 .site-header {
