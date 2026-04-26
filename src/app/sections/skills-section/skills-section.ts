@@ -24,6 +24,6 @@ export class SkillsSection {
     { src: 'assets/icon/skills/firebase.svg', name: 'Firebase' },
     { src: 'assets/icon/skills/git.svg', name: 'Git' },
     { src: 'assets/icon/skills/material-design.svg', name: 'Material Design' },
-    { src: 'assets/icon/skills/continually-learning.svg', name: 'Continually learning' },
+    { src: 'assets/icon/skills/continually-learningBlue.svg', name: 'Continually learning' },
   ];
 }

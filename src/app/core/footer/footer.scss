@@ -13,9 +13,16 @@
 .social-link {
   display: flex;
   gap: 1em;
+  img {
+    transition: transform 300ms ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
 
 .legal-notice {
   display: flex;
-  gap: 1em;
+  flex-direction: column;
 }

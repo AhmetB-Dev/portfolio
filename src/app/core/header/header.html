@@ -53,15 +53,16 @@
         </a>
       </li>
     </ul>
-
-    @for (l of lang.supported; track l.code) {
-      <button
-        type="button"
-        [class.is-active-lang]="lang.current() === l.code"
-        (click)="lang.set(l.code)"
-      >
-        {{ l.short }}
-      </button>
-    }
+    <div class="lang-container">
+      @for (l of lang.supported; track l.code) {
+        <button
+          type="button"
+          [class.is-active-lang]="lang.current() === l.code"
+          (click)="lang.set(l.code)"
+        >
+          {{ l.short }}
+        </button>
+      }
+    </div>
   </nav>
 </header>

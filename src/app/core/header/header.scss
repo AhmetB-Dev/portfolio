@@ -22,15 +22,20 @@ header {
 button {
   background-color: transparent;
   border-radius: 4px;
-  outline: solid 2px #70e61c;
+  border: solid 2px #70e61c;
+
+  &:not(.is-active-lang):hover {
+    background-color: #9747ff;
+    border-color: #9747ff;
+  }
 
   &.is-active-lang {
-    background-color: #9747ff;
-    outline: solid 2px #9747ff;
+    background-color: #70e61c;
+    border-color: #70e61c;
   }
 }
 
-.lang-switch {
+.lang-container {
   display: flex;
   gap: 10px;
 }
@@ -58,7 +63,7 @@ button {
 nav {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 4em;
 }
 
 .logo {

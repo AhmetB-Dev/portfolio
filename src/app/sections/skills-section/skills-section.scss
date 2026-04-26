@@ -3,6 +3,11 @@ section {
   justify-content: space-between;
   align-items: baseline;
   gap: 16em;
+  background-image: url(/assets/img/skills/bg.webp);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 100% 55%;
+  padding: 8em 0em;
 }
 
 .skills-grid {
@@ -20,6 +25,34 @@ section {
   padding-left: 2em;
 }
 
+.skills-grid:hover .skill-icon {
+  animation: skill-lift 1.5s ease;
+}
+
+@keyframes skill-lift {
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-13px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.skills-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills-text {
+  text-align: left;
+}
+
 .title-content {
   text-align: end;
   display: flex;
@@ -28,21 +61,32 @@ section {
 }
 
 .title-line {
-  background: #70e61c;
+  background: #1cdae6;
   height: 3px;
-  width: 4em;
+  width: 20em;
 }
 
 .title-skills {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
   gap: 7em;
 
   h2 {
     font-size: 6rem;
     margin: 0;
     margin-bottom: 40px;
+  }
+}
+
+button {
+  background-color: #70e61c;
+  padding: 0.8em 1.6em;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: transform 300ms ease;
+  &:hover {
+    background-color: #9747ff;
+    transform: matrix3d(1.05, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1, 0, -2.5, -2.5, 0, 1);
   }
 }

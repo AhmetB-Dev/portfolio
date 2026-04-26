@@ -10,19 +10,25 @@
   <div class="title-content">
     <div class="title-skills">
       <div>
-        <h2>{{ text().title }}</h2>
-        <p>{{ text().lead }}</p>
-        <h3>{{ text().otherSkillTitle }}</h3>
-        <p>
-          {{ text().otherSkillText }}
-        </p>
-        <button>
-          <a href="#contact"> {{ text().cta }}</a>
-        </button>
+        <div class="skills-heading">
+          <h2>{{ text().title }}</h2>
+          <div>
+            <p class="title-line"></p>
+          </div>
+        </div>
+        <div class="skills-text">
+          <p>{{ text().lead }}</p>
+          <h3>{{ text().otherSkillTitle }}</h3>
+          <p>
+            {{ text().otherSkillText }}
+          </p>
+          <div>
+            <button>
+              <a href="#contact"> {{ text().cta }}</a>
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div>
-      <p class="title-line"></p>
     </div>
   </div>
 </section>

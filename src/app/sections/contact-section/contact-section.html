@@ -20,19 +20,23 @@
     </div>
 
     <div class="contact-form">
-      <input type="text" placeholder="{{ text().namePlaceholder }} " />
-      <input type="text" placeholder="{{ text().emailPlaceholder }} " />
-      <input type="text" placeholder="{{ text().messagePlaceholder }} " />
-      <div class="privacy-content">
-        <input class="checkbox" type="checkbox" />
-        <p>
-          {{ text().privacyPrefix }}
-          <a> {{ text().privacyLink }} </a>
-          {{ text().privacySuffix }}
-        </p>
+      <div class="contact-fields">
+        <input type="text" placeholder="{{ text().namePlaceholder }} " />
+        <input type="email" placeholder="{{ text().emailPlaceholder }} " />
+        <textarea placeholder="{{ text().messagePlaceholder }} "></textarea>
+
+        <div class="privacy-content">
+          <input class="checkbox" type="checkbox" />
+          <p>
+            {{ text().privacyPrefix }}
+            <a href=""> {{ text().privacyLink }} </a>
+            {{ text().privacySuffix }}
+          </p>
+        </div>
       </div>
+
       <div class="contact-button">
-        <button>{{ text().button }}</button>
+        <button class="contact-btn" type="button">{{ text().button }}</button>
       </div>
 
       <div class="up-button">

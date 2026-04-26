@@ -1,3 +1,16 @@
+section {
+  padding: 5em 0;
+  background-image:
+    url(/assets/img/portfolio/blue_shadow.webp), url(/assets/img/portfolio/green_shadow.webp);
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    top right,
+    bottom left;
+  background-size:
+    25% 50%,
+    23% 51%;
+}
+
 .line {
   background-color: #70e61c;
   border: #70e61d;
@@ -38,22 +51,24 @@
 
 .project-overlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25));
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  background-color: #111214a8;
   pointer-events: none;
+  inset: 0;
+  opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .project-actions {
-  display: flex;
-  gap: 14px;
   transform: translateY(20px);
   transition: transform 0.3s ease;
+  position: absolute;
+  bottom: 14em;
+  display: flex;
+  gap: 1em;
 }
 
 .project-btn {
@@ -61,8 +76,24 @@
   border-radius: 999px;
   text-decoration: none;
   font-weight: 700;
-  background: white;
-  color: #111;
+  background-color: #9747ff;
+
+  &:hover {
+    background-color: #70e61c;
+  }
+}
+
+.live-btn {
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid #1cdae6;
+  background: transparent;
+
+  &:hover {
+    background-color: #1cdae6;
+  }
 }
 
 .project-card:hover .project-overlay {
@@ -79,13 +110,23 @@
 }
 
 .overlay-descr {
+  position: absolute;
   display: flex;
   text-align: center;
-  position: absolute;
-  color: black;
+  flex-direction: column;
   bottom: 0px;
-  background: white;
+  right: 0;
+  left: 0;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  flex-direction: column;
+  padding-bottom: 2em;
+  background: white;
+  color: black;
+
+  h3 {
+    color: #9747ff;
+  }
+  span {
+    color: #70e61c;
+  }
 }
