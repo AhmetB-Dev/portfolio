@@ -5,9 +5,10 @@ header {
   padding: 1em 3em;
   justify-content: space-between;
   z-index: 10;
+  font-size: clamp(1rem, 2vw, 3rem);
 
   a {
-    font-size: 2rem;
+    // font-size: 2rem;
     &:hover {
       color: #70e61c;
     }
@@ -26,6 +27,7 @@ button {
   background-color: transparent;
   border-radius: 4px;
   border: solid 2px #70e61c;
+  font-size: clamp(0.5rem, 1vw, 2rem);
 
   &:not(.is-active-lang):hover {
     background-color: #9747ff;

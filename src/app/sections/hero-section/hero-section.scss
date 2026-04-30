@@ -13,23 +13,19 @@ section {
     22% 65%;
 }
 
-img {
-  width: 25px;
-  height: 25px;
-}
-
 .hero {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding-top: 6em;
+  padding-top: 5em;
 }
 
 .hero-subtitle-vert {
   writing-mode: sideways-lr;
   display: flex;
-  font-size: 6rem;
+  font-size: clamp(1rem, 9vw, 12rem);
+
   margin: 0;
   justify-content: center;
 }
@@ -40,11 +36,11 @@ img {
 
   h1 {
     margin: 0;
-    font-size: 8rem;
+    font-size: clamp(1rem, 13vw, 20rem);
   }
 
   p {
-    font-size: 4rem;
+    font-size: clamp(1rem, 7vw, 12rem);
     margin: 0;
     color: #9747ff;
   }
@@ -53,14 +49,15 @@ img {
 .hero-cta-button {
   display: flex;
   justify-content: center;
-  padding-bottom: 3em;
-  padding-top: 3em;
+  padding-top: clamp(2rem, 4.5vw, 5rem);
 }
 
 button {
   background-color: #70e61c;
   border-radius: 6px;
   padding: 0.5em 1em;
+  font-size: clamp(0.6rem, 2vw, 2.2rem);
+
   color: white;
   transition: transform 300ms ease;
   &:hover {
@@ -69,23 +66,10 @@ button {
   }
 }
 
-// a {
-//   transition: transform 300ms ease;
-//   &:hover {
-//     transform: scale(1.2);
-//   }
-// }
-
 .hero-meta {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-}
-
-.hero-social-link {
-  display: flex;
-  align-items: center;
-  gap: 2em;
 }
 
 .space-line {
@@ -96,6 +80,17 @@ button {
   margin: 16px 0;
 }
 
+.hero-social-link {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+
+  img {
+    width: clamp(1rem, 2.3vw, 3rem);
+    // height: clamp(1rem, 2.3vw, 3rem);
+  }
+}
+
 .hero-scroll {
   p {
     display: flex;
@@ -103,6 +98,10 @@ button {
     writing-mode: vertical-rl;
     align-items: center;
     gap: 10px;
-    padding-right: 3em;
+    padding-right: 2em;
+    font-size: clamp(0rem, 1.7vw, 1.9rem);
+  }
+  img {
+    width: clamp(1rem, 2vw, 3rem);
   }
 }
