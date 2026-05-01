@@ -24,7 +24,7 @@ section {
 .hero-subtitle-vert {
   writing-mode: sideways-lr;
   display: flex;
-  font-size: clamp(1rem, 9vw, 12rem);
+  font-size: clamp(1rem, 7vw, 12rem);
 
   margin: 0;
   justify-content: center;
@@ -36,11 +36,11 @@ section {
 
   h1 {
     margin: 0;
-    font-size: clamp(1rem, 13vw, 20rem);
+    font-size: clamp(1rem, 10vw, 20rem);
   }
 
   p {
-    font-size: clamp(1rem, 7vw, 12rem);
+    font-size: clamp(1rem, 5vw, 10rem);
     margin: 0;
     color: #9747ff;
   }
@@ -54,9 +54,9 @@ section {
 
 button {
   background-color: #70e61c;
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 0.5em 1em;
-  font-size: clamp(0.6rem, 2vw, 2.2rem);
+  font-size: clamp(0.5rem, 1.8vw, 2.2rem);
 
   color: white;
   transition: transform 300ms ease;
@@ -99,7 +99,7 @@ button {
     align-items: center;
     gap: 10px;
     padding-right: 2em;
-    font-size: clamp(0rem, 1.7vw, 1.9rem);
+    font-size: clamp(0rem, 1.4vw, 1.9rem);
   }
   img {
     width: clamp(1rem, 2vw, 3rem);

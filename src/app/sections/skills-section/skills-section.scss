@@ -73,8 +73,7 @@ section {
   gap: 7em;
 
   h2 {
-    font-size: 6rem;
-    margin: 0;
+    font-size: var(--fs-section-title);
     margin-bottom: 40px;
   }
 }

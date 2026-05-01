@@ -211,7 +211,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       privacyPrefix: `I've read the `,
       privacyLink: 'privacy policy',
       privacySuffix: ' and agree to the processing of my data.',
-      button: 'Send messagne :)',
+      button: 'Send message :)',
       goUpLabel: 'Back to top',
     },
     footer: {

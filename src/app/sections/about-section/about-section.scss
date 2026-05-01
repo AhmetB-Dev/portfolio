@@ -5,7 +5,7 @@ section {
 }
 
 h2 {
-  font-size: 7rem;
+  font-size: var(--fs-section-title);
   margin-bottom: 20px;
 }
 
@@ -32,13 +32,3 @@ li {
   display: flex;
   gap: 18px;
 }
-
-// .background-image-left {
-//   background-image: url('/assets/img/Blue shadow.png');
-// }
-// .background-image-right {
-//   background-image: url('/assets/img/Purple shadow.png');
-//   background-position: unset;
-//   width: 23pc;
-//   height: 32pc;
-// }
