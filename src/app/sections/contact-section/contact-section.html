@@ -1,48 +1,50 @@
 <section>
-  <div class="contact-title">
-    <div>
-      <h2>{{ text().title }}</h2>
-    </div>
-    <div>
-      <p></p>
-    </div>
-  </div>
-
-  <div class="descri-contact">
-    <div class="descri-text">
-      <p class="descri-line"></p>
+  <div class="content-container">
+    <div class="contact-title">
       <div>
-        <h3>{{ text().headline }}</h3>
-        <p>
-          {{ text().text }}
-        </p>
+        <h2>{{ text().title }}</h2>
+      </div>
+      <div>
+        <p></p>
       </div>
     </div>
 
-    <div class="contact-form">
-      <div class="contact-fields">
-        <input type="text" placeholder="{{ text().namePlaceholder }} " />
-        <input type="email" placeholder="{{ text().emailPlaceholder }} " />
-        <textarea placeholder="{{ text().messagePlaceholder }} "></textarea>
-
-        <div class="privacy-content">
-          <input class="checkbox" type="checkbox" />
+    <div class="descri-contact">
+      <div class="descri-text">
+        <p class="descri-line"></p>
+        <div>
+          <h3>{{ text().headline }}</h3>
           <p>
-            {{ text().privacyPrefix }}
-            <a href=""> {{ text().privacyLink }} </a>
-            {{ text().privacySuffix }}
+            {{ text().text }}
           </p>
         </div>
       </div>
 
-      <div class="contact-button">
-        <button class="contact-btn" type="button">{{ text().button }}</button>
-      </div>
+      <div class="contact-form">
+        <div class="contact-fields">
+          <input type="text" placeholder="{{ text().namePlaceholder }} " />
+          <input type="email" placeholder="{{ text().emailPlaceholder }} " />
+          <textarea placeholder="{{ text().messagePlaceholder }} "></textarea>
 
-      <div class="up-button">
-        <a href="#header">
-          <img src="/assets/icon/contact/go-up-button.svg" alt="{{ text().goUpLabel }}" />
-        </a>
+          <div class="privacy-content">
+            <input class="checkbox" type="checkbox" />
+            <p>
+              {{ text().privacyPrefix }}
+              <a href=""> {{ text().privacyLink }} </a>
+              {{ text().privacySuffix }}
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-button">
+          <button class="contact-btn" type="button">{{ text().button }}</button>
+        </div>
+
+        <div class="up-button">
+          <a href="#header">
+            <img src="/assets/icon/contact/go-up-button.svg" alt="{{ text().goUpLabel }}" />
+          </a>
+        </div>
       </div>
     </div>
   </div>

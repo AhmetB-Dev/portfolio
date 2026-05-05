@@ -1,9 +1,6 @@
 section {
-  height: 100vh;
-
   background-image:
     url('/assets/img/hero/purple-shadow.webp'), url('/assets/img/hero/blue-shadow.webp');
-
   background-repeat: no-repeat, no-repeat;
   background-position:
     top left,
@@ -11,6 +8,8 @@ section {
   background-size:
     40% 70%,
     22% 65%;
+
+  height: 100vh;
 }
 
 .hero {
@@ -24,7 +23,7 @@ section {
 .hero-subtitle-vert {
   writing-mode: sideways-lr;
   display: flex;
-  font-size: clamp(1rem, 7vw, 12rem);
+  font-size: clamp(1rem, 7vw, 8rem);
 
   margin: 0;
   justify-content: center;
@@ -36,11 +35,11 @@ section {
 
   h1 {
     margin: 0;
-    font-size: clamp(1rem, 10vw, 20rem);
+    font-size: clamp(1rem, 10vw, 11rem);
   }
 
   p {
-    font-size: clamp(1rem, 5vw, 10rem);
+    font-size: clamp(1rem, 5vw, 6.5rem);
     margin: 0;
     color: #9747ff;
   }
@@ -98,10 +97,25 @@ button {
     writing-mode: vertical-rl;
     align-items: center;
     gap: 10px;
-    padding-right: 2em;
+    /* padding-right: 2em; */
     font-size: clamp(0rem, 1.4vw, 1.9rem);
+    margin: 0;
   }
   img {
     width: clamp(1rem, 2vw, 3rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-scroll {
+    display: none;
+  }
+
+  .hero-title {
+    p {
+      font-size: clamp(1rem, 6.35vw, 8rem);
+      margin: 0;
+      color: #9747ff;
+    }
   }
 }

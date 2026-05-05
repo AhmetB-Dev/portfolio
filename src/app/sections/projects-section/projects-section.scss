@@ -13,11 +13,15 @@ section {
 
 .line {
   background-color: #70e61c;
-  border: #70e61d;
   height: 3px;
-  width: 8%;
-  position: relative;
-  top: 2em;
+  width: 70%;
+  // position: absolute;
+  // left: 0;
+}
+
+.title-content {
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
@@ -26,6 +30,7 @@ h2 {
 
 .project-display {
   display: flex;
+  flex-direction: column;
 }
 
 .descri-project {
@@ -47,7 +52,8 @@ h2 {
 
 .project-image {
   width: 480px;
-  height: 340px;
+  height: 200px;
+
   object-fit: cover;
   display: block;
   transition: transform 0.35s ease;

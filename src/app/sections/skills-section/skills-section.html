@@ -1,31 +1,33 @@
 <section>
-  <div class="skills-icons">
-    @for (skill of skills; track skill.src) {
-      <div class="skills-grid">
-        <img [src]="skill.src" [alt]="skill.name" class="skill-icon" loading="lazy" />
-        <p>{{ skill.name }}</p>
-      </div>
-    }
-  </div>
-  <div class="title-content">
-    <div class="title-skills">
-      <div>
-        <div class="skills-heading">
-          <h2>{{ text().title }}</h2>
-          <div>
-            <p class="title-line"></p>
-          </div>
+  <div class="content-container">
+    <div class="skills-icons">
+      @for (skill of skills; track skill.src) {
+        <div class="skills-grid">
+          <img [src]="skill.src" [alt]="skill.name" class="skill-icon" loading="lazy" />
+          <p>{{ skill.name }}</p>
         </div>
-        <div class="skills-text">
-          <p>{{ text().lead }}</p>
-          <h3>{{ text().otherSkillTitle }}</h3>
-          <p>
-            {{ text().otherSkillText }}
-          </p>
-          <div>
-            <button>
-              <a href="#contact"> {{ text().cta }}</a>
-            </button>
+      }
+    </div>
+    <div class="title-content">
+      <div class="title-skills">
+        <div>
+          <div class="skills-heading">
+            <h2>{{ text().title }}</h2>
+            <div>
+              <p class="title-line"></p>
+            </div>
+          </div>
+          <div class="skills-text">
+            <p>{{ text().lead }}</p>
+            <h3>{{ text().otherSkillTitle }}</h3>
+            <p>
+              {{ text().otherSkillText }}
+            </p>
+            <div>
+              <button>
+                <a href="#contact"> {{ text().cta }}</a>
+              </button>
+            </div>
           </div>
         </div>
       </div>

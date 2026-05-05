@@ -13,6 +13,7 @@ export type TranslationModel = {
     about: string;
     skills: string;
     portfolio: string;
+    contact: string;
   };
   hero: {
     intro: string;
@@ -76,6 +77,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       about: 'Über mich',
       skills: 'Skills',
       portfolio: 'Portfolio',
+      contact: 'Kontakt',
     },
     hero: {
       intro: 'Ich bin',
@@ -151,6 +153,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       about: 'About me',
       skills: 'Skills',
       portfolio: 'Portfolio',
+      contact: 'Contact',
     },
     hero: {
       intro: 'I am',

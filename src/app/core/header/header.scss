@@ -1,11 +1,13 @@
 header {
   background-color: #141d2f;
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
   padding: 0.2em 3em;
   justify-content: space-between;
   z-index: 10;
   font-size: clamp(1rem, 1.8vw, 3rem);
+  position: sticky;
+  top: 0;
 
   a {
     &:not(.logo):hover {
@@ -58,10 +60,10 @@ button {
   }
 }
 
-.site-header {
-  position: sticky;
-  top: 0;
-}
+// .site-header {
+//   position: sticky;
+//   top: 0;
+// }
 
 nav {
   display: flex;
@@ -69,10 +71,137 @@ nav {
   gap: 4em;
 }
 
+.menu-content {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   font-weight: bold;
+  font-size: clamp(1.5rem, 2.5vw, 4rem);
+  z-index: 12;
 }
 
 .logo-end {
   color: #9747ff;
+}
+
+.mobile-menu-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  /* width: 44px; */
+  /* height: 44px; */
+  /* padding: 0; */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 12;
+
+  img {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+}
+.mobile-ct a {
+  display: none;
+}
+
+.lang-separator {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 2em 1em;
+  }
+
+  .menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    font-size: clamp(1.4rem, 3.2vw, 5rem);
+  }
+
+  .lang-container {
+    // align-items: center;
+
+    button {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      color: inherit;
+      font-size: clamp(1rem, 1.8vw, 3rem);
+      padding: 0;
+
+      &:hover {
+        background-color: transparent;
+        border-color: transparent;
+        color: none;
+      }
+
+      &.is-active-lang {
+        background-color: transparent;
+        border-color: transparent;
+        color: #70e61c;
+      }
+    }
+  }
+
+  .lang-separator {
+    display: block;
+  }
+
+  .mobile-ct a {
+    display: inline-block;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+    img {
+      height: clamp(1.8rem, 5vw, 10vh);
+    }
+    &:not(.is-active-lang):hover {
+      background-color: unset;
+    }
+  }
+
+  nav {
+    position: fixed;
+    inset: 0;
+    background-color: rgb(20 29 47 / 80%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: none;
+
+    z-index: 11;
+
+    ul {
+      flex-direction: column;
+      padding: 0;
+      gap: 1.5em;
+    }
+  }
+
+  nav.can-animate {
+    transition:
+      transform 160ms ease-in-out,
+      opacity 160ms ease-in-out;
+  }
+
+  nav.is-open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
 }

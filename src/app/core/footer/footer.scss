@@ -25,4 +25,15 @@
 .legal-notice {
   display: flex;
   flex-direction: column;
+
+  span {
+    font-size: clamp(1.5rem, 2vw, 6rem);
+  }
+
+  a {
+    font-size: clamp(0.8rem, 1vw, 2rem);
+  }
+}
+.copyright {
+  font-size: clamp(0.8rem, 1vw, 2rem);
 }

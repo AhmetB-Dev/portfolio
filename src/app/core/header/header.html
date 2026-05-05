@@ -1,68 +1,107 @@
-<header class="site-header">
-  <a routerLink="/" fragment="header" class="logo">
-    <span class="logo-main">Ahme</span><span class="logo-end">t</span>
-  </a>
+<header>
+  <div style="display: flex; align-items: center; justify-content: space-between" class="content-container">
+    <a routerLink="/" fragment="header" class="logo">
+      <span class="logo-main">Ahme</span><span class="logo-end">t</span>
+    </a>
+    <button
+      class="mobile-menu-button"
+      type="button"
+      aria-controls="main-navigation"
+      [attr.aria-expanded]="menuOpen()"
+      [attr.aria-label]="menuOpen() ? 'Menü schließen' : 'Menü öffnen'"
+      (click)="toggleMobileMenu()"
+    >
+      <img [src]="menuIcon()" alt="" aria-hidden="true" />
+    </button>
 
-  <nav>
-    <ul>
-      <li>
-        <a
-          routerLink="/"
-          fragment="about"
-          routerLinkActive="is-active"
-          [routerLinkActiveOptions]="{
-            paths: 'exact',
-            queryParams: 'ignored',
-            matrixParams: 'ignored',
-            fragment: 'exact',
-          }"
-        >
-          {{ text().about }}
-        </a>
-      </li>
+    <nav id="main-navigation" [class.is-open]="menuOpen()" [class.can-animate]="menuAnimation()">
+      <div class="menu-content">
+        <ul>
+          <li>
+            <a
+              routerLink="/"
+              fragment="about"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{
+                paths: 'exact',
+                queryParams: 'ignored',
+                matrixParams: 'ignored',
+                fragment: 'exact',
+              }"
+              (click)="closeMobileMenu()"
+            >
+              {{ text().about }}
+            </a>
+          </li>
 
-      <li>
-        <a
-          routerLink="/"
-          fragment="skills"
-          routerLinkActive="is-active"
-          [routerLinkActiveOptions]="{
-            paths: 'exact',
-            queryParams: 'ignored',
-            matrixParams: 'ignored',
-            fragment: 'exact',
-          }"
-        >
-          {{ text().skills }}
-        </a>
-      </li>
+          <li>
+            <a
+              routerLink="/"
+              fragment="skills"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{
+                paths: 'exact',
+                queryParams: 'ignored',
+                matrixParams: 'ignored',
+                fragment: 'exact',
+              }"
+              (click)="closeMobileMenu()"
+            >
+              {{ text().skills }}
+            </a>
+          </li>
 
-      <li>
-        <a
-          routerLink="/"
-          fragment="projects"
-          routerLinkActive="is-active"
-          [routerLinkActiveOptions]="{
-            paths: 'exact',
-            queryParams: 'ignored',
-            matrixParams: 'ignored',
-            fragment: 'exact',
-          }"
-        >
-          {{ text().portfolio }}
-        </a>
-      </li>
-    </ul>
-    <div class="lang-container">
-      @for (l of lang.supported; track l.code) {
-        <button
-          type="button"
-          [class.is-active-lang]="lang.current() === l.code"
-          (click)="lang.set(l.code)"
-        >
-          {{ l.short }}
-        </button>
-      }
-    </div>
-  </nav>
+          <li>
+            <a
+              routerLink="/"
+              fragment="projects"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{
+                paths: 'exact',
+                queryParams: 'ignored',
+                matrixParams: 'ignored',
+                fragment: 'exact',
+              }"
+              (click)="closeMobileMenu()"
+            >
+              {{ text().portfolio }}
+            </a>
+          </li>
+
+          <li class="mobile-ct">
+            <a
+              routerLink="/"
+              fragment="contact"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{
+                paths: 'exact',
+                queryParams: 'ignored',
+                matrixParams: 'ignored',
+                fragment: 'exact',
+              }"
+              (click)="closeMobileMenu()"
+            >
+              {{ text().contact }}
+            </a>
+          </li>
+        </ul>
+
+        <div class="lang-container">
+          @for (l of lang.supported; track l.code; let last = $last) {
+            <button
+              type="button"
+              [class.is-active-lang]="lang.current() === l.code"
+              (click)="lang.set(l.code)"
+            >
+              {{ l.short }}
+            </button>
+
+            @if (!last) {
+              <span class="lang-separator">/</span>
+            }
+          }
+        </div>
+      </div>
+    </nav>
+  </div>
 </header>
