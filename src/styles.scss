@@ -31,6 +31,11 @@ h2 {
 .content-container {
   max-width: var(--container-max);
   margin: auto;
-  // display: flex;
-  // align-items: baseline;
+}
+
+@media (max-width: 768px) {
+  .stack-on-mobile {
+    display: flex;
+    flex-direction: column;
+  }
 }

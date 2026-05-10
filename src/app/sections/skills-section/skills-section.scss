@@ -3,11 +3,13 @@ section {
   justify-content: space-between;
   align-items: baseline;
   gap: 16em;
-  background-image: url(/assets/img/skills/bg.webp);
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 100% 55%;
+
   padding: 8em 0em;
+}
+
+.dp-flex {
+  display: flex;
+  gap: clamp(1rem, 5vw, 10rem);
 }
 
 .skills-grid {
@@ -17,16 +19,25 @@ section {
   text-align: center;
 }
 
+.skills-grid:hover .skill-icon {
+  animation: skill-lift 1.5s ease;
+}
+
 .skills-icons {
   display: grid;
   align-content: start;
   grid-template-columns: repeat(4, 1fr);
+  // align-items: center;
   gap: 4em;
   padding-left: 2em;
-}
 
-.skills-grid:hover .skill-icon {
-  animation: skill-lift 1.5s ease;
+  img {
+
+  }
+
+  p {
+    font-size: clamp(1rem, 1.5vw, 2rem);
+  }
 }
 
 @keyframes skill-lift {
@@ -90,7 +101,7 @@ button {
   }
 }
 
-overlay-learn {
+.overlay-learn {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -101,4 +112,20 @@ overlay-learn {
   inset: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+.content-container {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .dp-flex {
+    display: flex;
+    gap: clamp(1rem, 5vw, 10rem);
+    // flex-direction: column-reverse;
+  }
+
+  .stack-on-mobile {
+    flex-direction: column-reverse;
+  }
 }

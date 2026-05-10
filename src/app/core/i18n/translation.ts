@@ -24,12 +24,7 @@ export type TranslationModel = {
   about: {
     title: string;
     lead: string;
-    stack1: string;
-    stack2: string;
-    stack3: string;
-    projectsCta: string;
     contactCta: string;
-    githubCta: string;
     cardLocation: string;
     cardWorkStyle: string;
     cardLearning: string;
@@ -88,12 +83,7 @@ export const translations: Record<LangCode, TranslationModel> = {
     about: {
       title: 'Über mich',
       lead: `Ich bin ein motivierter Softwareentwickler mit einem starken Fokus auf saubere Strukturen, wartbaren Code und praxisnahe Lösungen. Ich arbeite analytisch und selbstorganisiert, zerlege komplexe Probleme in überschaubare Schritte und lege großen Wert auf klare Architektur und gut lesbaren Code. Durch persönliche Projekte erweitere ich mein technisches Wissen kontinuierlich und setze neue Konzepte direkt in der Praxis um.`,
-      stack1: 'Angular • TypeScript • REST APIs',
-      stack2: 'Komponentenarchitektur, wartbares CSS',
-      stack3: 'Problemlösung: analytisch, ausdauernd, teamfähig',
-      projectsCta: 'Projekte',
       contactCta: 'Kontakt',
-      githubCta: 'GitHub',
       cardLocation: `Ich arbeite strukturiert und selbstorganisiert und bin besonders produktiv in Remote-Umgebungen. Gleichzeitig bin ich offen für gut durchdachte Hybrid-Setups, besonders während des Onboardings oder für wichtige Teamtermine.`,
       cardWorkStyle: `Ich arbeite strukturiert, zuverlässig und eigenverantwortlich. Ich gehe Herausforderungen methodisch an: Anforderungen klären, in sinnvolle Schritte zerlegen, sauber umsetzen und bei Bedarf iterativ verbessern. Ich schätze klare Kommunikation, verständliche Strukturen und Code, der langfristig wartbar bleibt.`,
       cardLearning: `Ich bin offen für neue Technologien und lerne gerne dazu. Durch praktische Projekte, Best Practices und iterative Verbesserungen entwickle ich meine Fähigkeiten kontinuierlich weiter.`,
@@ -164,12 +154,7 @@ export const translations: Record<LangCode, TranslationModel> = {
     about: {
       title: 'About me',
       lead: `I am a motivated software developer with a strong focus on clean structures, maintainable code, and practical solutions. I work analytically and in a self-organized manner, breaking down complex problems into manageable steps while placing great emphasis on clear architecture and readable code. Through personal projects, I continuously expand my technical knowledge and apply new concepts directly in practice.`,
-      stack1: 'Angular • TypeScript • REST APIs',
-      stack2: 'Component architecture, maintainable CSS',
-      stack3: 'Problem-solving: analytical, persistent, collaborative',
-      projectsCta: 'Projects',
       contactCta: 'Contact',
-      githubCta: 'GitHub',
       cardLocation: `I work in a structured and self-organized way and feel most productive in remote environments. At the same time, I'm open to well-designed hybrid setups, especially during onboarding or for key team sessions.`,
       cardWorkStyle: `I work in a structured, reliable, and self-driven way. I approach challenges methodically: clarifying requirements, breaking them into manageable steps, implementing solutions cleanly, and iterating when needed. I value clear communication, understandable structures, and code that remains maintainable over time.`,
       cardLearning: `I'm open-minded and enjoy learning new technologies. Through hands-on projects, best practices, and iterative improvements, I continuously develop my skills.`,

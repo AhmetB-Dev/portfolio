@@ -140,3 +140,11 @@ h2 {
     color: #70e61c;
   }
 }
+
+@media (max-width: 768px) {
+  .dp-flex {
+    display: flex;
+    gap: clamp(1rem, 5vw, 10rem);
+    flex-direction: column-reverse;
+  }
+}

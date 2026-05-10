@@ -1,12 +1,28 @@
 section {
-  padding: 1em 5em;
   display: flex;
   flex-direction: column;
+  padding: 1em 5em;
+
+  background-image:
+    url(/assets/img/about/purple_shadow.webp), url(/assets/img/about/green_shadow.webp),
+    url(/assets/img/skills/bg.webp);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 50%, 90%, bottom;
+  background-size:
+    50% 50%,
+    50% 50%,
+    100% 55%;
+
+
 }
 
 h2 {
   font-size: var(--fs-section-title);
   margin-bottom: 20px;
+}
+
+p {
+  font-size: clamp(1rem, 1.2vw, 5rem);
 }
 
 li {
@@ -16,10 +32,18 @@ li {
 }
 
 .about-card {
-  border: solid white;
+  border: 3px solid #385533;
   display: flex;
-  align-items: center;
-  border-radius: 22px;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2em;
+
+  img {
+    border: 2px solid #165a6e;
+    border-radius: 3em;
+    padding: 4px;
+  }
 }
 
 .about {
@@ -31,4 +55,12 @@ li {
 .about-content {
   display: flex;
   gap: 18px;
+}
+
+@media (max-width: 768px) {
+  .dp-flex {
+    display: flex;
+    gap: clamp(1rem, 5vw, 10rem);
+    // flex-direction: column-reverse;
+  }
 }
