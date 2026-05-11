@@ -1,9 +1,3 @@
-import { Injectable } from '@angular/core';
-
-Injectable({
-  providedIn: 'root',
-});
-
 export type LangCode = 'de' | 'en';
 
 type ProjectId = 'join' | 'sharkie' | 'memory' | 'app';
@@ -15,12 +9,14 @@ export type TranslationModel = {
     portfolio: string;
     contact: string;
   };
+
   hero: {
     intro: string;
     role: string;
     cta: string;
     scroll: string;
   };
+
   about: {
     title: string;
     lead: string;
@@ -29,6 +25,7 @@ export type TranslationModel = {
     cardWorkStyle: string;
     cardLearning: string;
   };
+
   skills: {
     title: string;
     lead: string;
@@ -36,6 +33,7 @@ export type TranslationModel = {
     otherSkillText: string;
     cta: string;
   };
+
   projects: {
     title: string;
     lead: string;
@@ -48,6 +46,7 @@ export type TranslationModel = {
       }
     >;
   };
+
   contact: {
     title: string;
     headline: string;
@@ -60,7 +59,18 @@ export type TranslationModel = {
     privacySuffix: string;
     button: string;
     goUpLabel: string;
+    successMessage: string;
+    errors: {
+      nameRequired: string;
+      nameMinLength: string;
+      emailRequired: string;
+      emailInvalid: string;
+      messageRequired: string;
+      messageMinLength: string;
+      privacyRequired: string;
+    };
   };
+
   footer: {
     legalNotice: string;
   };
@@ -120,18 +130,31 @@ export const translations: Record<LangCode, TranslationModel> = {
         },
       },
     },
+
     contact: {
       title: 'Kontakt',
       headline: 'Hast du ein Problem zu lösen?',
-      text: 'Schreib mir gern. Ich freue mich über spannende Projekte, Frontend-Themen und neue Herausforderungen.',
+      text: '...',
       namePlaceholder: 'Dein Name',
       emailPlaceholder: 'Deine E-Mail',
       messagePlaceholder: 'Deine Nachricht',
-      privacyPrefix: 'Ich habe die ',
+      privacyPrefix: 'Ich habe die',
       privacyLink: 'Datenschutzerklärung',
-      privacySuffix: ' gelesen und stimme der Verarbeitung meiner Daten zu.',
-      button: 'Nachricht senden :)',
+      privacySuffix: 'gelesen und stimme zu.',
+      button: 'Nachricht senden',
       goUpLabel: 'Nach oben',
+
+      successMessage: 'Danke! Deine Nachricht wurde erfolgreich geprüft.',
+
+      errors: {
+        nameRequired: 'Bitte gib deinen Namen ein.',
+        nameMinLength: 'Dein Name sollte mindestens 2 Zeichen haben.',
+        emailRequired: 'Bitte gib deine E-Mail-Adresse ein.',
+        emailInvalid: 'Bitte gib eine gültige E-Mail-Adresse ein.',
+        messageRequired: 'Bitte gib eine Nachricht ein.',
+        messageMinLength: 'Deine Nachricht sollte mindestens 10 Zeichen haben.',
+        privacyRequired: 'Bitte akzeptiere die Datenschutzerklärung.',
+      },
     },
     footer: {
       legalNotice: 'Impressum',
@@ -192,15 +215,27 @@ export const translations: Record<LangCode, TranslationModel> = {
     contact: {
       title: 'Contact',
       headline: 'Got a problem to solve?',
-      text: 'Feel free to message me. I am always open to interesting projects, frontend topics, and new challenges.',
+      text: '...',
       namePlaceholder: 'Your name',
       emailPlaceholder: 'Your email',
       messagePlaceholder: 'Your message',
-      privacyPrefix: `I've read the `,
+      privacyPrefix: 'I have read the',
       privacyLink: 'privacy policy',
-      privacySuffix: ' and agree to the processing of my data.',
-      button: 'Send message :)',
-      goUpLabel: 'Back to top',
+      privacySuffix: 'and agree to it.',
+      button: 'Send message',
+      goUpLabel: 'Go up',
+
+      successMessage: 'Thank you! Your message was successfully checked.',
+
+      errors: {
+        nameRequired: 'Please enter your name.',
+        nameMinLength: 'Your name should have at least 2 characters.',
+        emailRequired: 'Please enter your email address.',
+        emailInvalid: 'Please enter a valid email address.',
+        messageRequired: 'Please enter a message.',
+        messageMinLength: 'Your message should have at least 10 characters.',
+        privacyRequired: 'Please accept the privacy policy.',
+      },
     },
     footer: {
       legalNotice: 'Legal notice',

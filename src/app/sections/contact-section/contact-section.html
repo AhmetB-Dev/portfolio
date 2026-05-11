@@ -28,7 +28,7 @@
                 <img
                   class="field-icon error-icon"
                   src="/assets/icon/contact/error.svg"
-                  alt="success"
+                  alt=""
                 />
               }
 
@@ -36,7 +36,7 @@
                 <img
                   class="field-icon success-icon"
                   src="/assets/icon/contact/success.svg"
-                  alt="success"
+                  alt=""
                 />
               }
 
@@ -60,7 +60,7 @@
                 <img
                   class="field-icon error-icon"
                   src="/assets/icon/contact/error.svg"
-                  alt="success"
+                  alt=""
                 />
               }
 
@@ -68,7 +68,7 @@
                 <img
                   class="field-icon success-icon"
                   src="/assets/icon/contact/success.svg"
-                  alt="success"
+                  alt=""
                 />
               }
               <input
@@ -95,7 +95,7 @@
                 <img
                   class="field-icon error-icon"
                   src="/assets/icon/contact/error.svg"
-                  alt="success"
+                  alt=""
                 />
               }
 
@@ -103,7 +103,7 @@
                 <img
                   class="field-icon success-icon"
                   src="/assets/icon/contact/success.svg"
-                  alt="success"
+                  alt=""
                 />
               }
               <textarea
@@ -116,7 +116,7 @@
             }
           </div>
 
-          <div class="privacy-field">
+          <div class="privacy-field" [class.invalid]="isInvalid('privacy')">
             <input id="privacy" class="checkbox" type="checkbox" formControlName="privacy" />
 
             <label for="privacy">

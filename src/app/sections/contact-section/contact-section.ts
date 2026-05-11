@@ -1,5 +1,5 @@
 import { Component, computed, inject } from '@angular/core';
-import { NonNullableFormBuilder, ReactiveFormsModule, Validator, Validators } from '@angular/forms';
+import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Language } from '../../core/services/language';
 
 type ContactField = 'name' | 'email' | 'message' | 'privacy';
@@ -23,7 +23,7 @@ export class ContactSection {
 
   readonly contactForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['', [Validators.required, Validators.email, Validators.minLength(2)]],
+    email: ['', [Validators.required, Validators.email]],
     message: ['', [Validators.required, Validators.minLength(5)]],
     privacy: [false, [Validators.requiredTrue]],
   });
@@ -37,7 +37,7 @@ export class ContactSection {
       return;
     }
 
-    console.log('contact form dara', this.contactForm.getRawValue());
+    console.log('Contact form data:', this.contactForm.getRawValue());
     this.contactForm.reset();
     this.submitted = false;
     this.successMessage = true;
@@ -54,60 +54,33 @@ export class ContactSection {
   }
 
   successText(): string {
-    return this.isGerman()
-      ? 'Danke! Deine Nachricht wurde erfolgreich geprüft.'
-      : 'Thank you! Your message was successfully checked.';
+    return this.text().successMessage;
   }
 
   errorMessage(field: ContactField): string {
     const control = this.contactForm.controls[field];
+    const errors = this.text().errors;
 
     if (!control.errors) return '';
 
     if (field === 'name') {
-      if (control.hasError('required')) {
-        return this.isGerman() ? 'Bitte gib deinen Namen ein.' : 'Please enter your name.';
-      }
-
-      if (control.hasError('minlength')) {
-        return this.isGerman()
-          ? 'Dein Name sollte mindestens 2 Zeichen haben.'
-          : 'Your name should have at least 2 characters.';
-      }
+      if (control.hasError('required')) return errors.nameRequired;
+      if (control.hasError('minlength')) return errors.nameMinLength;
     }
 
     if (field === 'email') {
-      if (control.hasError('required')) {
-        return this.isGerman()
-          ? 'Bitte gib deine E-Mail-Adresse ein.'
-          : 'Please enter your email address.';
-      }
-
-      if (control.hasError('email')) {
-        return this.isGerman()
-          ? 'Bitte gib eine gültige E-Mail-Adresse ein.'
-          : 'Please enter a valid email address.';
-      }
+      if (control.hasError('required')) return errors.emailRequired;
+      if (control.hasError('email')) return errors.emailInvalid;
     }
 
     if (field === 'message') {
-      if (control.hasError('required')) {
-        return this.isGerman() ? 'Bitte gib eine Nachricht ein.' : 'Please enter a message.';
-      }
-
-      if (control.hasError('minlength')) {
-        return this.isGerman()
-          ? 'Deine Nachricht sollte mindestens 10 Zeichen haben.'
-          : 'Your message should have at least 10 characters.';
-      }
+      if (control.hasError('required')) return errors.messageRequired;
+      if (control.hasError('minlength')) return errors.messageMinLength;
     }
 
     if (field === 'privacy') {
-      return this.isGerman()
-        ? 'Bitte akzeptiere die Datenschutzerklärung.'
-        : 'Please accept the privacy policy.';
+      if (control.hasError('required')) return errors.privacyRequired;
     }
-
     return '';
   }
 }
