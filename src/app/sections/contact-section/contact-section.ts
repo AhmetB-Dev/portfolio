@@ -1,8 +1,21 @@
 import { Component, computed, inject } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Language } from '../../core/services/language';
+import { HttpClient } from '@angular/common/http';
 
 type ContactField = 'name' | 'email' | 'message' | 'privacy';
+
+type ContactPayload = {
+  name: string;
+  email: string;
+  message: string;
+  honeypot: string;
+};
+
+type MailResponse = {
+  success: boolean;
+  error?: string;
+};
 
 @Component({
   selector: 'app-contact-section',
@@ -11,36 +24,78 @@ type ContactField = 'name' | 'email' | 'message' | 'privacy';
   styleUrl: './contact-section.scss',
 })
 export class ContactSection {
+  private readonly fb = inject(NonNullableFormBuilder);
+  private readonly http = inject(HttpClient);
+
+  private readonly mailUrl = 'http://localhost:8000/send-mail.php';
   readonly lang = inject(Language);
   readonly text = computed(() => this.lang.texts().contact);
 
   private readonly formBuilder = inject(NonNullableFormBuilder);
-  private isGerman(): boolean {
-    return this.lang.current() === 'de';
-  }
+
   submitted = false;
   successMessage = false;
+  isSending = false;
+  sendErrorMessage = '';
 
   readonly contactForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
-    message: ['', [Validators.required, Validators.minLength(5)]],
+    message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(5000)]],
     privacy: [false, [Validators.requiredTrue]],
   });
 
   onSubmit(): void {
     this.submitted = true;
     this.successMessage = false;
+    this.sendErrorMessage = '';
     this.contactForm.markAllAsTouched();
 
-    if (this.contactForm.invalid) {
+    if (this.contactForm.invalid || this.isSending) {
       return;
     }
 
-    console.log('Contact form data:', this.contactForm.getRawValue());
-    this.contactForm.reset();
-    this.submitted = false;
-    this.successMessage = true;
+    const payload = this.createContactPayload();
+
+    this.sendContactMail(payload);
+  }
+
+  private createContactPayload(): ContactPayload {
+    const formData = this.contactForm.getRawValue();
+
+    return {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+      honeypot: '',
+    };
+  }
+
+  private sendContactMail(payload: ContactPayload): void {
+    this.isSending = true;
+    this.sendErrorMessage = '';
+
+    this.http.post<MailResponse>(this.mailUrl, payload).subscribe({
+      next: (response) => {
+        this.isSending = false;
+
+        if (!response.success) {
+          this.sendErrorMessage = response.error ?? 'Mail delivery failed.';
+          return;
+        }
+
+        this.contactForm.reset();
+        this.submitted = false;
+        this.successMessage = true;
+      },
+
+      error: (error) => {
+        this.isSending = false;
+        this.sendErrorMessage =
+          'Die Nachricht konnte nicht gesendet werden. Bitte versuche es später erneut.';
+        console.error('Mail request failed:', error);
+      },
+    });
   }
 
   isInvalid(field: ContactField): boolean {
@@ -59,28 +114,45 @@ export class ContactSection {
 
   errorMessage(field: ContactField): string {
     const control = this.contactForm.controls[field];
-    const errors = this.text().errors;
 
     if (!control.errors) return '';
 
-    if (field === 'name') {
-      if (control.hasError('required')) return errors.nameRequired;
-      if (control.hasError('minlength')) return errors.nameMinLength;
-    }
+    if (field === 'name') return this.nameErrorMessage();
+    if (field === 'email') return this.emailErrorMessage();
+    if (field === 'message') return this.messageErrorMessage();
+    if (field === 'privacy') return this.text().errors.privacyRequired;
 
-    if (field === 'email') {
-      if (control.hasError('required')) return errors.emailRequired;
-      if (control.hasError('email')) return errors.emailInvalid;
-    }
+    return '';
+  }
 
-    if (field === 'message') {
-      if (control.hasError('required')) return errors.messageRequired;
-      if (control.hasError('minlength')) return errors.messageMinLength;
-    }
+  private nameErrorMessage(): string {
+    const control = this.contactForm.controls.name;
+    const errors = this.text().errors;
 
-    if (field === 'privacy') {
-      if (control.hasError('required')) return errors.privacyRequired;
-    }
+    if (control.hasError('required')) return errors.nameRequired;
+    if (control.hasError('minlength')) return errors.nameMinLength;
+
+    return '';
+  }
+
+  private emailErrorMessage(): string {
+    const control = this.contactForm.controls.email;
+    const errors = this.text().errors;
+
+    if (control.hasError('required')) return errors.emailRequired;
+    if (control.hasError('email')) return errors.emailInvalid;
+
+    return '';
+  }
+
+  private messageErrorMessage(): string {
+    const control = this.contactForm.controls.message;
+    const errors = this.text().errors;
+
+    if (control.hasError('required')) return errors.messageRequired;
+    if (control.hasError('minlength')) return errors.messageMinLength;
+    if (control.hasError('maxlength')) return errors.messageMaxLength;
+
     return '';
   }
 }

@@ -25,11 +25,7 @@
           <div class="field" [class.invalid]="isInvalid('name')" [class.valid]="isValid('name')">
             <div class="input-wrap">
               @if (isInvalid('name')) {
-                <img
-                  class="field-icon error-icon"
-                  src="/assets/icon/contact/error.svg"
-                  alt=""
-                />
+                <img class="field-icon error-icon" src="/assets/icon/contact/error.svg" alt="" />
               }
 
               @if (isValid('name')) {
@@ -57,11 +53,7 @@
           <div class="field" [class.invalid]="isInvalid('email')" [class.valid]="isValid('email')">
             <div class="input-wrap">
               @if (isInvalid('email')) {
-                <img
-                  class="field-icon error-icon"
-                  src="/assets/icon/contact/error.svg"
-                  alt=""
-                />
+                <img class="field-icon error-icon" src="/assets/icon/contact/error.svg" alt="" />
               }
 
               @if (isValid('email')) {
@@ -92,11 +84,7 @@
           >
             <div class="input-wrap textarea-wrap">
               @if (isInvalid('message')) {
-                <img
-                  class="field-icon error-icon"
-                  src="/assets/icon/contact/error.svg"
-                  alt=""
-                />
+                <img class="field-icon error-icon" src="/assets/icon/contact/error.svg" alt="" />
               }
 
               @if (isValid('message')) {
@@ -133,18 +121,30 @@
           }
         </div>
 
-        <div class="contact-button">
-          <button class="contact-btn" type="submit" [class.valid]="contactForm.valid">
-            {{ text().button }}
+        <div class="contact-btn-container">
+          <button
+            class="contact-btn"
+            type="submit"
+            [class.valid]="contactForm.valid"
+            [disabled]="isSending"
+          >
+            {{ isSending ? 'Wird gesendet...' : text().button }}
           </button>
-        </div>
 
-        @if (successMessage) {
-          <div class="success-screen">
-            <span class="success-screen-icon">✓</span>
-            <p>{{ successText() }}</p>
-          </div>
-        }
+          @if (sendErrorMessage) {
+            <div class="send-error-screen">
+              <img class="field-icon error-icon" src="/assets/icon/contact/error.svg" alt="" />
+              <p>{{ sendErrorMessage }}</p>
+            </div>
+          }
+
+          @if (successMessage) {
+            <div class="success-screen">
+              <span class="success-screen-icon">✓</span>
+              <p>{{ successText() }}</p>
+            </div>
+          }
+        </div>
 
         <div class="up-button">
           <a href="#header">

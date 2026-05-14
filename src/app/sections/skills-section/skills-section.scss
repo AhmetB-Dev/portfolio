@@ -3,8 +3,6 @@ section {
   justify-content: space-between;
   align-items: baseline;
   gap: 16em;
-
-  padding: 8em 0em;
 }
 
 .dp-flex {
@@ -29,10 +27,9 @@ section {
   grid-template-columns: repeat(4, 1fr);
   // align-items: center;
   gap: 4em;
-  padding-left: 2em;
+  padding-left: 4em;
 
   img {
-
   }
 
   p {

@@ -20,7 +20,6 @@ export type TranslationModel = {
   about: {
     title: string;
     lead: string;
-    contactCta: string;
     cardLocation: string;
     cardWorkStyle: string;
     cardLearning: string;
@@ -68,6 +67,7 @@ export type TranslationModel = {
       messageRequired: string;
       messageMinLength: string;
       privacyRequired: string;
+      messageMaxLength: string;
     };
   };
 
@@ -86,17 +86,16 @@ export const translations: Record<LangCode, TranslationModel> = {
     },
     hero: {
       intro: 'Ich bin',
-      role: 'Frontend Entwickler',
+      role: 'FRONTEND ENTWICKLER',
       cta: 'Lass uns reden',
       scroll: 'Runterscrollen',
     },
     about: {
       title: 'Über mich',
-      lead: `Ich bin ein motivierter Softwareentwickler mit einem starken Fokus auf saubere Strukturen, wartbaren Code und praxisnahe Lösungen. Ich arbeite analytisch und selbstorganisiert, zerlege komplexe Probleme in überschaubare Schritte und lege großen Wert auf klare Architektur und gut lesbaren Code. Durch persönliche Projekte erweitere ich mein technisches Wissen kontinuierlich und setze neue Konzepte direkt in der Praxis um.`,
-      contactCta: 'Kontakt',
-      cardLocation: `Ich arbeite strukturiert und selbstorganisiert und bin besonders produktiv in Remote-Umgebungen. Gleichzeitig bin ich offen für gut durchdachte Hybrid-Setups, besonders während des Onboardings oder für wichtige Teamtermine.`,
-      cardWorkStyle: `Ich arbeite strukturiert, zuverlässig und eigenverantwortlich. Ich gehe Herausforderungen methodisch an: Anforderungen klären, in sinnvolle Schritte zerlegen, sauber umsetzen und bei Bedarf iterativ verbessern. Ich schätze klare Kommunikation, verständliche Strukturen und Code, der langfristig wartbar bleibt.`,
-      cardLearning: `Ich bin offen für neue Technologien und lerne gerne dazu. Durch praktische Projekte, Best Practices und iterative Verbesserungen entwickle ich meine Fähigkeiten kontinuierlich weiter.`,
+      lead: `Ich entwickle moderne Webanwendungen mit Fokus auf klare Strukturen, wartbaren Code und praxisnahe Lösungen. Komplexe Aufgaben zerlege ich in verständliche Schritte und setze sie sauber, zuverlässig und lösungsorientiert um.`,
+      cardWorkStyle: `Ich arbeite selbstorganisiert und produktiv in Remote-Umgebungen. Für Onboarding, Abstimmungen oder wichtige Teamtermine bin ich auch für gut geplante Hybrid-Setups offen.`,
+      cardLocation: `Neue Technologien und Best Practices lerne ich gerne direkt in praktischen Projekten. So entwickle ich meine Fähigkeiten kontinuierlich weiter und verbessere meine Arbeitsweise Schritt für Schritt.`,
+      cardLearning: `Ich gehe Aufgaben methodisch an: Anforderungen klären, sinnvoll strukturieren, sauber umsetzen und bei Bedarf iterativ verbessern. Wichtig sind mir klare Kommunikation, verständlicher Code und langfristige Wartbarkeit.`,
     },
     skills: {
       title: 'Skills',
@@ -154,6 +153,7 @@ export const translations: Record<LangCode, TranslationModel> = {
         messageRequired: 'Bitte gib eine Nachricht ein.',
         messageMinLength: 'Deine Nachricht sollte mindestens 10 Zeichen haben.',
         privacyRequired: 'Bitte akzeptiere die Datenschutzerklärung.',
+        messageMaxLength: 'Deine Nachricht darf maximal 5000 Zeichen lang sein.',
       },
     },
     footer: {
@@ -170,17 +170,16 @@ export const translations: Record<LangCode, TranslationModel> = {
     },
     hero: {
       intro: 'I am',
-      role: 'Frontend Developer',
+      role: 'FRONTEND DEVELOPER',
       cta: `Let's talk`,
       scroll: 'Scroll down',
     },
     about: {
       title: 'About me',
-      lead: `I am a motivated software developer with a strong focus on clean structures, maintainable code, and practical solutions. I work analytically and in a self-organized manner, breaking down complex problems into manageable steps while placing great emphasis on clear architecture and readable code. Through personal projects, I continuously expand my technical knowledge and apply new concepts directly in practice.`,
-      contactCta: 'Contact',
-      cardLocation: `I work in a structured and self-organized way and feel most productive in remote environments. At the same time, I'm open to well-designed hybrid setups, especially during onboarding or for key team sessions.`,
-      cardWorkStyle: `I work in a structured, reliable, and self-driven way. I approach challenges methodically: clarifying requirements, breaking them into manageable steps, implementing solutions cleanly, and iterating when needed. I value clear communication, understandable structures, and code that remains maintainable over time.`,
-      cardLearning: `I'm open-minded and enjoy learning new technologies. Through hands-on projects, best practices, and iterative improvements, I continuously develop my skills.`,
+      lead: `I build modern web applications with a focus on clear structure, maintainable code and practical solutions. I break complex tasks into manageable steps and implement them in a clean, reliable and solution-oriented way.`,
+      cardWorkStyle: `I work well in self-organized remote environments. For onboarding, alignment or important team sessions, I am also open to well-planned hybrid setups.`,
+      cardLocation: `I enjoy learning new technologies and best practices through hands-on projects. This helps me continuously improve my skills and apply new concepts in real-world situations.`,
+      cardLearning: `I approach tasks methodically: clarify requirements, structure the work, implement cleanly and improve iteratively when needed. Clear communication, readable code and long-term maintainability are important to me.`,
     },
     skills: {
       title: 'Skills',
@@ -235,6 +234,7 @@ export const translations: Record<LangCode, TranslationModel> = {
         messageRequired: 'Please enter a message.',
         messageMinLength: 'Your message should have at least 10 characters.',
         privacyRequired: 'Please accept the privacy policy.',
+        messageMaxLength: 'Your message must not be longer than 5000 characters.',
       },
     },
     footer: {
