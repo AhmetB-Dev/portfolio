@@ -3,6 +3,8 @@ section {
   justify-content: space-between;
   align-items: baseline;
   gap: 16em;
+
+  padding: 6em 0em;
 }
 
 .dp-flex {
@@ -27,9 +29,10 @@ section {
   grid-template-columns: repeat(4, 1fr);
   // align-items: center;
   gap: 4em;
-  padding-left: 4em;
+  padding-left: 2em;
 
   img {
+    width: clamp(2rem, 8vw, 4rem);
   }
 
   p {
@@ -53,8 +56,15 @@ section {
 
 .skills-heading {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  justify-content: flex-end;
+  gap: 6%;
+
+  span {
+    background: #1cdae6;
+    height: 3px;
+    width: 55%;
+    margin-top: 30px;
+  }
 }
 
 .skills-text {
@@ -111,15 +121,37 @@ button {
   transition: opacity 0.3s ease;
 }
 
-.content-container {
-  display: flex;
-}
-
 @media (max-width: 768px) {
+  .section {
+  }
+
+  .mobile-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .padding-mobile {
+    padding: var(--mobile-paadding);
+  }
+
   .dp-flex {
     display: flex;
     gap: clamp(1rem, 5vw, 10rem);
     // flex-direction: column-reverse;
+  }
+
+  .skills-icons {
+    display: grid;
+    align-content: start;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1em;
+    padding: 4em 1em 0 1em;
+  }
+
+  .skills-text {
+    padding: 0 1em;
+    border-radius: 2em;
   }
 
   .stack-on-mobile {

@@ -37,13 +37,13 @@ li {
   flex-direction: column;
   padding: 0em 0em 6em 4em;
   gap: 2em;
-  width: 80%;
+  width: 70%;
 }
 
 .bg-stack-desktop {
   background-image: url(/assets/img/about/bg.webp);
   background-repeat: no-repeat;
-  background-position: 0% 120%;
+  background-position: 0 120%;
   background-size: 100% 30%;
 }
 
@@ -71,7 +71,7 @@ li {
     position: relative;
     bottom: 1em;
     left: 2em;
-    width: 90%;
+    width: 85%;
     height: clamp(20em, 80vh, 80em);
   }
 }
