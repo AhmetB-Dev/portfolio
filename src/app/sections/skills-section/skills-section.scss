@@ -1,15 +1,83 @@
-section {
+.content-container {
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
-  align-items: baseline;
-  gap: 16em;
-
-  padding: 6em 0em;
+  gap: clamp(2rem, 8vw, 10rem);
 }
 
-.dp-flex {
+h2 {
+  font-size: var(--fs-section-title);
+  margin: 0;
+}
+
+h3 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+
+  span {
+    color: #9747ff;
+  }
+}
+
+p {
   display: flex;
-  gap: clamp(1rem, 5vw, 10rem);
+  flex-direction: column;
+  font-size: var(--fs-text);
+}
+
+.skills-icons {
+  order: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3em;
+  padding-left: 2em;
+}
+
+.skills-info {
+  order: 2;
+  max-width: 520px;
+  text-align: left;
+}
+
+.skills-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-line {
+  display: inline-block;
+  width: 55%;
+  height: 3px;
+  background-color: #1cdae6;
+}
+
+.skills-lead {
+  margin-top: 2rem;
+}
+
+.skills-extra {
+  margin-top: 2rem;
+}
+
+.skills-action {
+  margin-top: 2rem;
+}
+
+.contact-btn {
+  background-color: #70e61c;
+  padding: 0.8em 1.6em;
+  /* font-size: 1rem; */
+  border-radius: 8px;
+  text-decoration: none;
+
+  transition:
+    transform 300ms ease,
+    background-color 300ms ease;
+
+  &:hover {
+    background-color: #9747ff;
+    transform: translate(-2.5px, -2.5px) scale(1.05);
+  }
 }
 
 .skills-grid {
@@ -17,27 +85,15 @@ section {
   flex-direction: column;
   align-items: center;
   text-align: center;
+
+  img {
+    width: clamp(48px, 6vw, 80px);
+    height: auto;
+  }
 }
 
 .skills-grid:hover .skill-icon {
   animation: skill-lift 1.5s ease;
-}
-
-.skills-icons {
-  display: grid;
-  align-content: start;
-  grid-template-columns: repeat(4, 1fr);
-  // align-items: center;
-  gap: 4em;
-  padding-left: 2em;
-
-  img {
-    width: clamp(2rem, 8vw, 4rem);
-  }
-
-  p {
-    font-size: clamp(1rem, 1.5vw, 2rem);
-  }
 }
 
 @keyframes skill-lift {
@@ -54,107 +110,69 @@ section {
   }
 }
 
-.skills-heading {
-  display: flex;
-  justify-content: flex-end;
-  gap: 6%;
-
-  span {
-    background: #1cdae6;
-    height: 3px;
-    width: 55%;
-    margin-top: 30px;
-  }
-}
-
-.skills-text {
-  text-align: left;
-}
-
-.title-content {
-  text-align: end;
-  display: flex;
-  align-items: baseline;
-  gap: 15px;
-}
-
-.title-line {
-  background: #1cdae6;
-  height: 3px;
-  width: 10em;
-}
-
-.title-skills {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 7em;
-
-  h2 {
-    font-size: var(--fs-section-title);
-    margin-bottom: 40px;
-  }
-}
-
-button {
-  background-color: #70e61c;
-  padding: 0.8em 1.6em;
-  font-size: 1rem;
-  border-radius: 8px;
-  transition: transform 300ms ease;
-  &:hover {
-    background-color: #9747ff;
-    transform: matrix3d(1.05, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1, 0, -2.5, -2.5, 0, 1);
-  }
-}
-
-.overlay-learn {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #111214a8;
-  pointer-events: none;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 @media (max-width: 768px) {
-  .section {
+  .content-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'heading'
+      'lead'
+      'icons'
+      'extra'
+      'action';
   }
 
-  .mobile-reverse {
+  .skills-heading {
     display: flex;
-    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5%;
   }
 
-  .padding-mobile {
-    padding: var(--mobile-paadding);
+  .skills-info {
+    display: contents;
   }
 
-  .dp-flex {
-    display: flex;
-    gap: clamp(1rem, 5vw, 10rem);
-    // flex-direction: column-reverse;
+  .title-line {
+    width: 55%;
+  }
+
+  .skills-lead {
+    grid-area: lead;
+    text-align: left;
+    margin: 0;
+    padding: 0em 1em;
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
   }
 
   .skills-icons {
-    display: grid;
-    align-content: start;
+    grid-area: icons;
+    order: initial;
     grid-template-columns: repeat(3, 1fr);
-
     gap: 1em;
-    padding: 4em 1em 0 1em;
+    padding: 0em 1em;
   }
 
-  .skills-text {
-    padding: 0 1em;
-    border-radius: 2em;
+  .skills-extra {
+    grid-area: extra;
+    text-align: right;
+    margin-top: 0;
+    padding: 0em 1em;
+
+    h3 {
+      margin: 0;
+      font-size: clamp(1.25rem, 6vw, 1.7rem);
+    }
   }
 
-  .stack-on-mobile {
-    flex-direction: column-reverse;
+  .skills-action {
+    grid-area: action;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .contact-btn {
+    border-radius: 10px;
   }
 }

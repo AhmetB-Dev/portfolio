@@ -4,6 +4,7 @@ import { Language } from '../../core/services/language';
 type SkillIcon = {
   src: string;
   name: string;
+  labelLines?: string[];
 };
 
 @Component({
@@ -23,7 +24,15 @@ export class SkillsSection {
     { src: 'assets/icon/skills/typescript.svg', name: 'TypeScript' },
     { src: 'assets/icon/skills/firebase.svg', name: 'Firebase' },
     { src: 'assets/icon/skills/git.svg', name: 'Git' },
-    { src: 'assets/icon/skills/material-design.svg', name: 'Material Design' },
-    { src: 'assets/icon/skills/continually-learningBlue.svg', name: 'Continually learning' },
+    {
+      src: 'assets/icon/skills/material-design.svg',
+      name: 'Material Design',
+      labelLines: ['Material', 'Design'],
+    },
+    {
+      src: 'assets/icon/skills/continually-learningBlue.svg',
+      name: 'Continually learning',
+      labelLines: ['Continually', 'learning'],
+    },
   ];
 }
