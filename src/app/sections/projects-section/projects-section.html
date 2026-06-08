@@ -2,14 +2,13 @@
   <div class="project-display mobile-display-flex">
     <div>
       <p class="line"></p>
-      <div class="content-container">
+      <div class="content-width">
         <div>
           <h2>{{ text().title }}</h2>
           <p>{{ text().lead }}</p>
         </div>
-        <!-- <div class="title-content content-container"> -->
 
-        <div class="descri-project content-container">
+        <div class="descri-project content-width">
           <div class="project-grid">
             @for (project of projects(); track project.id) {
               <div class="project-card">
