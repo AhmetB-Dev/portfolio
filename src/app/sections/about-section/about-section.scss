@@ -1,3 +1,10 @@
+section {
+  background-image: url(/assets/img/about/bg.webp);
+  background-repeat: no-repeat;
+  background-position: 0 120%;
+  background-size: 100% 30%;
+}
+
 h2 {
   font-size: var(--fs-section-title);
 }
@@ -5,12 +12,6 @@ h2 {
 p {
   font-size: clamp(1rem, 1.5vw, 1.8rem);
   margin: 0;
-}
-
-li {
-  &::marker {
-    color: #6dd3f7;
-  }
 }
 
 .dp-content {
@@ -38,13 +39,6 @@ li {
   padding: 0em 0em 6em 4em;
   gap: 2em;
   width: 70%;
-}
-
-.bg-stack-desktop {
-  background-image: url(/assets/img/about/bg.webp);
-  background-repeat: no-repeat;
-  background-position: 0 120%;
-  background-size: 100% 30%;
 }
 
 .bg-stack-mobile {
@@ -77,6 +71,13 @@ li {
 }
 
 @media (max-width: 768px) {
+  section {
+    background-image: unset;
+    background-repeat: unset;
+    background-position: unset;
+    background-size: unset;
+  }
+
   .about-content {
     display: flex;
     flex-direction: column-reverse;
@@ -105,13 +106,6 @@ li {
     background-repeat: no-repeat;
     background-position: 0% 115%;
     background-size: 100% 34%;
-  }
-
-  .bg-stack-desktop {
-    background-image: unset;
-    background-repeat: unset;
-    background-position: unset;
-    background-size: unset;
   }
 
   .image-stack {
