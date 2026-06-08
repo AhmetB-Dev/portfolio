@@ -1,37 +1,39 @@
-<section>
-  <div class="content-width dp-flex">
-    <div>
-      <div class="hero">
-        <p class="hero-subtitle-vert">{{ text().intro }}</p>
-        <div class="hero-title">
-          <h1>Ahmet Balci</h1>
-          <p>{{ text().role }}</p>
-        </div>
-      </div>
-
-      <div class="hero-cta-button">
-        <button>
-          <a href="#contact ">{{ text().cta }}</a>
-        </button>
+<section class="hero">
+  <div class="page-width">
+    <div class="hero__content">
+      <p class="hero__subtitle-vert">{{ text().intro }}</p>
+      <div class="hero__title-group">
+        <h1 class="hero__title">Ahmet Balci</h1>
+        <p class="hero__role">{{ text().role }}</p>
       </div>
     </div>
 
-    <div class="hero-meta">
-      <div>
-        <div class="hero-social-link">
-          <div class="line-content">
-            <p class="space-line"></p>
-          </div>
-          <div class="icon-content">
-            <a href=""><img src="./assets/icon/hero/github-btn.svg" alt="Github Link" /></a>
-            <a href=""><img src="./assets/icon/hero/email-btn.svg" alt="Email Link" /></a>
-            <a href=""><img src="./assets/icon/hero/linkedin-btn.svg" alt="Linkedin Link" /></a>
-          </div>
+    <div class="hero__action">
+      <a class="hero__cta" href="#contact ">{{ text().cta }}</a>
+    </div>
+
+    <div class="hero__meta">
+      <!-- <div class="hero__line-content"> -->
+      <span class="hero__space-line"></span>
+      <!-- </div> -->
+      <div class="hero__social-content">
+        <div class="hero__social-links">
+          <a class="hero__social-link" href=""
+            ><img src="./assets/icon/hero/github-btn.svg" alt="Github Link"
+          /></a>
+          <a class="hero__social-link" href=""
+            ><img src="./assets/icon/hero/email-btn.svg" alt="Email Link"
+          /></a>
+          <a class="hero__social-link" href=""
+            ><img src="./assets/icon/hero/linkedin-btn.svg" alt="Linkedin Link"
+          /></a>
         </div>
       </div>
 
-      <div class="hero-scroll">
-        <p>{{ text().scroll }} <img src="./assets/icon/hero/arrow-down-line.svg" alt="" /></p>
+      <div class="hero__scroll">
+        <p class="hero__scroll-text">
+          {{ text().scroll }} <img src="./assets/icon/hero/arrow-down-line.svg" alt="" />
+        </p>
       </div>
     </div>
   </div>
