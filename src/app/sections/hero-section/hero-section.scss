@@ -84,10 +84,21 @@
     border-radius: 10px;
   }
 
-  // &__social-content {
-  //   display: flex;
-  //   align-items: center;
-  // }
+  &__social-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: calc(100% + 2em);
+      height: 6px;
+      width: 100vw;
+      background-color: #22c55e;
+      border-radius: 10px;
+    }
+  }
 
   &__social-link {
     display: flex;

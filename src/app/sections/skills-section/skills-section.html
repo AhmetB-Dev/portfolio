@@ -1,37 +1,38 @@
-<section>
-  <div class="content-container page-width">
-    <div class="skills-info">
-      <div class="skills-heading">
-        <h2>{{ text().title }}</h2>
-        <span class="title-line"></span>
+<section class="skills" id="skills">
+  <div class="skills__container page-width">
+    <div class="skills__info">
+      <div class="skills__heading">
+        <h2 class="skills__title">{{ text().title }}</h2>
+        <span class="skills__title-line"></span>
       </div>
 
-      <p class="skills-lead">
+      <p class="skills__lead">
         {{ text().lead }}
       </p>
 
-      <div class="skills-extra">
-        <h3>{{ text().otherSkillTitle }}</h3>
+      <div class="skills__extra">
+        <h3 class="skills__extra-title">{{ text().otherSkillTitle }}</h3>
 
-        <p>
+        <p class="skills__extra-text">
           {{ text().otherSkillText }}
         </p>
       </div>
 
-      <div class="skills-action">
-        <a class="contact-btn" href="#contact">
+      <div class="skills__action">
+        <a class="skills__cta" href="#contact">
           {{ text().cta }}
         </a>
       </div>
     </div>
 
-    <div class="skills-icons">
+    <div class="skills__grid">
       @for (skill of skills; track skill.src) {
-        <div class="skills-grid">
-          <img [src]="skill.src" [alt]="skill.name" class="skill-icon" loading="lazy" />
-          <p class="skill-label">
+        <div class="skills__item">
+          <img class="skills__icon" [src]="skill.src" [alt]="skill.name" loading="lazy" />
+
+          <p class="skills__label">
             @for (line of skill.labelLines ?? [skill.name]; track line) {
-              <span>{{ line }}</span>
+              <span class="skills__label-line">{{ line }}</span>
             }
           </p>
         </div>
