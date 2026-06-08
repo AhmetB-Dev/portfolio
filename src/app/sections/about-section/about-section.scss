@@ -1,67 +1,61 @@
-section {
+.about {
   background-image: url(/assets/img/about/bg.webp);
   background-repeat: no-repeat;
   background-position: 0 120%;
   background-size: 100% 30%;
-}
 
-h2 {
-  font-size: var(--fs-section-title);
-}
+  &__container {
+    display: flex;
+    align-items: center;
+  }
 
-p {
-  font-size: clamp(1rem, 1.5vw, 1.8rem);
-  margin: 0;
-}
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0em 0em 6em 4em;
+    gap: 2em;
+    width: 70%;
+  }
 
-.dp-content {
-  display: contents;
-}
+  &__title {
+    font-size: var(--fs-section-title);
+  }
 
-.about-card {
-  display: flex;
-  align-items: flex-start;
+  &__lead {
+    font-size: clamp(1rem, 1.5vw, 1.8rem);
+    margin: 0;
+  }
 
-  img {
+  &__card {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__card-icon {
     padding: 0 1.2em 0 0;
     height: clamp(2em, 6vh, 8em);
   }
-}
 
-.about-content {
-  display: flex;
-  align-items: center;
-}
+  &__visual {
+    background-image: unset;
+    background-repeat: unset;
+    background-position: unset;
+    background-size: unset;
+  }
 
-.about {
-  display: flex;
-  flex-direction: column;
-  padding: 0em 0em 6em 4em;
-  gap: 2em;
-  width: 70%;
-}
+  &__image-stack {
+    background-image:
+      url('/assets/img/about/purple_shadow.webp'), url('/assets/img/about/green_shadow.webp');
+    background-repeat: no-repeat no-repeat;
+    background-position:
+      85% 70%,
+      100% 45%;
+    background-size: 30%, 80%;
+    position: relative;
+    z-index: -1;
+  }
 
-.bg-stack-mobile {
-  background-image: unset;
-  background-repeat: unset;
-  background-position: unset;
-  background-size: unset;
-}
-
-.image-stack {
-  background-image:
-    url('/assets/img/about/purple_shadow.webp'), url('/assets/img/about/green_shadow.webp');
-  background-repeat: no-repeat no-repeat;
-  background-position:
-    85% 70%,
-    100% 45%;
-  background-size: 30%, 80%;
-  position: relative;
-  z-index: -1;
-}
-
-.cover-image {
-  img {
+  &__portrait {
     position: relative;
     bottom: 1em;
     left: 2em;
@@ -71,61 +65,57 @@ p {
 }
 
 @media (max-width: 768px) {
-  section {
+  .about {
     background-image: unset;
     background-repeat: unset;
     background-position: unset;
     background-size: unset;
-  }
 
-  .about-content {
-    display: flex;
-    flex-direction: column-reverse;
-  }
+    &__container {
+      display: flex;
+      flex-direction: column-reverse;
+    }
 
-  .dp-content {
-    display: block;
-  }
+    &__content {
+      margin-top: clamp(-1em, -6vh, -12em);
+      padding: 0 1em 6em 1em;
+      gap: 1em;
+      width: unset;
+    }
 
-  .about {
-    margin-top: clamp(-1em, -6vh, -12em);
-    padding: 0 1em 6em 1em;
-    gap: 1em;
-    width: unset;
-  }
-
-  .about-card {
-    img {
+    &__card-icon {
       padding: 0 0.8em 0 0;
       height: clamp(2em, 7vh, 8em);
     }
-  }
-  .bg-stack-mobile {
-    display: block;
-    background-image: url(/assets/img/about/bg-m.webp);
-    background-repeat: no-repeat;
-    background-position: 0% 115%;
-    background-size: 100% 34%;
-  }
 
-  .image-stack {
-    background-image:
-      url(/assets/img/about/purple_shadow.webp), url(/assets/img/about/green_shadow.webp);
-    background-repeat: no-repeat no-repeat;
-    background-position:
-      -70% -300%,
-      150% 70%;
-    background-size: 80%, 80%;
-    display: flex;
-    justify-content: center;
-  }
-  .cover-image img {
-    object-fit: cover;
-    position: relative;
-    bottom: 2em;
-    right: unset;
-    left: unset;
-    width: 75%;
-    height: unset;
+    &__visual {
+      display: block;
+      background-image: url(/assets/img/about/bg-m.webp);
+      background-repeat: no-repeat;
+      background-position: 0% 115%;
+      background-size: 100% 34%;
+    }
+
+    &__image-stack {
+      background-image:
+        url(/assets/img/about/purple_shadow.webp), url(/assets/img/about/green_shadow.webp);
+      background-repeat: no-repeat no-repeat;
+      background-position:
+        -70% -300%,
+        150% 70%;
+      background-size: 80%, 80%;
+      display: flex;
+      justify-content: center;
+    }
+
+    &__portrait {
+      object-fit: cover;
+      position: relative;
+      bottom: 2em;
+      right: unset;
+      left: unset;
+      width: 75%;
+      height: unset;
+    }
   }
 }
