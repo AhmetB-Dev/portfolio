@@ -1,36 +1,47 @@
-<section>
+<section class="contact" id="contact">
   <div class="page-width">
-    <div class="contact-title">
+    <div class="contact__heading">
       <div>
-        <h2>{{ text().title }}</h2>
+        <h2 class="contact__title">{{ text().title }}</h2>
       </div>
+
       <div>
-        <p></p>
+        <p class="contact__title-line"></p>
       </div>
     </div>
 
-    <div class="descri-contact">
-      <div class="descri-text">
-        <p class="descri-line"></p>
+    <div class="contact__content">
+      <div class="contact__description">
+        <p class="contact__description-line"></p>
+
         <div>
-          <h3>{{ text().headline }}</h3>
-          <p>
+          <h3 class="contact__headline">{{ text().headline }}</h3>
+
+          <p class="contact__text">
             {{ text().text }}
           </p>
         </div>
       </div>
 
-      <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-        <div class="contact-fields">
-          <div class="field" [class.invalid]="isInvalid('name')" [class.valid]="isValid('name')">
-            <div class="input-wrap">
+      <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="contact__fields">
+          <div
+            class="contact__field"
+            [class.invalid]="isInvalid('name')"
+            [class.valid]="isValid('name')"
+          >
+            <div class="contact__input-wrap">
               @if (isInvalid('name')) {
-                <img class="field-icon error-icon" src="/assets/icon/contact/error.svg" alt="" />
+                <img
+                  class="contact__field-icon contact__field-icon--error"
+                  src="/assets/icon/contact/error.svg"
+                  alt=""
+                />
               }
 
               @if (isValid('name')) {
                 <img
-                  class="field-icon success-icon"
+                  class="contact__field-icon contact__field-icon--success"
                   src="/assets/icon/contact/success.svg"
                   alt=""
                 />
@@ -43,26 +54,36 @@
                 autocomplete="name"
               />
             </div>
+
             @if (isInvalid('name')) {
-              <p class="error-message">
+              <p class="contact__error">
                 {{ errorMessage('name') }}
               </p>
             }
           </div>
 
-          <div class="field" [class.invalid]="isInvalid('email')" [class.valid]="isValid('email')">
-            <div class="input-wrap">
+          <div
+            class="contact__field"
+            [class.invalid]="isInvalid('email')"
+            [class.valid]="isValid('email')"
+          >
+            <div class="contact__input-wrap">
               @if (isInvalid('email')) {
-                <img class="field-icon error-icon" src="/assets/icon/contact/error.svg" alt="" />
+                <img
+                  class="contact__field-icon contact__field-icon--error"
+                  src="/assets/icon/contact/error.svg"
+                  alt=""
+                />
               }
 
               @if (isValid('email')) {
                 <img
-                  class="field-icon success-icon"
+                  class="contact__field-icon contact__field-icon--success"
                   src="/assets/icon/contact/success.svg"
                   alt=""
                 />
               }
+
               <input
                 type="email"
                 formControlName="email"
@@ -70,60 +91,76 @@
                 autocomplete="email"
               />
             </div>
+
             @if (isInvalid('email')) {
-              <p class="error-message">
+              <p class="contact__error">
                 {{ errorMessage('email') }}
               </p>
             }
           </div>
 
           <div
-            class="field"
+            class="contact__field"
             [class.invalid]="isInvalid('message')"
             [class.valid]="isValid('message')"
           >
-            <div class="input-wrap textarea-wrap">
+            <div class="contact__input-wrap contact__input-wrap--textarea">
               @if (isInvalid('message')) {
-                <img class="field-icon error-icon" src="/assets/icon/contact/error.svg" alt="" />
+                <img
+                  class="contact__field-icon contact__field-icon--error"
+                  src="/assets/icon/contact/error.svg"
+                  alt=""
+                />
               }
 
               @if (isValid('message')) {
                 <img
-                  class="field-icon success-icon"
+                  class="contact__field-icon contact__field-icon--success"
                   src="/assets/icon/contact/success.svg"
                   alt=""
                 />
               }
+
               <textarea
                 formControlName="message"
                 [placeholder]="text().messagePlaceholder"
               ></textarea>
             </div>
+
             @if (isInvalid('message')) {
-              <p class="error-message">{{ errorMessage('message') }}</p>
+              <p class="contact__error">
+                {{ errorMessage('message') }}
+              </p>
             }
           </div>
 
-          <div class="privacy-field" [class.invalid]="isInvalid('privacy')">
-            <input id="privacy" class="checkbox" type="checkbox" formControlName="privacy" />
+          <div class="contact__privacy" [class.invalid]="isInvalid('privacy')">
+            <input
+              id="privacy"
+              class="contact__checkbox"
+              type="checkbox"
+              formControlName="privacy"
+            />
 
-            <label for="privacy">
+            <label class="contact__privacy-label" for="privacy">
               {{ text().privacyPrefix }}
-              <a href=""> {{ text().privacyLink }} </a>
+              <a class="contact__privacy-link" href="">
+                {{ text().privacyLink }}
+              </a>
               {{ text().privacySuffix }}
             </label>
           </div>
 
           @if (isInvalid('privacy')) {
-            <p class="error-message privacy-error">
+            <p class="contact__error contact__error--privacy">
               {{ errorMessage('privacy') }}
             </p>
           }
         </div>
 
-        <div class="contact-btn-container">
+        <div class="contact__actions">
           <button
-            class="contact-btn"
+            class="contact__submit"
             type="submit"
             [class.valid]="contactForm.valid"
             [disabled]="isSending"
@@ -132,21 +169,25 @@
           </button>
 
           @if (sendErrorMessage) {
-            <div class="send-error-screen">
-              <img class="field-icon error-icon" src="/assets/icon/contact/error.svg" alt="" />
+            <div class="contact__send-error">
+              <img
+                class="contact__field-icon contact__field-icon--error"
+                src="/assets/icon/contact/error.svg"
+                alt=""
+              />
               <p>{{ sendErrorMessage }}</p>
             </div>
           }
 
           @if (successMessage) {
-            <div class="success-screen">
-              <span class="success-screen-icon">✓</span>
+            <div class="contact__success">
+              <span class="contact__success-icon">✓</span>
               <p>{{ successText() }}</p>
             </div>
           }
         </div>
 
-        <div class="up-button">
+        <div class="contact__up-button">
           <a href="#header">
             <img src="/assets/icon/contact/go-up-button.svg" alt="{{ text().goUpLabel }}" />
           </a>
