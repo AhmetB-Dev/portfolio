@@ -133,7 +133,7 @@ export const translations: Record<LangCode, TranslationModel> = {
     contact: {
       title: 'Kontakt',
       headline: 'Hast du ein Problem zu lösen?',
-      text: '...',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore tempora ex vel doloremque nulla nisi ipsa consequuntur sit. Eius earum laborum autem, dolore deserunt recusandae doloribus suscipit iusto! Voluptates, error.',
       namePlaceholder: 'Dein Name',
       emailPlaceholder: 'Deine E-Mail',
       messagePlaceholder: 'Deine Nachricht',
@@ -214,7 +214,7 @@ export const translations: Record<LangCode, TranslationModel> = {
     contact: {
       title: 'Contact',
       headline: 'Got a problem to solve?',
-      text: '...',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore tempora ex vel doloremque nulla nisi ipsa consequuntur sit. Eius earum laborum autem, dolore deserunt recusandae doloribus suscipit iusto! Voluptates, error.',
       namePlaceholder: 'Your name',
       emailPlaceholder: 'Your email',
       messagePlaceholder: 'Your message',

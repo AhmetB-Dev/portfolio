@@ -15,7 +15,7 @@ $checkbox-color: #70e61c;
   &__title-line {
     background: #70e61c;
     height: 3px;
-    width: 19em;
+    width: 37%;
     position: absolute;
     right: 0;
   }
@@ -34,15 +34,22 @@ $checkbox-color: #70e61c;
   &__description {
     display: flex;
     gap: 2em;
+    align-items: flex-start;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: calc(100% + 2em);
+      height: 6px;
+      width: 100vw;
+      background-color: #22c55e;
+      border-radius: 10px;
+    }
   }
 
   &__description-line {
-    background: #70e61c;
-    height: 3px;
-    margin-top: 1.8em;
-    width: 2em;
+    display: none;
   }
-
   &__form {
     display: flex;
     flex-direction: column;
@@ -377,7 +384,7 @@ $checkbox-color: #70e61c;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .contact {
     &__content {
       gap: 3em;
