@@ -6,7 +6,7 @@ html {
 }
 
 * {
-  // box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -37,6 +37,7 @@ h2 {
 }
 
 .page-width {
-  max-width: var(--container-max);
-  margin: auto;
+  padding-inline: calc((100vw - 1440px) / 2);
+  //     max-width: var(--container-max);
+  // margin: auto;
 }

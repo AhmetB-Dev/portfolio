@@ -1,13 +1,11 @@
 .about {
+  display: flex;
+  align-items: center;
+
   background-image: url(/assets/img/about/bg.webp);
   background-repeat: no-repeat;
   background-position: 0 120%;
   background-size: 100% 30%;
-
-  &__container {
-    display: flex;
-    align-items: center;
-  }
 
   &__content {
     display: flex;
@@ -66,15 +64,13 @@
 
 @media (max-width: 960px) {
   .about {
+    display: flex;
+    flex-direction: column-reverse;
+
     background-image: unset;
     background-repeat: unset;
     background-position: unset;
     background-size: unset;
-
-    &__container {
-      display: flex;
-      flex-direction: column-reverse;
-    }
 
     &__content {
       margin-top: clamp(-1em, -6vh, -12em);

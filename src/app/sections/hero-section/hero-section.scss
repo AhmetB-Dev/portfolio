@@ -1,8 +1,11 @@
 .hero {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
   height: 100vh;
-  display: flex; //delete if not compatible
   background-image:
-    url('/assets/img/hero/purple-shadow.webp'), url('/assets/img/hero/blue-shadow.webp');
+    url(/assets/img/hero/purple-shadow.webp), url(/assets/img/hero/blue-shadow.webp);
   background-repeat: no-repeat, no-repeat;
   background-position:
     top left,
