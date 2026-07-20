@@ -1,30 +1,38 @@
-<header>
+<header class="header">
   <div
     style="display: flex; align-items: center; justify-content: space-between"
-    class="page-width"
+    class="header__container page-width"
   >
-    <a routerLink="/" fragment="header" class="logo">
-      <span class="logo-main">Ahme</span><span class="logo-end">t</span>
+    <a routerLink="/" fragment="header" class="header__logo logo">
+      <span class="header__logo-main logo-main">Ahme</span><span class="header__logo-end logo-end">t</span>
     </a>
     <button
-      class="mobile-menu-button"
+      class="header__menu-button mobile-menu-button"
       type="button"
       aria-controls="main-navigation"
       [attr.aria-expanded]="menuOpen()"
       [attr.aria-label]="menuOpen() ? 'Menü schließen' : 'Menü öffnen'"
       (click)="toggleMobileMenu()"
     >
-      <img [src]="menuIcon()" alt="" aria-hidden="true" />
+      <img class="header__menu-icon" [src]="menuIcon()" alt="" aria-hidden="true" />
     </button>
 
-    <nav id="main-navigation" [class.is-open]="menuOpen()" [class.can-animate]="menuAnimation()">
-      <div class="menu-content">
-        <ul>
-          <li>
+    <nav
+      id="main-navigation"
+      class="header__navigation"
+      [class.is-open]="menuOpen()"
+      [class.can-animate]="menuAnimation()"
+      [class.header__navigation--open]="menuOpen()"
+      [class.header__navigation--animating]="menuAnimation()"
+    >
+      <div class="header__menu-content menu-content">
+        <ul class="header__navigation-list">
+          <li class="header__navigation-item">
             <a
+              class="header__navigation-link"
               routerLink="/"
               fragment="about"
-              routerLinkActive="is-active"
+              routerLinkActive="is-active header__navigation-link--active"
               [routerLinkActiveOptions]="{
                 paths: 'exact',
                 queryParams: 'ignored',
@@ -37,11 +45,12 @@
             </a>
           </li>
 
-          <li>
+          <li class="header__navigation-item">
             <a
+              class="header__navigation-link"
               routerLink="/"
               fragment="skills"
-              routerLinkActive="is-active"
+              routerLinkActive="is-active header__navigation-link--active"
               [routerLinkActiveOptions]="{
                 paths: 'exact',
                 queryParams: 'ignored',
@@ -54,11 +63,12 @@
             </a>
           </li>
 
-          <li>
+          <li class="header__navigation-item">
             <a
+              class="header__navigation-link"
               routerLink="/"
               fragment="projects"
-              routerLinkActive="is-active"
+              routerLinkActive="is-active header__navigation-link--active"
               [routerLinkActiveOptions]="{
                 paths: 'exact',
                 queryParams: 'ignored',
@@ -71,11 +81,12 @@
             </a>
           </li>
 
-          <li class="mobile-ct">
+          <li class="header__navigation-item header__navigation-item--mobile-contact mobile-ct">
             <a
+              class="header__navigation-link"
               routerLink="/"
               fragment="contact"
-              routerLinkActive="is-active"
+              routerLinkActive="is-active header__navigation-link--active"
               [routerLinkActiveOptions]="{
                 paths: 'exact',
                 queryParams: 'ignored',
@@ -89,18 +100,20 @@
           </li>
         </ul>
 
-        <div class="lang-container">
+        <div class="header__language lang-container">
           @for (l of lang.supported; track l.code; let last = $last) {
             <button
+              class="header__language-button"
               type="button"
               [class.is-active-lang]="lang.current() === l.code"
+              [class.header__language-button--active]="lang.current() === l.code"
               (click)="lang.set(l.code)"
             >
               {{ l.short }}
             </button>
 
             @if (!last) {
-              <span class="lang-separator">/</span>
+              <span class="header__language-separator lang-separator">/</span>
             }
           }
         </div>

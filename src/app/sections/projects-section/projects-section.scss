@@ -1,4 +1,4 @@
-section {
+.projects {
   padding: 5em 0;
   background-image:
     url(/assets/img/portfolio/blue_shadow.webp), url(/assets/img/portfolio/green_shadow.webp);
@@ -9,137 +9,131 @@ section {
   background-size:
     25% 50%,
     23% 51%;
-}
 
-.line {
-  background-color: #70e61c;
-  height: 3px;
-  width: 70%;
-  // position: absolute;
-  // left: 0;
-}
-
-.title-content {
-  display: flex;
-  flex-direction: column;
-}
-
-h2 {
-  font-size: var(--fs-section-title);
-}
-
-.project-display {
-  display: flex;
-  flex-direction: column;
-}
-
-.descri-project {
-  padding-left: 2em;
-}
-
-.project-grid {
-  display: flex;
-  gap: 33px;
-  flex-wrap: wrap;
-}
-
-.project-card {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #70e61c;
-  border-radius: 10px;
-}
-
-.project-image {
-  width: 480px;
-  height: 200px;
-
-  object-fit: cover;
-  display: block;
-  transition: transform 0.35s ease;
-}
-
-.project-overlay {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #111214a8;
-  pointer-events: none;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.project-actions {
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
-  position: absolute;
-  bottom: 14em;
-  display: flex;
-  gap: 1em;
-}
-
-.project-btn {
-  padding: 12px 22px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-  background-color: #9747ff;
-
-  &:hover {
+  &__line {
+    width: 70%;
+    height: 3px;
     background-color: #70e61c;
   }
-}
 
-.live-btn {
-  padding: 12px 22px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-  border: 1px solid #1cdae6;
-  background: transparent;
-
-  &:hover {
-    background-color: #1cdae6;
+  &__intro {
+    display: flex;
+    flex-direction: column;
   }
-}
 
-.project-card:hover .project-overlay {
-  opacity: 1;
-  pointer-events: auto;
-}
+  &__title {
+    font-size: var(--fs-section-title);
+  }
 
-.project-card:hover .project-actions {
-  transform: translateY(0);
-}
+  &__display {
+    display: flex;
+    flex-direction: column;
+  }
 
-.project-card:hover .project-image {
-  transform: scale(1.5);
-}
+  &__list-container {
+    padding-left: 2em;
+  }
 
-.overlay-descr {
-  position: absolute;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  bottom: 0px;
-  right: 0;
-  left: 0;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  padding-bottom: 2em;
-  background: white;
-  color: black;
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 33px;
+  }
 
-  h3 {
+  &__card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #70e61c;
+    border-radius: 10px;
+
+    &:hover .projects__overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &:hover .projects__actions {
+      transform: translateY(0);
+    }
+
+    &:hover .projects__image {
+      transform: scale(1.5);
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 480px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #111214a8;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &__actions {
+    position: absolute;
+    bottom: 14em;
+    display: flex;
+    gap: 1em;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  &__button {
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+
+    &--github {
+      background-color: #9747ff;
+
+      &:hover {
+        background-color: #70e61c;
+      }
+    }
+
+    &--live {
+      border: 1px solid #1cdae6;
+      background: transparent;
+
+      &:hover {
+        background-color: #1cdae6;
+      }
+    }
+  }
+
+  &__details {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2em;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: white;
+    color: black;
+    text-align: center;
+  }
+
+  &__name {
     color: #9747ff;
   }
-  span {
+
+  &__technologies {
     color: #70e61c;
   }
-}
-
-@media (max-width: 960px) {
 }

@@ -1,44 +1,50 @@
-<section>
-  <div class="project-display mobile-display-flex">
-    <div>
-      <p class="line"></p>
-      <div class="page-width">
-        <div>
-          <h2>{{ text().title }}</h2>
-          <p>{{ text().lead }}</p>
+<section class="projects">
+  <div class="projects__display">
+    <div class="projects__inner">
+      <div class="projects__container page-width">
+        <div class="projects__intro">
+          <div class="projects__heading">
+            <h2 class="projects__title">{{ text().title }}</h2>
+          </div>
+
+          <p class="projects__lead">{{ text().lead }}</p>
         </div>
 
-        <div class="descri-project page-width">
-          <div class="project-grid">
+        <div class="projects__list-container descri-project page-width">
+          <div class="projects__grid project-grid">
             @for (project of projects(); track project.id) {
-              <div class="project-card">
-                <img [src]="project.src" [alt]="project.name" class="project-image" />
+              <div class="projects__card project-card">
+                <img
+                  class="projects__image project-image"
+                  [src]="project.src"
+                  [alt]="project.name"
+                />
 
-                <div class="project-overlay">
-                  <div class="project-actions">
+                <div class="projects__overlay project-overlay">
+                  <div class="projects__actions project-actions">
                     <a
+                      class="projects__button projects__button--live live-btn"
                       [href]="project.liveUrl"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="live-btn"
                     >
                       {{ text().liveBtn }}
                     </a>
 
                     <a
+                      class="projects__button projects__button--github project-btn"
                       [href]="project.githubUrl"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="project-btn"
                     >
                       {{ text().githubBtn }}
                     </a>
                   </div>
 
-                  <div class="overlay-descr">
-                    <h3>{{ project.name }}</h3>
-                    <p>{{ project.description }}</p>
-                    <span>{{ project.technologies }}</span>
+                  <div class="projects__details overlay-descr">
+                    <h3 class="projects__name">{{ project.name }}</h3>
+                    <p class="projects__description">{{ project.description }}</p>
+                    <span class="projects__technologies">{{ project.technologies }}</span>
                   </div>
                 </div>
               </div>

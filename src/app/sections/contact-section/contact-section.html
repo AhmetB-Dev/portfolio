@@ -1,11 +1,11 @@
 <section class="contact" id="contact">
-  <div class="page-width">
+  <div class="contact__container page-width">
     <div class="contact__heading">
-      <div>
+      <div class="contact__heading-content">
         <h2 class="contact__title">{{ text().title }}</h2>
       </div>
 
-      <div>
+      <div class="contact__title-line-wrap">
         <span class="contact__title-line"></span>
       </div>
     </div>
@@ -16,7 +16,7 @@
           <span class="contact__description-line"></span>
         </div> -->
 
-        <div>
+        <div class="contact__description-content">
           <h3 class="contact__headline">{{ text().headline }}</h3>
           <p class="contact__text">
             {{ text().text }}
@@ -30,6 +30,8 @@
             class="contact__field"
             [class.invalid]="isInvalid('name')"
             [class.valid]="isValid('name')"
+            [class.contact__field--invalid]="isInvalid('name')"
+            [class.contact__field--valid]="isValid('name')"
           >
             <div class="contact__input-wrap">
               @if (isInvalid('name')) {
@@ -49,6 +51,7 @@
               }
 
               <input
+                class="contact__input"
                 type="text"
                 formControlName="name"
                 [placeholder]="text().namePlaceholder"
@@ -67,6 +70,8 @@
             class="contact__field"
             [class.invalid]="isInvalid('email')"
             [class.valid]="isValid('email')"
+            [class.contact__field--invalid]="isInvalid('email')"
+            [class.contact__field--valid]="isValid('email')"
           >
             <div class="contact__input-wrap">
               @if (isInvalid('email')) {
@@ -86,6 +91,7 @@
               }
 
               <input
+                class="contact__input"
                 type="email"
                 formControlName="email"
                 [placeholder]="text().emailPlaceholder"
@@ -104,6 +110,8 @@
             class="contact__field"
             [class.invalid]="isInvalid('message')"
             [class.valid]="isValid('message')"
+            [class.contact__field--invalid]="isInvalid('message')"
+            [class.contact__field--valid]="isValid('message')"
           >
             <div class="contact__input-wrap contact__input-wrap--textarea">
               @if (isInvalid('message')) {
@@ -123,6 +131,7 @@
               }
 
               <textarea
+                class="contact__textarea"
                 formControlName="message"
                 [placeholder]="text().messagePlaceholder"
               ></textarea>
@@ -135,7 +144,11 @@
             }
           </div>
 
-          <div class="contact__privacy" [class.invalid]="isInvalid('privacy')">
+          <div
+            class="contact__privacy"
+            [class.invalid]="isInvalid('privacy')"
+            [class.contact__privacy--invalid]="isInvalid('privacy')"
+          >
             <input
               id="privacy"
               class="contact__checkbox"
@@ -164,13 +177,14 @@
             class="contact__submit"
             type="submit"
             [class.valid]="contactForm.valid"
+            [class.contact__submit--valid]="contactForm.valid"
             [disabled]="isSending"
           >
             {{ isSending ? 'Wird gesendet...' : text().button }}
           </button>
 
           @if (sendErrorMessage) {
-            <div class="contact__send-error">
+            <div class="contact__status contact__status--error contact__send-error">
               <img
                 class="contact__field-icon contact__field-icon--error"
                 src="/assets/icon/contact/error.svg"
@@ -181,7 +195,7 @@
           }
 
           @if (successMessage) {
-            <div class="contact__success">
+            <div class="contact__status contact__status--success contact__success">
               <span class="contact__success-icon">✓</span>
               <p>{{ successText() }}</p>
             </div>
@@ -189,8 +203,12 @@
         </div>
 
         <div class="contact__up-button">
-          <a href="#header">
-            <img src="/assets/icon/contact/go-up-button.svg" alt="{{ text().goUpLabel }}" />
+          <a class="contact__up-link" href="#header">
+            <img
+              class="contact__up-icon"
+              src="/assets/icon/contact/go-up-button.svg"
+              alt="{{ text().goUpLabel }}"
+            />
           </a>
         </div>
       </form>
