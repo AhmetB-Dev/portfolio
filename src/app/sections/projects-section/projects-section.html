@@ -4,12 +4,19 @@
       <div class="projects__container page-width">
         <div class="projects__intro">
           <div class="projects__heading">
-            <h2 class="projects__title">{{ text().title }}</h2>
+            <span class="projects__title-line" aria-hidden="true"></span>
+
+            <h2 class="projects__title">
+              {{ text().title }}
+            </h2>
           </div>
 
-          <p class="projects__lead">{{ text().lead }}</p>
+          <div class="projects__intro-content page-width">
+            <p class="projects__lead">
+              {{ text().lead }}
+            </p>
+          </div>
         </div>
-
         <div class="projects__list-container descri-project page-width">
           <div class="projects__grid project-grid">
             @for (project of projects(); track project.id) {

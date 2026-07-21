@@ -149,27 +149,30 @@
             [class.invalid]="isInvalid('privacy')"
             [class.contact__privacy--invalid]="isInvalid('privacy')"
           >
-            <input
-              id="privacy"
-              class="contact__checkbox"
-              type="checkbox"
-              formControlName="privacy"
-            />
+            <div style="display: flex; gap: 0.8em; min-height: 5em">
+              <input
+                id="privacy"
+                class="contact__checkbox"
+                type="checkbox"
+                formControlName="privacy"
+              />
 
-            <label class="contact__privacy-label" for="privacy">
-              {{ text().privacyPrefix }}
-              <a class="contact__privacy-link" href="">
-                {{ text().privacyLink }}
-              </a>
-              {{ text().privacySuffix }}
-            </label>
+              <label class="contact__privacy-label" for="privacy">
+                {{ text().privacyPrefix }}
+                <a class="contact__privacy-link" href="">
+                  {{ text().privacyLink }}
+                </a>
+                {{ text().privacySuffix }}
+              </label>
+            </div>
+            <div>
+              @if (isInvalid('privacy')) {
+                <p class="contact__error contact__error--privacy">
+                  {{ errorMessage('privacy') }}
+                </p>
+              }
+            </div>
           </div>
-
-          @if (isInvalid('privacy')) {
-            <p class="contact__error contact__error--privacy">
-              {{ errorMessage('privacy') }}
-            </p>
-          }
         </div>
 
         <div class="contact__actions">
