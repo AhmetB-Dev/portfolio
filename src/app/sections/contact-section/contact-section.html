@@ -1,4 +1,4 @@
-<section class="contact" id="contact">
+<!-- <section class="contact" id="contact">
   <div class="contact__container page-width">
     <div class="contact__heading">
       <div class="contact__heading-content">
@@ -12,9 +12,6 @@
 
     <div class="contact__content">
       <div class="contact__description">
-        <!-- <div>
-          <span class="contact__description-line"></span>
-        </div> -->
 
         <div class="contact__description-content">
           <h3 class="contact__headline">{{ text().headline }}</h3>
@@ -59,11 +56,15 @@
               />
             </div>
 
-            @if (isInvalid('name')) {
-              <p class="contact__error">
+            <p
+              class="contact__error contact__error--field"
+              [class.contact__error--visible]="isInvalid('name')"
+              aria-live="polite"
+            >
+              @if (isInvalid('name')) {
                 {{ errorMessage('name') }}
-              </p>
-            }
+              }
+            </p>
           </div>
 
           <div
@@ -99,11 +100,15 @@
               />
             </div>
 
-            @if (isInvalid('email')) {
-              <p class="contact__error">
+            <p
+              class="contact__error contact__error--field"
+              [class.contact__error--visible]="isInvalid('email')"
+              aria-live="polite"
+            >
+              @if (isInvalid('email')) {
                 {{ errorMessage('email') }}
-              </p>
-            }
+              }
+            </p>
           </div>
 
           <div
@@ -137,11 +142,15 @@
               ></textarea>
             </div>
 
-            @if (isInvalid('message')) {
-              <p class="contact__error">
+            <p
+              class="contact__error contact__error--field"
+              [class.contact__error--visible]="isInvalid('message')"
+              aria-live="polite"
+            >
+              @if (isInvalid('message')) {
                 {{ errorMessage('message') }}
-              </p>
-            }
+              }
+            </p>
           </div>
 
           <div
@@ -217,4 +226,4 @@
       </form>
     </div>
   </div>
-</section>
+</section> -->

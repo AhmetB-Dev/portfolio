@@ -60,7 +60,7 @@ $checkbox-color: #70e61c;
   &__fields {
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 0.45em;
   }
 
   &__field {
@@ -68,12 +68,8 @@ $checkbox-color: #70e61c;
     flex-direction: column;
     gap: 0.45em;
 
-    &--invalid {
-      animation: fieldMoveUp 520ms ease;
-    }
-
-    &--valid {
-      animation: fieldMoveDown 520ms ease;
+    &--invalid .contact__input-wrap {
+      transform: translateY(-0.7rem);
     }
 
     &--invalid .contact__input,
@@ -90,6 +86,8 @@ $checkbox-color: #70e61c;
   &__input-wrap {
     position: relative;
     width: 28em;
+    transform: translateY(0);
+    transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   &__input,
@@ -155,12 +153,31 @@ $checkbox-color: #70e61c;
     margin: 0;
     color: #e61c40;
     font-size: 0.9rem;
-    opacity: 0;
-    transform: translateY(-6px);
-    animation: errorFadeIn 260ms ease forwards;
+
+    &--field {
+      min-height: 1.25em;
+      line-height: 1.25;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-0.35rem);
+      transition:
+        opacity 180ms ease,
+        transform 180ms ease,
+        visibility 0s linear 180ms;
+    }
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition-delay: 270ms, 270ms, 0s;
+    }
 
     &--privacy {
       margin: -2.4rem 0rem 0rem 0rem;
+      opacity: 0;
+      transform: translateY(-6px);
+      animation: errorFadeIn 260ms ease forwards;
     }
   }
 
@@ -319,34 +336,6 @@ $checkbox-color: #70e61c;
   }
 }
 
-@keyframes fieldMoveUp {
-  0% {
-    transform: translateY(0);
-  }
-
-  45% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes fieldMoveDown {
-  0% {
-    transform: translateY(0);
-  }
-
-  45% {
-    transform: translateY(10px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
 @keyframes errorFadeIn {
   to {
     opacity: 1;
@@ -363,6 +352,19 @@ $checkbox-color: #70e61c;
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact {
+    &__input-wrap,
+    &__error--field {
+      transition: none;
+    }
+
+    &__field--invalid .contact__input-wrap {
+      transform: none;
+    }
   }
 }
 
@@ -386,6 +388,14 @@ $checkbox-color: #70e61c;
 
     &__status--success {
       width: 100%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    &__error--field {
+      min-height: 2.5em;
     }
   }
 }
