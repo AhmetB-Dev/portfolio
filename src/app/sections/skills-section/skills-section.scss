@@ -48,9 +48,10 @@
   &__title-line {
     background: rgba(28, 218, 230, 1);
     height: 3px;
-    width: 37%;
-    position: absolute;
     right: 0;
+    width: calc(15% + 5rem);
+    position: absolute;
+    border-radius: 10px;
   }
 
   &__lead {
@@ -141,7 +142,7 @@
     }
 
     &__title-line {
-      width: 55%;
+      width: calc(75% + -4em);
     }
 
     &__lead {
