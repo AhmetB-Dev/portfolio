@@ -1,64 +1,54 @@
-<section class="projects">
-  <div class="projects__display">
-    <div class="projects__inner">
-      <div class="projects__container page-width">
-        <div class="projects__intro">
-          <div class="projects__heading">
-            <span class="projects__title-line" aria-hidden="true"></span>
+<section class="projects page-width">
+  <div class="projects__intro">
+    <div class="projects__heading">
+      <span class="projects__title-line" aria-hidden="true"></span>
 
-            <h2 class="projects__title">
-              {{ text().title }}
-            </h2>
-          </div>
+      <h2 class="projects__title">
+        {{ text().title }}
+      </h2>
+    </div>
 
-          <div class="projects__intro-content page-width">
-            <p class="projects__lead">
-              {{ text().lead }}
-            </p>
-          </div>
-        </div>
-        <div class="projects__list-container descri-project page-width">
-          <div class="projects__grid project-grid">
-            @for (project of projects(); track project.id) {
-              <div class="projects__card project-card">
-                <img
-                  class="projects__image project-image"
-                  [src]="project.src"
-                  [alt]="project.name"
-                />
+    <div class="projects__intro-content">
+      <p class="projects__lead">
+        {{ text().lead }}
+      </p>
+    </div>
+  </div>
+  <div class="projects__list-container descri-project">
+    <div class="projects__grid project-grid">
+      @for (project of projects(); track project.id) {
+        <div class="projects__card project-card">
+          <img class="projects__image project-image" [src]="project.src" [alt]="project.name" />
 
-                <div class="projects__overlay project-overlay">
-                  <div class="projects__actions project-actions">
-                    <a
-                      class="projects__button projects__button--live live-btn"
-                      [href]="project.liveUrl"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {{ text().liveBtn }}
-                    </a>
+          <div class="projects__overlay project-overlay">
+            <div class="projects__actions project-actions">
+              <a
+                class="projects__button projects__button--live live-btn"
+                [href]="project.liveUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ text().liveBtn }}
+              </a>
 
-                    <a
-                      class="projects__button projects__button--github project-btn"
-                      [href]="project.githubUrl"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {{ text().githubBtn }}
-                    </a>
-                  </div>
+              <a
+                class="projects__button projects__button--github project-btn"
+                [href]="project.githubUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ text().githubBtn }}
+              </a>
+            </div>
 
-                  <div class="projects__details overlay-descr">
-                    <h3 class="projects__name">{{ project.name }}</h3>
-                    <p class="projects__description">{{ project.description }}</p>
-                    <span class="projects__technologies">{{ project.technologies }}</span>
-                  </div>
-                </div>
-              </div>
-            }
+            <div class="projects__details overlay-descr">
+              <h3 class="projects__name">{{ project.name }}</h3>
+              <p class="projects__description">{{ project.description }}</p>
+              <span class="projects__technologies">{{ project.technologies }}</span>
+            </div>
           </div>
         </div>
-      </div>
+      }
     </div>
   </div>
 </section>

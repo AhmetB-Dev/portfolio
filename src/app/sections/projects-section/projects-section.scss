@@ -1,5 +1,4 @@
 .projects {
-  padding: 5em 0;
   background-image:
     url(/assets/img/portfolio/blue_shadow.webp), url(/assets/img/portfolio/green_shadow.webp);
   background-repeat: no-repeat, no-repeat;
@@ -45,13 +44,9 @@
     white-space: nowrap;
   }
 
-  &__display {
-    display: flex;
-    flex-direction: column;
-  }
-
   &__list-container {
-    padding-left: 2em;
+    padding-left: 1em;
+    padding-right: 1rem;
   }
 
   &__grid {
@@ -76,15 +71,16 @@
     }
 
     &:hover .projects__image {
-      transform: scale(1.5);
+      transform: translateY(-50px) scale(1.5);
     }
   }
 
   &__image {
     display: block;
-    width: 480px;
-    height: 200px;
-    object-fit: cover;
+    object-fit: contain;
+    height: clamp(340px, 33vw, 660px);
+    width: clamp(270px, 40vw, 660px);
+    max-width: 100%;
     transition: transform 0.35s ease;
   }
 
@@ -99,13 +95,17 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
+
+    p {
+      margin: 0;
+    }
   }
 
   &__actions {
-    position: absolute;
-    bottom: 14em;
     display: flex;
     gap: 1em;
+    position: absolute;
+    bottom: 12.5em;
     transform: translateY(20px);
     transition: transform 0.3s ease;
   }
@@ -135,25 +135,40 @@
   }
 
   &__details {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    background: white;
+    color: black;
+
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 2em;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    background: white;
-    color: black;
-    text-align: center;
   }
 
   &__name {
     color: #9747ff;
+    margin: 1rem 0rem 0.4rem 0rem;
   }
 
   &__technologies {
     color: #70e61c;
+    padding: 0.4rem 0rem 1rem 0rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .projects {
+    &__grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 33px;
+    }
   }
 }
