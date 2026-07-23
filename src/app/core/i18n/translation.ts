@@ -1,6 +1,6 @@
 export type LangCode = 'de' | 'en';
 
-type ProjectId = 'join' | 'sharkie' | 'memory' | 'app';
+type ProjectId = 'join' | 'sharkie' | 'memory' | 'app' | 'pollApp';
 
 export type TranslationModel = {
   header: {
@@ -127,6 +127,10 @@ export const translations: Record<LangCode, TranslationModel> = {
           description:
             'Eine Produktivitäts-App, die Nutzer dabei unterstützt, Aufgaben zu verwalten und organisiert zu bleiben.',
         },
+        pollApp: {
+          description:
+            'Eine Produktivitäts-App, die Nutzer dabei unterstützt, Aufgaben zu verwalten und organisiert zu bleiben.',
+        },
       },
     },
 
@@ -140,7 +144,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       privacyPrefix: 'Ich habe die',
       privacyLink: 'Datenschutzerklärung',
       privacySuffix: 'gelesen und stimme zu.',
-      button: 'Nachricht senden',
+      button: 'Nachricht senden :)',
       goUpLabel: 'Nach oben',
 
       successMessage: 'Danke! Deine Nachricht wurde erfolgreich geprüft.',
@@ -209,6 +213,9 @@ export const translations: Record<LangCode, TranslationModel> = {
         app: {
           description: 'A productivity app that helps users manage their tasks and stay organized.',
         },
+        pollApp: {
+          description: 'A productivity app that helps users manage their tasks and stay organized.',
+        },
       },
     },
     contact: {
@@ -221,7 +228,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       privacyPrefix: 'I have read the',
       privacyLink: 'privacy policy',
       privacySuffix: 'and agree to it.',
-      button: 'Send message',
+      button: 'Send message :)',
       goUpLabel: 'Go up',
 
       successMessage: 'Thank you! Your message was successfully checked.',

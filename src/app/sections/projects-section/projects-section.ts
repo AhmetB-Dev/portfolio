@@ -1,7 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { Language } from '../../core/services/language';
 
-type ProjectId = 'join' | 'sharkie' | 'memory' | 'app';
+type ProjectId = 'join' | 'sharkie' | 'memory' | 'app' | 'pollApp';
 
 type ProjectBase = {
   id: ProjectId;
@@ -30,7 +30,7 @@ export class ProjectsSection {
     {
       id: 'join',
       name: 'Join',
-      technologies: 'HTML | CSS | javaScript | Firebase',
+      technologies: 'HTML | CSS | JavaScript | Firebase',
       src: 'assets/img/portfolio/join_cover.webp',
       liveUrl: 'https://example.com/join',
       githubUrl: 'https://github.com/example/join',
@@ -38,7 +38,7 @@ export class ProjectsSection {
     {
       id: 'sharkie',
       name: 'Sharkie',
-      technologies: 'HTML | CSS | javaScript',
+      technologies: 'HTML | CSS | JavaScript',
       src: 'assets/img/portfolio/sharkie_cover.webp',
       liveUrl: 'https://example.com/sharkie',
       githubUrl: 'https://github.com/example/sharkie',
@@ -55,6 +55,14 @@ export class ProjectsSection {
       id: 'app',
       name: 'App',
       technologies: 'Angular | TypeScript | SCSS | Firebase',
+      src: 'assets/img/portfolio/sharkie_cover.webp',
+      liveUrl: 'https://example.com/app',
+      githubUrl: 'https://github.com/example/app',
+    },
+    {
+      id: 'pollApp',
+      name: 'PollApp',
+      technologies: 'Angular | TypeScript | SCSS | Supabase',
       src: 'assets/img/portfolio/sharkie_cover.webp',
       liveUrl: 'https://example.com/app',
       githubUrl: 'https://github.com/example/app',

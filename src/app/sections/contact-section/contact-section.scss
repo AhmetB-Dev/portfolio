@@ -6,6 +6,10 @@ $checkbox-color: #70e61c;
   background-position: top right;
   background-size: 30% 120%;
 
+  &__container {
+    padding: 4rem 0rem 3rem 0rem;
+  }
+
   &__heading {
     display: flex;
     align-items: center;
@@ -22,13 +26,22 @@ $checkbox-color: #70e61c;
 
   &__content {
     display: flex;
-    justify-content: space-between;
-    gap: 6em;
-    padding: 0 3em 0 0;
+    gap: 3em;
+    padding: 0rem 1rem 0rem 1rem;
+    flex-direction: column;
+    // padding: 0 3em 0 0;
   }
 
   &__title {
     font-size: var(--fs-section-title);
+  }
+
+  &__headline {
+    font-size: clamp(1rem, 0.8rem + 1vw, 4rem);
+  }
+
+  &__text {
+    font-size: var(--fs-text);
   }
 
   &__description {
@@ -52,21 +65,21 @@ $checkbox-color: #70e61c;
   }
 
   &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 2em;
   }
 
   &__fields {
     display: flex;
     flex-direction: column;
-    gap: 0.45em;
+    gap: 0.8rem;
   }
 
   &__field {
     display: flex;
     flex-direction: column;
-    gap: 0.45em;
+    gap: 0.3rem;
 
     &--invalid .contact__input-wrap {
       transform: translateY(-0.7rem);
@@ -84,8 +97,7 @@ $checkbox-color: #70e61c;
   }
 
   &__input-wrap {
-    position: relative;
-    width: 28em;
+    display: flex;
     transform: translateY(0);
     transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -118,22 +130,19 @@ $checkbox-color: #70e61c;
 
   &__input {
     height: 2.8em;
+    font-size: clamp(0.8rem, 0.6rem + 0.6vw, 1.4rem);
   }
 
   &__textarea {
     min-height: 12em;
     padding-top: 0.5em;
+    font-size: clamp(0.8rem, 0.6rem + 0.6vw, 1.4rem);
     resize: vertical;
-  }
-
-  &__input-wrap--textarea .contact__field-icon {
-    top: 1.1em;
-    transform: none;
   }
 
   &__field-icon {
     position: absolute;
-    top: 18px;
+    top: clamp(18px, 2vw, 30px);
     right: 12px;
     z-index: 2;
     font-weight: 700;
@@ -142,21 +151,23 @@ $checkbox-color: #70e61c;
 
     &--error {
       color: #e61c40;
+      width: clamp(25px, 2vw, 35px);
     }
 
     &--success {
       color: #70e61c;
+      width: clamp(25px, 2vw, 35px);
     }
   }
 
   &__error {
     margin: 0;
     color: #e61c40;
-    font-size: 0.9rem;
+    font-size: clamp(0.7rem, 0.4rem + 0.7vw, 1rem);
 
     &--field {
       min-height: 1.25em;
-      line-height: 1.25;
+      line-height: 0;
       opacity: 0;
       visibility: hidden;
       transform: translateY(-0.35rem);
@@ -174,7 +185,6 @@ $checkbox-color: #70e61c;
     }
 
     &--privacy {
-      margin: -2.4rem 0rem 0rem 0rem;
       opacity: 0;
       transform: translateY(-6px);
       animation: errorFadeIn 260ms ease forwards;
@@ -210,8 +220,8 @@ $checkbox-color: #70e61c;
     display: grid;
     flex: 0 0 auto;
     place-items: center;
-    width: 20px;
-    height: 20px;
+    width: clamp(16px, 1.2vw, 20px);
+    height: clamp(16px, 1.2vw, 20px);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -248,16 +258,16 @@ $checkbox-color: #70e61c;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 3em;
   }
 
   &__submit {
-    padding: 0.8em 1.4em;
+    padding: 0.8em 1.2em;
+    font-size: clamp(1rem, 0.9rem + 0.9vw, 1.8rem);
     border: none;
     border-radius: 10px;
-    background-color: #9b9b9b;
     color: #fff;
-    font-size: 1.4rem;
-    cursor: pointer;
+    background-color: #9b9b9b;
     transition:
       transform 180ms ease,
       background-color 180ms ease;
@@ -322,8 +332,8 @@ $checkbox-color: #70e61c;
 
   &__up-button {
     display: flex;
+    padding-top: 1rem;
     justify-content: flex-end;
-    padding-right: 3em;
   }
 
   &__up-link {
@@ -332,7 +342,7 @@ $checkbox-color: #70e61c;
   }
 
   &__up-icon {
-    width: 26px;
+    width: clamp(30px, 2vw, 45px);
   }
 }
 
@@ -368,34 +378,5 @@ $checkbox-color: #70e61c;
   }
 }
 
-@media (max-width: 960px) {
-  .contact {
-    &__content {
-      gap: 3em;
-    }
-
-    &__input-wrap {
-      width: 100%;
-    }
-
-    &__form {
-      width: 100%;
-    }
-
-    &__title-line {
-      width: 8em;
-    }
-
-    &__status--success {
-      width: 100%;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .contact {
-    &__error--field {
-      min-height: 2.5em;
-    }
-  }
+@media (min-width: 960px) {
 }
