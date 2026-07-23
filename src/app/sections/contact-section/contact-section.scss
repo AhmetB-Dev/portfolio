@@ -18,7 +18,7 @@ $checkbox-color: #70e61c;
 
   &__title-line {
     position: absolute;
-    right: 0;
+    right: -60px;
     width: 37%;
     height: 3px;
     background: #70e61c;
@@ -163,7 +163,7 @@ $checkbox-color: #70e61c;
   &__error {
     margin: 0;
     color: #e61c40;
-    font-size: clamp(0.7rem, 0.4rem + 0.7vw, 1rem);
+    font-size: clamp(0.75rem, 0.4rem + 0.7vw, 1rem);
 
     &--field {
       min-height: 1.25em;
@@ -379,4 +379,13 @@ $checkbox-color: #70e61c;
 }
 
 @media (min-width: 960px) {
+  .contact {
+    &__title-line {
+      position: absolute;
+      right: 0;
+      width: 37%;
+      height: 3px;
+      background: #70e61c;
+    }
+  }
 }

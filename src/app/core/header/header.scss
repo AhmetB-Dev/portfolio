@@ -1,8 +1,7 @@
 .header {
+  z-index: 10;
   position: sticky;
   top: 0;
-  z-index: 10;
-  padding: 0.2em 3em;
   background-color: #141d2f;
   font-size: clamp(1rem, 1.7vw, 3rem);
 
