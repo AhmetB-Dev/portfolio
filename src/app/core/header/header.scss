@@ -1,7 +1,8 @@
 .header {
-  z-index: 10;
   position: sticky;
   top: 0;
+  z-index: 10;
+  padding: 1em 1em;
   background-color: #141d2f;
   font-size: clamp(1rem, 1.7vw, 3rem);
 
@@ -11,41 +12,57 @@
     justify-content: space-between;
   }
 
-  &__navigation-link:hover {
-    color: #70e61c;
+  &__logo {
+    z-index: 12;
+    font-size: clamp(1.5rem, 2.5vw, 4rem);
+    font-weight: bold;
+  }
+
+  &__logo-end {
+    color: #9747ff;
+  }
+
+  &__navigation {
+    position: fixed;
+    inset: 0;
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    background-color: rgb(20 29 47 / 80%);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: none;
+    pointer-events: none;
+  }
+
+  &__navigation--animating {
+    transition:
+      transform 160ms ease-in-out,
+      opacity 160ms ease-in-out;
+  }
+
+  &__navigation--open {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
   }
 
   &__navigation-list {
     display: flex;
-    gap: 1em;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 0;
   }
 
   &__navigation-item {
     display: unset;
   }
 
-  &__language-button,
-  &__menu-button {
-    border: solid 2px #70e61c;
-    border-radius: 8px;
-    background-color: transparent;
-    font-size: clamp(0.6rem, 1.1vw, 2rem);
-  }
-
-  &__language-button:not(.header__language-button--active):hover,
-  &__menu-button:hover {
-    border-color: #9747ff;
-    background-color: #9747ff;
-  }
-
-  &__language-button--active {
-    border-color: #70e61c;
-    background-color: #70e61c;
-  }
-
-  &__language {
-    display: flex;
-    gap: 10px;
+  &__navigation-link:hover {
+    color: #70e61c;
   }
 
   &__navigation-link--active {
@@ -62,138 +79,140 @@
     }
   }
 
-  &__navigation {
-    display: flex;
-    align-items: center;
-    gap: 4em;
+  &__navigation-item--mobile-contact .header__navigation-link {
+    display: inline-block;
   }
 
   &__menu-content {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    font-size: clamp(1.4rem, 3.2vw, 5rem);
   }
 
-  &__logo {
-    z-index: 12;
-    font-size: clamp(1.5rem, 2.5vw, 4rem);
-    font-weight: bold;
+  &__language {
+    display: flex;
+    gap: 10px;
   }
 
-  &__logo-end {
-    color: #9747ff;
+  &__language-button {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    color: inherit;
+    font-size: clamp(1rem, 1.8vw, 3rem);
+
+    &:hover {
+      border-color: transparent;
+      background-color: transparent;
+      color: inherit;
+    }
+
+    &--active,
+    &--active:hover {
+      border-color: transparent;
+      background-color: transparent;
+      color: #70e61c;
+    }
+  }
+
+  &__language-separator {
+    display: block;
   }
 
   &__menu-button {
-    display: none;
+    z-index: 12;
+    display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 12;
     border: none;
     background-color: transparent;
     cursor: pointer;
+
+    &:hover {
+      background-color: unset;
+    }
   }
 
   &__menu-icon {
     display: block;
     width: 32px;
-    height: 32px;
-  }
-
-  &__navigation-item--mobile-contact .header__navigation-link {
-    display: none;
-  }
-
-  &__language-separator {
-    display: none;
+    height: clamp(1.8rem, 4vw, 10vh);
   }
 }
 
-@media (max-width: 960px) {
+/* Desktop */
+@media (min-width: 961px) {
   .header {
-    padding: 2em 1em;
+    padding-inline: calc((100vw - 1440px) / 2);
 
-    &__menu-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1em;
-      font-size: clamp(1.4rem, 3.2vw, 5rem);
-    }
-
-    &__language-button {
-      padding: 0;
-      border: none;
-      border-radius: 0;
-      background-color: transparent;
-      color: inherit;
-      font-size: clamp(1rem, 1.8vw, 3rem);
-
-      &:hover {
-        border-color: transparent;
-        background-color: transparent;
-        color: inherit;
-      }
-
-      &--active,
-      &--active:hover {
-        border-color: transparent;
-        background-color: transparent;
-        color: #70e61c;
-      }
-    }
-
-    &__language-separator {
-      display: block;
-    }
-
-    &__navigation-item--mobile-contact .header__navigation-link {
-      display: inline-block;
-    }
-
-    &__menu-button {
-      display: flex;
-
-      &:hover {
-        background-color: unset;
-      }
-    }
-
-    &__menu-icon {
-      height: clamp(1.8rem, 4vw, 10vh);
+    &__container {
+      padding: 0rem 6rem 0rem 6rem;
     }
 
     &__navigation {
-      position: fixed;
-      inset: 0;
-      z-index: 11;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2em;
-      background-color: rgb(20 29 47 / 80%);
-      opacity: 0;
-      transform: translateX(100%);
+      position: static;
+      inset: auto;
+      z-index: auto;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 4em;
+      background-color: transparent;
+      opacity: 1;
+      transform: none;
       transition: none;
-      pointer-events: none;
+      pointer-events: auto;
     }
 
     &__navigation-list {
-      flex-direction: column;
-      gap: 1.5em;
-      padding: 0;
+      flex-direction: row;
+      gap: 1em;
     }
 
-    &__navigation--animating {
-      transition:
-        transform 160ms ease-in-out,
-        opacity 160ms ease-in-out;
+    &__navigation-item--mobile-contact .header__navigation-link {
+      display: none;
     }
 
-    &__navigation--open {
-      opacity: 1;
-      transform: translateX(0);
-      pointer-events: auto;
+    &__menu-content {
+      flex-direction: row;
+      align-items: center;
+      gap: 0;
+      font-size: inherit;
+    }
+
+    &__language-button {
+      padding: revert;
+      border: solid 2px #70e61c;
+      border-radius: 8px;
+      background-color: transparent;
+      color: inherit;
+      font-size: clamp(0.6rem, 1.1vw, 2rem);
+    }
+
+    &__language-button:not(.header__language-button--active):hover {
+      border-color: #9747ff;
+      background-color: #9747ff;
+    }
+
+    &__language-button--active,
+    &__language-button--active:hover {
+      border-color: #70e61c;
+      background-color: #70e61c;
+      color: inherit;
+    }
+
+    &__language-separator {
+      display: none;
+    }
+
+    &__menu-button {
+      display: none;
+    }
+
+    &__menu-icon {
+      height: 32px;
     }
   }
 }

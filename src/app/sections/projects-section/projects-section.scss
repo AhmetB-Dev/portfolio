@@ -175,5 +175,14 @@
     &__actions {
       bottom: clamp(14em, 6.5rem + 20vw, 25em);
     }
+
+    &__list-container {
+      padding-left: 6em;
+      padding-right: 6rem;
+    }
+
+    &__intro {
+      padding-left: 6rem;
+    }
   }
 }

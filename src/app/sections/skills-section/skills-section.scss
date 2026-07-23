@@ -1,15 +1,41 @@
 .skills {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(2rem, 8vw, 10rem);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'heading'
+    'lead'
+    'icons'
+    'extra'
+    'action';
+  gap: clamp(1rem, 4vw, 7rem);
 
-  &__extra-title {
-    font-size: clamp(1.4rem, 3vw, 2rem);
+  &__info {
+    display: contents;
+    text-align: left;
+  }
 
-    span {
-      color: #9747ff;
-    }
+  &__heading {
+    grid-area: heading;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5%;
+    padding: 0 1em;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--fs-section-title);
+  }
+
+  &__title-line {
+    position: absolute;
+    right: 0;
+    width: calc(80% - 4em);
+    height: 3px;
+    border-radius: 10px;
+    background-color: #1cdae6;
   }
 
   &__lead,
@@ -20,58 +46,50 @@
     font-size: var(--fs-text);
   }
 
-  &__grid {
-    order: 1;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3em;
-    padding-left: 2em;
-  }
-
-  &__info {
-    order: 2;
-    max-width: 520px;
-    text-align: left;
-  }
-
-  &__heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__title {
-    font-size: var(--fs-section-title);
-    margin: 0;
-  }
-
-  &__title-line {
-    background: rgba(28, 218, 230, 1);
-    height: 3px;
-    right: 0;
-    width: calc(15% + 5rem);
-    position: absolute;
-    border-radius: 10px;
-  }
-
   &__lead {
-    margin-top: 2rem;
+    grid-area: lead;
+    margin: 0;
+    padding: 0 1em;
+    text-align: left;
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+  }
+
+  &__grid {
+    grid-area: icons;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    padding: 0 1em;
   }
 
   &__extra {
-    margin-top: 2rem;
+    grid-area: extra;
+    margin-top: 0;
+    padding: 0 1em;
+    text-align: right;
+  }
+
+  &__extra-title {
+    margin: 0;
+    font-size: clamp(1.25rem, 6vw, 1.7rem);
+
+    span {
+      color: #9747ff;
+    }
   }
 
   &__action {
-    margin-top: 2rem;
+    grid-area: action;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
   }
 
   &__cta {
-    background-color: #70e61c;
     padding: 0.8em 1.6em;
-    border-radius: 8px;
+    border-radius: 10px;
+    background-color: #70e61c;
     text-decoration: none;
-
     transition:
       transform 300ms ease,
       background-color 300ms ease;
@@ -113,75 +131,71 @@
   }
 }
 
-@media (max-width: 960px) {
+/* Desktop */
+@media (min-width: 961px) {
   .skills {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'heading'
-      'lead'
-      'icons'
-      'extra'
-      'action';
-
-    &__heading {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 0 1em 0em 1em;
-      gap: 5%;
-    }
-
-    &__title {
-      font-size: var(--fs-section-title);
-      margin: 0;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     &__info {
-      display: contents;
+      display: block;
+      order: 2;
+      max-width: 520px;
+      padding-right: 6rem;
+    }
+
+    &__heading {
+      justify-content: space-between;
+      gap: 0;
+      padding: 0;
     }
 
     &__title-line {
-      width: calc(75% + -4em);
+      right: 0;
+      width: calc(15% + 5rem);
     }
 
     &__lead {
-      grid-area: lead;
-      text-align: left;
-      margin: 0;
-      padding: 0em 1em;
-      font-size: clamp(0.9rem, 4vw, 1.1rem);
+      margin-top: 2rem;
+      padding: 0;
+      font-size: var(--fs-text);
     }
 
     &__grid {
-      grid-area: icons;
-      order: initial;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1em;
-      padding: 0em 1em;
+      order: 1;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2em;
+      padding: 0rem 0em 0rem 6rem;
     }
 
     &__extra {
-      grid-area: extra;
-      text-align: right;
-      margin-top: 0;
-      padding: 0em 1em;
+      margin-top: 2rem;
+      padding: 0;
+      text-align: left;
     }
 
     &__extra-title {
-      margin: 0;
-      font-size: clamp(1.25rem, 6vw, 1.7rem);
+      font-size: clamp(1.4rem, 3vw, 2rem);
     }
 
     &__action {
-      grid-area: action;
-      display: flex;
-      justify-content: center;
-      margin-top: 0;
+      display: block;
+      margin-top: 2rem;
     }
 
     &__cta {
-      border-radius: 10px;
+      border-radius: 8px;
+    }
+  }
+}
+
+/* Große Desktop-Bildschirme */
+@media (min-width: 1440px) {
+  .skills {
+    &__title-line {
+      right: calc(50% - 50vw);
+      width: calc(15% + 5rem + 50vw - 50%);
     }
   }
 }

@@ -45,9 +45,22 @@ $checkbox-color: #70e61c;
   }
 
   &__headline {
+    position: relative;
     font-size: clamp(1rem, 0.8rem + 1vw, 4rem);
-  }
 
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: calc(100% + 0.25rem);
+      width: 0.75rem;
+      height: 3px;
+      border-radius: 10px;
+      background-color: #1cdae6;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+  }
   &__text {
     font-size: var(--fs-text);
   }
@@ -378,12 +391,27 @@ $checkbox-color: #70e61c;
 
 @media (min-width: 960px) {
   .contact {
+    &__content {
+      display: flex;
+      padding: 3rem 3rem 0rem 6rem;
+      justify-content: space-between;
+      flex-direction: unset;
+    }
+
+    &__text {
+      font-size: var(--fs-text);
+      width: clamp(36ch, 43ch, 60ch);
+    }
+
     &__title-line {
       position: absolute;
       right: 0;
       width: 37%;
       height: 3px;
       background: #70e61c;
+    }
+    &__headline::before {
+      width: 100%;
     }
   }
 }
