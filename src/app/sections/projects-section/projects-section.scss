@@ -2,13 +2,14 @@
   padding-top: 6rem;
   background-image:
     url(/assets/img/portfolio/blue_shadow.webp), url(/assets/img/portfolio/green_shadow.webp);
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat;
+
   background-position:
     top right,
     bottom left;
   background-size:
-    25% 50%,
-    23% 51%;
+    80% 40%,
+    40% 40%;
 
   &__intro {
     padding-left: 1rem;
@@ -65,9 +66,9 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    border: 1px solid #70e61c;
     border-radius: 10px;
-
+    border: 1px solid #70e61c;
+    background-color: rgba(20, 29, 47, 1);
     &:hover .projects__overlay {
       opacity: 1;
       pointer-events: auto;
@@ -104,7 +105,7 @@
 
     p {
       margin: 0;
-      font-size: clamp(0.9rem, 0.7rem + 0.9vw, 1.5rem);
+      font-size: clamp(0.9rem, 0.7rem + 0.8vw, 1.5rem);
     }
   }
 
@@ -162,12 +163,18 @@
 
   &__technologies {
     color: #70e61c;
-    font-size: clamp(0.9rem, 0.6rem + 1vw, 1.5rem);
+    font-size: clamp(0.9rem, 0.6rem + 0.9vw, 1.5rem);
   }
 }
 
 @media (min-width: 960px) {
   .projects {
+    background-position:
+      top right,
+      bottom left;
+    background-size:
+      25% 50%,
+      23% 51%;
     &__grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }

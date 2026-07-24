@@ -3,8 +3,9 @@ $checkbox-color: #70e61c;
 .contact {
   background-image: url('/assets/img/contact/shadow_contact.webp');
   background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 30% 120%;
+
+  background-position: bottom right;
+  background-size: 70% 55%;
 
   &__container {
     padding: 4rem 0rem 3rem 0rem;
@@ -52,8 +53,8 @@ $checkbox-color: #70e61c;
       content: '';
       position: absolute;
       top: 50%;
-      right: calc(100% + 0.25rem);
-      width: 0.75rem;
+      right: calc(100% + 0.3rem);
+      width: 22.85rem;
       height: 3px;
       border-radius: 10px;
       background-color: #1cdae6;
@@ -391,6 +392,8 @@ $checkbox-color: #70e61c;
 
 @media (min-width: 960px) {
   .contact {
+    background-position: top right;
+    background-size: 30% 120%;
     &__content {
       display: flex;
       padding: 3rem 3rem 0rem 6rem;
@@ -416,7 +419,7 @@ $checkbox-color: #70e61c;
     }
 
     &__headline::before {
-      width: 100%;
+      width: 200%;
     }
   }
 }

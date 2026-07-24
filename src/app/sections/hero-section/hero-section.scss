@@ -7,13 +7,13 @@
 
   background-image:
     url(/assets/img/hero/purple-shadow.webp), url(/assets/img/hero/blue-shadow.webp);
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat;
   background-position:
     top left,
-    right 13em;
+    right 1em;
   background-size:
-    25% 50%,
-    25% 40%;
+    50% 55%,
+    25% 60%;
 
   &__content {
     display: flex;
@@ -149,10 +149,10 @@
   .hero {
     background-position:
       top left,
-      right -5em;
+      right -4em;
     background-size:
-      30% 100%,
-      20% 100%;
+      45% 100%,
+      22% 80%;
 
     &__content {
       padding-top: clamp(1em, 7vw, 15rem);
