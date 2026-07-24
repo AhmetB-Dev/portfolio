@@ -162,12 +162,12 @@ $checkbox-color: #70e61c;
 
     &--error {
       color: #e61c40;
-      width: clamp(25px, 2vw, 35px);
+      width: clamp(22px, 2vw, 35px);
     }
 
     &--success {
       color: #70e61c;
-      width: clamp(25px, 2vw, 35px);
+      width: clamp(22px, 2vw, 35px);
     }
   }
 
@@ -246,7 +246,7 @@ $checkbox-color: #70e61c;
     &::after {
       content: '';
       width: 6px;
-      height: 10px;
+      height: 9px;
       margin-bottom: 2px;
       border-right: 2px solid $checkbox-color;
       border-bottom: 2px solid $checkbox-color;
@@ -410,6 +410,11 @@ $checkbox-color: #70e61c;
       height: 3px;
       background: #70e61c;
     }
+
+    &__field-icon {
+      top: clamp(22px, 1.7vw, 30px);
+    }
+
     &__headline::before {
       width: 100%;
     }

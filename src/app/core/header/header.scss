@@ -53,7 +53,7 @@
   &__navigation-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 1em;
     padding: 0;
   }
 
@@ -139,7 +139,7 @@
   &__menu-icon {
     display: block;
     width: 32px;
-    height: clamp(1.8rem, 4vw, 10vh);
+    height: clamp(1.6rem, 1vw, 2.5rem);
   }
 }
 

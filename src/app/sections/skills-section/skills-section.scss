@@ -51,7 +51,7 @@
     margin: 0;
     padding: 0 1em;
     text-align: left;
-    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    font-size: var(--fs-text);
   }
 
   &__grid {
@@ -86,7 +86,8 @@
   }
 
   &__cta {
-    padding: 0.8em 1.6em;
+    font-size: clamp(1rem, 0.7rem + 0.7vw, 1.6rem);
+    padding: 0.6em 1.1em;
     border-radius: 10px;
     background-color: #70e61c;
     text-decoration: none;
@@ -180,8 +181,9 @@
     }
 
     &__action {
-      display: block;
-      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-start;
+      padding-top: 1rem;
     }
 
     &__cta {

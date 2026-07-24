@@ -21,8 +21,8 @@ export type TranslationModel = {
     title: string;
     lead: string;
     cardLocation: string;
-    cardWorkStyle: string;
     cardLearning: string;
+    cardProblemSolving: string;
   };
 
   skills: {
@@ -59,6 +59,7 @@ export type TranslationModel = {
     button: string;
     goUpLabel: string;
     successMessage: string;
+
     errors: {
       nameRequired: string;
       nameMinLength: string;
@@ -84,52 +85,63 @@ export const translations: Record<LangCode, TranslationModel> = {
       portfolio: 'Portfolio',
       contact: 'Kontakt',
     },
+
     hero: {
       intro: 'Ich bin',
       role: 'FRONTEND ENTWICKLER',
       cta: 'Lass uns reden',
       scroll: 'Runterscrollen',
     },
+
     about: {
       title: 'Über mich',
-      lead: `Ich entwickle moderne Webanwendungen mit Fokus auf klare Strukturen, wartbaren Code und praxisnahe Lösungen. Komplexe Aufgaben zerlege ich in verständliche Schritte und setze sie sauber, zuverlässig und lösungsorientiert um.`,
-      cardWorkStyle: `Ich arbeite selbstorganisiert und produktiv in Remote-Umgebungen. Für Onboarding, Abstimmungen oder wichtige Teamtermine bin ich auch für gut geplante Hybrid-Setups offen.`,
-      cardLocation: `Neue Technologien und Best Practices lerne ich gerne direkt in praktischen Projekten. So entwickle ich meine Fähigkeiten kontinuierlich weiter und verbessere meine Arbeitsweise Schritt für Schritt.`,
-      cardLearning: `Ich gehe Aufgaben methodisch an: Anforderungen klären, sinnvoll strukturieren, sauber umsetzen und bei Bedarf iterativ verbessern. Wichtig sind mir klare Kommunikation, verständlicher Code und langfristige Wartbarkeit.`,
+      lead: 'Ich entwickle moderne Webanwendungen und begeistere mich dafür, aus Ideen funktionierende und benutzerfreundliche Lösungen zu schaffen. Dabei lege ich Wert auf klare Strukturen, sauberen Code und kontinuierliche Weiterentwicklung.',
+      cardLocation: `Ich lebe in Siegen und arbeite bevorzugt remote, bin aber auch für hybride Arbeitsmodelle offen.`,
+      cardLearning:
+        'Neue Technologien lerne ich am besten durch praktische Projekte. Dabei erweitere ich Schritt für Schritt meine Kenntnisse in der modernen Webentwicklung.',
+      cardProblemSolving:
+        'Ich gehe Herausforderungen strukturiert an, zerlege komplexe Aufgaben in kleinere Schritte und entwickle nachvollziehbare, wartbare Lösungen.',
     },
+
     skills: {
       title: 'Skills',
       lead: 'Eine Auswahl an Technologien, die ich in meinen Projekten verwendet habe – mit Fokus auf saubere, wartbare und skalierbare Webentwicklung.',
       otherSkillTitle: 'Du suchst noch einen anderen Skill?',
       otherSkillText:
-        'Ich lerne schnell und erweitere meinen Stack gerne besonders wenn es hilft, bessere Produkte zu bauen.',
+        'Ich lerne schnell und erweitere meinen Stack gerne – besonders, wenn es hilft, bessere Produkte zu bauen.',
       cta: 'Kontakt aufnehmen',
     },
+
     projects: {
       title: 'Portfolio',
       lead: 'Hier findest du eine Auswahl meiner Arbeiten – interagiere mit den Projekten und sieh meine Skills in Aktion.',
       liveBtn: 'Live Test',
       githubBtn: 'GitHub',
+
       items: {
         join: {
           description:
             'Ein Kanban-Task-Management-Tool zum Erstellen, Organisieren und Verwalten von Aufgaben im Team.',
         },
+
         sharkie: {
           description:
             'Ein 2D-Jump-and-Run-Spiel mit einer Unterwasserwelt, Gegnern und sammelbaren Objekten.',
         },
+
         memory: {
           description:
             'Ein klassisches Memory-Spiel, bei dem passende Kartenpaare gefunden werden müssen.',
         },
+
         app: {
           description:
             'Eine Produktivitäts-App, die Nutzer dabei unterstützt, Aufgaben zu verwalten und organisiert zu bleiben.',
         },
+
         pollApp: {
           description:
-            'Eine Produktivitäts-App, die Nutzer dabei unterstützt, Aufgaben zu verwalten und organisiert zu bleiben.',
+            'Eine Umfrage-App zum Erstellen, Teilen und Auswerten von Abstimmungen und Nutzerfeedback.',
         },
       },
     },
@@ -137,7 +149,7 @@ export const translations: Record<LangCode, TranslationModel> = {
     contact: {
       title: 'Kontakt',
       headline: 'Hast du ein Problem zu lösen?',
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore tempora ex vel doloremque nulla nisi ipsa consequuntur sit. Eius earum laborum autem, dolore deserunt recusandae doloribus suscipit iusto! Voluptates, error.',
+      text: 'Du suchst Unterstützung bei der Entwicklung einer modernen Webanwendung oder möchtest dich über ein gemeinsames Projekt austauschen? Schreib mir gerne eine Nachricht.',
       namePlaceholder: 'Dein Name',
       emailPlaceholder: 'Deine E-Mail',
       messagePlaceholder: 'Deine Nachricht',
@@ -146,8 +158,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       privacySuffix: 'gelesen und stimme zu.',
       button: 'Nachricht senden :)',
       goUpLabel: 'Nach oben',
-
-      successMessage: 'Danke! Deine Nachricht wurde erfolgreich geprüft.',
+      successMessage: 'Danke! Deine Nachricht wurde erfolgreich gesendet.',
 
       errors: {
         nameRequired: 'Bitte gib deinen Namen ein.',
@@ -160,6 +171,7 @@ export const translations: Record<LangCode, TranslationModel> = {
         messageMaxLength: 'Deine Nachricht darf maximal 5000 Zeichen lang sein.',
       },
     },
+
     footer: {
       legalNotice: 'Impressum',
     },
@@ -172,56 +184,69 @@ export const translations: Record<LangCode, TranslationModel> = {
       portfolio: 'Portfolio',
       contact: 'Contact',
     },
+
     hero: {
       intro: 'I am',
       role: 'FRONTEND DEVELOPER',
-      cta: `Let's talk`,
+      cta: "Let's talk",
       scroll: 'Scroll down',
     },
+
     about: {
       title: 'About me',
-      lead: `I build modern web applications with a focus on clear structure, maintainable code and practical solutions. I break complex tasks into manageable steps and implement them in a clean, reliable and solution-oriented way.`,
-      cardWorkStyle: `I work well in self-organized remote environments. For onboarding, alignment or important team sessions, I am also open to well-planned hybrid setups.`,
-      cardLocation: `I enjoy learning new technologies and best practices through hands-on projects. This helps me continuously improve my skills and apply new concepts in real-world situations.`,
-      cardLearning: `I approach tasks methodically: clarify requirements, structure the work, implement cleanly and improve iteratively when needed. Clear communication, readable code and long-term maintainability are important to me.`,
+      lead: 'I develop modern web applications and enjoy turning ideas into functional and user-friendly solutions. I focus on clear structures, clean code, and continuous improvement.',
+      cardLocation: `I am based in Siegen and prefer working remotely, but I am also open to hybrid work models.`,
+      cardLearning:
+        'I learn new technologies best through practical projects, continuously expanding my skills in modern web development.',
+      cardProblemSolving:
+        'I approach challenges methodically, break complex tasks into manageable steps, and create clear, maintainable solutions.',
     },
+
     skills: {
       title: 'Skills',
-      lead: `A selection of technologies I've used in my projects—focused on clean, maintainable, and scalable web development.`,
+      lead: "A selection of technologies I've used in my projects – focused on clean, maintainable, and scalable web development.",
       otherSkillTitle: 'Looking for another skill?',
       otherSkillText:
-        'I learn fast and enjoy expanding my stack—especially when it helps build better products.',
+        'I learn fast and enjoy expanding my stack – especially when it helps build better products.',
       cta: 'Get in touch',
     },
+
     projects: {
       title: 'Portfolio',
-      lead: 'Explore a selection of my work here - interact with projects to see my skills in action.',
+      lead: 'Explore a selection of my work – interact with the projects to see my skills in action.',
       liveBtn: 'Live Test',
       githubBtn: 'GitHub',
+
       items: {
         join: {
           description:
             'A Kanban task management tool for creating, organizing, and managing tasks in a team.',
         },
+
         sharkie: {
           description:
-            'A 2D platformer game with an underwater world, enemies, and collectible items.',
+            'A 2D platformer game featuring an underwater world, enemies, and collectible items.',
         },
+
         memory: {
           description: 'A classic memory game where players flip cards to find matching pairs.',
         },
+
         app: {
           description: 'A productivity app that helps users manage their tasks and stay organized.',
         },
+
         pollApp: {
-          description: 'A productivity app that helps users manage their tasks and stay organized.',
+          description:
+            'A polling app for creating, sharing, and evaluating polls and user feedback.',
         },
       },
     },
+
     contact: {
       title: 'Contact',
       headline: 'Got a problem to solve?',
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore tempora ex vel doloremque nulla nisi ipsa consequuntur sit. Eius earum laborum autem, dolore deserunt recusandae doloribus suscipit iusto! Voluptates, error.',
+      text: 'Are you looking for support in developing a modern web application or would you like to discuss a potential project? Feel free to send me a message.',
       namePlaceholder: 'Your name',
       emailPlaceholder: 'Your email',
       messagePlaceholder: 'Your message',
@@ -230,8 +255,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       privacySuffix: 'and agree to it.',
       button: 'Send message :)',
       goUpLabel: 'Go up',
-
-      successMessage: 'Thank you! Your message was successfully checked.',
+      successMessage: 'Thank you! Your message was sent successfully.',
 
       errors: {
         nameRequired: 'Please enter your name.',
@@ -244,6 +268,7 @@ export const translations: Record<LangCode, TranslationModel> = {
         messageMaxLength: 'Your message must not be longer than 5000 characters.',
       },
     },
+
     footer: {
       legalNotice: 'Legal notice',
     },
