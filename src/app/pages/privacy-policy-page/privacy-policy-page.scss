@@ -1,2 +1,40 @@
-.legal-page {
+.privacy-page {
+  &__title {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto
+      minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(0.75rem, 2vw, 2rem);
+    margin: 0;
+
+    color: #70e61c;
+    font-size: clamp(2.2rem, 1rem + 4vw, 6rem);
+
+    &::after {
+      content: '';
+      display: block;
+      width: auto;
+      height: 0.25rem;
+
+      margin-inline-end: calc(50% - 50vw);
+
+      border-radius: 6px;
+      background-color: #70e61c;
+    }
+  }
+
+  &__title-line-left {
+    display: block;
+    justify-self: end;
+    width: clamp(4rem, 9vw, 10rem);
+    height: 0.25rem;
+    border-radius: 6px;
+    background-color: #9747ff;
+  }
+
+  &__title-text {
+    white-space: nowrap;
+  }
 }
