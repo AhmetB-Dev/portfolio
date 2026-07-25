@@ -74,6 +74,7 @@ export type TranslationModel = {
 
   footer: {
     legalNotice: string;
+    privacyPolicy: string;
   };
 };
 
@@ -174,6 +175,7 @@ export const translations: Record<LangCode, TranslationModel> = {
 
     footer: {
       legalNotice: 'Impressum',
+      privacyPolicy: 'Datenschutzerklärung',
     },
   },
 
@@ -271,6 +273,7 @@ export const translations: Record<LangCode, TranslationModel> = {
 
     footer: {
       legalNotice: 'Legal notice',
+      privacyPolicy: 'Privacy policy',
     },
   },
 };

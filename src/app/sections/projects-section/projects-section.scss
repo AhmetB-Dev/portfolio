@@ -175,6 +175,7 @@
     background-size:
       25% 50%,
       23% 51%;
+
     &__grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -184,12 +185,12 @@
     }
 
     &__list-container {
-      padding-left: 6em;
-      padding-right: 6rem;
+      padding-left: 4em;
+      padding-right: 4rem;
     }
 
     &__intro {
-      padding-left: 6rem;
+      padding-left: 4rem;
     }
 
     &__details {

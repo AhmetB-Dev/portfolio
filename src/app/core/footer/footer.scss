@@ -10,7 +10,6 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    padding: 3em;
   }
 
   &__social-links {
@@ -32,12 +31,25 @@
     display: contents;
   }
 
+  &__legal-links {
+    order: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.25rem;
+  }
+
   &__name {
     font-size: clamp(1.5rem, 2vw, 6rem);
   }
 
   &__legal-link {
-    order: 1;
+    transition: color 160ms ease;
+
+    &:hover,
+    &:focus-visible {
+      color: #70e61c;
+    }
   }
 
   &__legal-link,
@@ -58,6 +70,11 @@
     &__legal {
       display: flex;
       flex-direction: column;
+    }
+
+    &__legal-links {
+      align-items: flex-start;
+      gap: 0.25rem;
     }
   }
 }

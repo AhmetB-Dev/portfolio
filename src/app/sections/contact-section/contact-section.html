@@ -14,9 +14,7 @@
       <div class="contact__description">
         <div class="contact__description-content">
           <h3 class="contact__headline">{{ text().headline }}</h3>
-          <p class="contact__text">
-            {{ text().text }}
-          </p>
+          <p class="contact__text">{{ text().text }}</p>
         </div>
       </div>
 
@@ -37,7 +35,6 @@
                   alt=""
                 />
               }
-
               @if (isValid('name')) {
                 <img
                   class="contact__field-icon contact__field-icon--success"
@@ -81,7 +78,6 @@
                   alt=""
                 />
               }
-
               @if (isValid('email')) {
                 <img
                   class="contact__field-icon contact__field-icon--success"
@@ -125,7 +121,6 @@
                   alt=""
                 />
               }
-
               @if (isValid('message')) {
                 <img
                   class="contact__field-icon contact__field-icon--success"
@@ -174,7 +169,7 @@
 
               <label class="contact__privacy-label" for="privacy">
                 {{ text().privacyPrefix }}
-                <a class="contact__privacy-link" href="">
+                <a class="contact__privacy-link" routerLink="/privacy-policy">
                   {{ text().privacyLink }}
                 </a>
                 {{ text().privacySuffix }}
@@ -211,7 +206,6 @@
               <p>{{ sendErrorMessage }}</p>
             </div>
           }
-
           @if (successMessage) {
             <div class="contact__status contact__status--success contact__success">
               <span class="contact__success-icon">✓</span>
@@ -224,7 +218,7 @@
           <a class="contact__up-link" href="#header">
             <img
               class="contact__up-icon"
-              src="/assets/icon/contact/go-up-button.svg"
+              src="assets/shared/up-button.svg"
               alt="{{ text().goUpLabel }}"
             />
           </a>

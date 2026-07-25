@@ -1,0 +1,48 @@
+.legal-page {
+  &__back {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.75rem, 2vw, 2rem);
+    font-size: var(--fs-section-title);
+    color: rgba(112, 230, 28, 1);
+  }
+
+  &__title::before,
+  &__title::after {
+    content: '';
+    display: block;
+    height: 0.25rem;
+    border-radius: 999px;
+    background-color: var(--btn-hover-color);
+  }
+
+  // &__title::before {
+  //   flex: 0 0 clamp(2rem, 6vw, 6rem);
+  // }
+
+  &__title::after {
+    flex: 1 0 0;
+    margin-inline-end: calc(50% - 50vw);
+  }
+
+  &__container {
+    padding: 0rem 1rem;
+  }
+
+  &__section {
+  }
+
+  &__section-title {
+    color: rgba(151, 71, 255, 1);
+  }
+
+  &__highlight {
+    color: rgba(151, 71, 255, 1);
+  }
+}

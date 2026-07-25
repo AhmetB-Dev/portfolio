@@ -3,7 +3,11 @@
   <div class="footer__container site-footer page-width">
     <div class="footer__legal legal-notice">
       <span class="footer__name">Ahmet</span>
-      <a class="footer__legal-link" href="">{{ text().legalNotice }} </a>
+      <div class="footer__legal-links">
+        <a class="footer__legal-link" routerLink="/legal-notice">
+          {{ text().legalNotice }}
+        </a>
+      </div>
     </div>
     <div class="footer__copyright copyright">©Ahmet Balci 2026</div>
     <div class="footer__social-links social-link">

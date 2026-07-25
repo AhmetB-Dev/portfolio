@@ -1,19 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideRouter } from '@angular/router';
+import { LegalNoticePage } from './legal-notice-page';
 
-import { Header } from './header';
-
-describe('Header', () => {
-  let component: Header;
-  let fixture: ComponentFixture<Header>;
+describe('LegalNoticePage', () => {
+  let component: LegalNoticePage;
+  let fixture: ComponentFixture<LegalNoticePage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Header],
-      providers: [provideRouter([])],
+      imports: [LegalNoticePage],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Header);
+    fixture = TestBed.createComponent(LegalNoticePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

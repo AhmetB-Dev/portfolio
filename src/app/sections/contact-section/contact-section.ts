@@ -1,5 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { Language } from '../../core/services/language';
 import { HttpClient } from '@angular/common/http';
 
@@ -19,7 +20,7 @@ type MailResponse = {
 
 @Component({
   selector: 'app-contact-section',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './contact-section.html',
   styleUrl: './contact-section.scss',
 })
