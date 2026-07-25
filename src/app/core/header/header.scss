@@ -13,13 +13,9 @@
   }
 
   &__logo {
-    z-index: 12;
-    font-size: clamp(1.5rem, 2.5vw, 4rem);
-    font-weight: bold;
-  }
+    --logo-size: clamp(1.5rem, 2.5vw, 4rem);
 
-  &__logo-end {
-    color: #9747ff;
+    z-index: 12;
   }
 
   &__navigation {
