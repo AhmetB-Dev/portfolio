@@ -356,12 +356,60 @@ $checkbox-color: #70e61c;
   }
 
   &__up-link {
-    display: flex;
+    display: inline-flex;
     justify-content: flex-end;
+    border-radius: 50%;
+
+    &:focus-visible {
+      outline: 2px solid #70e61c;
+      outline-offset: 4px;
+    }
+
+    &:focus-visible .contact__up-icon--default,
+    &:active .contact__up-icon--default {
+      opacity: 0;
+    }
+
+    &:focus-visible .contact__up-icon--active,
+    &:active .contact__up-icon--active {
+      opacity: 1;
+    }
+  }
+
+  &__up-icons {
+    position: relative;
+    display: grid;
+    width: clamp(30px, 2vw, 45px);
+    aspect-ratio: 1;
   }
 
   &__up-icon {
-    width: clamp(30px, 2vw, 45px);
+    grid-area: 1 / 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: opacity 180ms ease;
+    pointer-events: none;
+
+    &--default {
+      opacity: 1;
+    }
+
+    &--active {
+      opacity: 0;
+    }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact__up-link:hover {
+    .contact__up-icon--default {
+      opacity: 0;
+    }
+
+    .contact__up-icon--active {
+      opacity: 1;
+    }
   }
 }
 
@@ -386,6 +434,10 @@ $checkbox-color: #70e61c;
 
 @media (prefers-reduced-motion: reduce) {
   .contact {
+    &__up-icon {
+      transition: none;
+    }
+
     &__input-wrap,
     &__error--field {
       transition: none;
@@ -416,7 +468,7 @@ $checkbox-color: #70e61c;
     &__title-line {
       position: absolute;
       right: 0;
-      width: 37%;
+      width: 34%;
       height: 3px;
       background: #70e61c;
     }

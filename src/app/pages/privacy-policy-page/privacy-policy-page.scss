@@ -1,4 +1,14 @@
 .privacy-page {
+  &__back {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__back-link {
+    width: clamp(30px, 2vw, 45px);
+  }
+
   &__title {
     display: grid;
     grid-template-columns:
@@ -36,5 +46,13 @@
 
   &__title-text {
     white-space: nowrap;
+  }
+}
+
+@media (min-width: 960px) {
+  .privacy-page {
+    &__back {
+      display: none;
+    }
   }
 }

@@ -5,6 +5,10 @@
     align-items: center;
   }
 
+  &__back-link {
+    width: clamp(30px, 2vw, 45px);
+  }
+
   &__title {
     display: flex;
     align-items: center;
@@ -49,6 +53,10 @@
 }
 @media (min-width: 769px) {
   .legal-page {
+    &__back {
+      display: none;
+    }
+
     &__container {
       padding: 0rem 4rem 0rem 4rem;
     }

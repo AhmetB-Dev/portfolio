@@ -1,8 +1,11 @@
 <footer class="footer">
-  <div class="footer__line line"></div>
+  <div class="footer__line"></div>
   <div class="footer__container site-footer page-width">
     <div class="footer__legal legal-notice">
-      <span class="footer__name">Ahmet</span>
+      <a routerLink="/" fragment="header" class="footer__logo logo">
+        <span class="footer__logo-main logo-main">Ahme</span
+        ><span class="footer__logo-end logo-end">t</span>
+      </a>
       <div class="footer__legal-links">
         <a class="footer__legal-link" routerLink="/legal-notice">
           {{ text().legalNotice }}
