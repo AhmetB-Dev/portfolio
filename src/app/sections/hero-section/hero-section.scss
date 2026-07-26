@@ -58,7 +58,7 @@
     border-radius: 4px;
     background-color: #70e61c;
     color: white;
-    font-size: clamp(0.5rem, 1.4vw, 2.2rem);
+    font-size: clamp(0.6rem, 0.5rem + 1.1vw, 2.2rem);
     transition: transform 300ms ease;
 
     &:hover {
@@ -109,8 +109,7 @@
     align-items: center;
 
     img {
-      width: 30px;
-      aspect-ratio: 1.3 / 1;
+      width: clamp(21px, 2vw, 40px);
       transition: transform 300ms ease;
     }
 
