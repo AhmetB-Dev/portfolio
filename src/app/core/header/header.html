@@ -6,7 +6,7 @@
       ><span aria-hidden="true">me</span><span class="brand-logo__t" aria-hidden="true">t</span>
     </a>
     <button
-      class="header__menu-button mobile-menu-button"
+      class="header__menu-button"
       type="button"
       aria-controls="main-navigation"
       [attr.aria-expanded]="menuOpen()"
@@ -19,19 +19,17 @@
     <nav
       id="main-navigation"
       class="header__navigation"
-      [class.is-open]="menuOpen()"
-      [class.can-animate]="menuAnimation()"
       [class.header__navigation--open]="menuOpen()"
       [class.header__navigation--animating]="menuAnimation()"
     >
-      <div class="header__menu-content menu-content">
+      <div class="header__menu-content">
         <ul class="header__navigation-list">
           <li class="header__navigation-item">
             <a
               class="header__navigation-link"
               routerLink="/"
               fragment="about"
-              routerLinkActive="is-active header__navigation-link--active"
+              routerLinkActive="header__navigation-link--active"
               [routerLinkActiveOptions]="{
                 paths: 'exact',
                 queryParams: 'ignored',
@@ -49,7 +47,7 @@
               class="header__navigation-link"
               routerLink="/"
               fragment="skills"
-              routerLinkActive="is-active header__navigation-link--active"
+              routerLinkActive="header__navigation-link--active"
               [routerLinkActiveOptions]="{
                 paths: 'exact',
                 queryParams: 'ignored',
@@ -67,7 +65,7 @@
               class="header__navigation-link"
               routerLink="/"
               fragment="projects"
-              routerLinkActive="is-active header__navigation-link--active"
+              routerLinkActive="header__navigation-link--active"
               [routerLinkActiveOptions]="{
                 paths: 'exact',
                 queryParams: 'ignored',
@@ -80,12 +78,12 @@
             </a>
           </li>
 
-          <li class="header__navigation-item header__navigation-item--mobile-contact mobile-ct">
+          <li class="header__navigation-item header__navigation-item--mobile-contact">
             <a
               class="header__navigation-link"
               routerLink="/"
               fragment="contact"
-              routerLinkActive="is-active header__navigation-link--active"
+              routerLinkActive="header__navigation-link--active"
               [routerLinkActiveOptions]="{
                 paths: 'exact',
                 queryParams: 'ignored',
@@ -99,12 +97,11 @@
           </li>
         </ul>
 
-        <div class="header__language lang-container">
+        <div class="header__language">
           @for (l of lang.supported; track l.code; let last = $last) {
             <button
               class="header__language-button"
               type="button"
-              [class.is-active-lang]="lang.current() === l.code"
               [class.header__language-button--active]="lang.current() === l.code"
               (click)="lang.set(l.code)"
             >
@@ -112,7 +109,7 @@
             </button>
 
             @if (!last) {
-              <span class="header__language-separator lang-separator">/</span>
+              <span class="header__language-separator">/</span>
             }
           }
         </div>

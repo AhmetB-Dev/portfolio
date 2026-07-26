@@ -76,18 +76,6 @@
     padding-left: clamp(4rem, 24vw, 14rem);
   }
 
-  &__line-content {
-    display: flex;
-    align-items: center;
-  }
-
-  &__space-line {
-    width: 17%;
-    height: 6px;
-    background-color: #22c55e;
-    border-radius: 10px;
-  }
-
   &__social-content {
     position: relative;
     display: flex;

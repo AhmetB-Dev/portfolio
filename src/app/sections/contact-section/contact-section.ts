@@ -25,7 +25,6 @@ type MailResponse = {
   styleUrl: './contact-section.scss',
 })
 export class ContactSection {
-  private readonly fb = inject(NonNullableFormBuilder);
   private readonly http = inject(HttpClient);
 
   private readonly mailUrl = 'http://localhost:8000/send-mail.php';

@@ -1,7 +1,6 @@
 .footer {
   &__line {
     height: 3px;
-    border: #70e61d;
     background-color: #70e61c;
     width: 100%;
     position: absolute;
@@ -44,10 +43,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem 1.25rem;
-  }
-
-  &__name {
-    font-size: clamp(1.5rem, 2vw, 6rem);
   }
 
   &__legal-link {

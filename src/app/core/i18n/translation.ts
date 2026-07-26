@@ -72,6 +72,80 @@ export type TranslationModel = {
     };
   };
 
+  legalNoticePage: {
+    title: string;
+    backLabel: string;
+
+    imprint: {
+      title: string;
+      studentNames: string;
+      address: string;
+      postcodeCity: string;
+      contactTitle: string;
+      emailLabel: string;
+    };
+
+    acceptance: {
+      title: string;
+      firstBeforeProduct: string;
+      firstAfterProduct: string;
+      second: string;
+    };
+
+    scope: {
+      title: string;
+      firstAfterProduct: string;
+      firstAfterAcademy: string;
+      second: string;
+      thirdBeforeProduct: string;
+      thirdBetweenProductAndAcademy: string;
+      thirdAfterAcademy: string;
+    };
+
+    proprietaryRights: {
+      title: string;
+      beforeAcademy: string;
+      betweenAcademyAndProduct: string;
+      afterProduct: string;
+    };
+
+    use: {
+      title: string;
+      firstAfterProduct: string;
+      secondBeforeProduct: string;
+      secondAfterProduct: string;
+      thirdBeforeProduct: string;
+    };
+
+    disclaimer: {
+      title: string;
+      firstAfterProduct: string;
+      secondBeforeAcademy: string;
+      secondAfterAcademy: string;
+      thirdBeforeProduct: string;
+    };
+
+    indemnity: {
+      title: string;
+      beforeAcademy: string;
+      betweenAcademyAndProduct: string;
+      afterProduct: string;
+      contactBeforeEmail: string;
+      contactEmail: string;
+      dateLabel: string;
+      date: string;
+    };
+  };
+
+  privacyPolicyPage: {
+    title: string;
+    backLabel: string;
+    firstSectionTitle: string;
+    firstParagraph: string;
+    secondSectionTitle: string;
+    secondParagraph: string;
+  };
+
   footer: {
     legalNotice: string;
     privacyPolicy: string;
@@ -163,6 +237,101 @@ export const translations: Record<LangCode, TranslationModel> = {
       },
     },
 
+    legalNoticePage: {
+      title: 'Impressum',
+      backLabel: 'Zurück zur Startseite',
+
+      imprint: {
+        title: 'Impressum',
+        studentNames: '[Liste der Namen]',
+        address: '[Adresse des Portfolio-Betreibers]',
+        postcodeCity: '[Postleitzahl und Ort]',
+        contactTitle: 'Das Board erkunden',
+        emailLabel: 'E-Mail',
+      },
+
+      acceptance: {
+        title: 'Annahme der Bedingungen',
+        firstBeforeProduct: 'Durch den Zugriff auf und die Nutzung von',
+        firstAfterProduct:
+          '(Produkt) erkennen Sie die folgenden Bedingungen sowie alle Richtlinien, Leitlinien oder Änderungen an, die Ihnen von Zeit zu Zeit vorgelegt werden können, und stimmen ihnen zu.',
+        second:
+          'Wir, die aufgeführten Studierenden, können die Bedingungen von Zeit zu Zeit ohne vorherige Ankündigung aktualisieren oder ändern.',
+      },
+
+      scope: {
+        title: 'Umfang und Eigentum am Produkt',
+        firstAfterProduct:
+          'wurde im Rahmen eines studentischen Gruppenprojekts in einem Webentwicklungs-Bootcamp bei der',
+        firstAfterAcademy:
+          ' entwickelt. Es dient Bildungszwecken und ist nicht für eine umfangreiche private oder geschäftliche Nutzung vorgesehen.',
+        second:
+          'Daher können wir keine durchgängige Verfügbarkeit, Zuverlässigkeit, Richtigkeit oder andere Qualitätsmerkmale dieses Produkts garantieren.',
+        thirdBeforeProduct: 'Das Design von',
+        thirdBetweenProductAndAcademy: 'ist Eigentum der',
+        thirdAfterAcademy:
+          '. Die unbefugte Nutzung, Vervielfältigung, Änderung, Verbreitung oder Nachbildung des Designs ist strengstens untersagt.',
+      },
+
+      proprietaryRights: {
+        title: 'Eigentumsrechte',
+        beforeAcademy: 'Abgesehen von dem Design im Eigentum der',
+        betweenAcademyAndProduct:
+          ' behalten wir, die aufgeführten Studierenden, sämtliche Eigentumsrechte an',
+        afterProduct:
+          ', einschließlich aller damit verbundenen urheberrechtlich geschützten Materialien, Marken und sonstigen geschützten Informationen.',
+      },
+
+      use: {
+        title: 'Nutzung des Produkts',
+        firstAfterProduct:
+          'darf ausschließlich für rechtmäßige Zwecke und in Übereinstimmung mit allen geltenden Gesetzen und Vorschriften verwendet werden.',
+        secondBeforeProduct: 'Jede Nutzung von',
+        secondAfterProduct:
+          'für rechtswidrige Aktivitäten oder um eine andere Person zu belästigen, zu schädigen, zu bedrohen oder einzuschüchtern, ist strengstens untersagt.',
+        thirdBeforeProduct:
+          'Sie sind allein für Ihre Interaktionen mit anderen Nutzern von',
+      },
+
+      disclaimer: {
+        title: 'Gewährleistungsausschluss und Haftungsbeschränkung',
+        firstAfterProduct:
+          'wird „wie besehen“ ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt. Dies schließt insbesondere stillschweigende Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten ein.',
+        secondBeforeAcademy:
+          'In keinem Fall haften wir, die aufgeführten Studierenden oder die',
+        secondAfterAcademy:
+          ', für unmittelbare, mittelbare, zufällige, besondere, Folge- oder exemplarische Schäden. Dies schließt insbesondere Schäden durch entgangenen Gewinn, Verlust von Ansehen, Nutzung, Daten oder andere immaterielle Verluste ein.',
+        thirdBeforeProduct:
+          'Dies gilt selbst dann, wenn wir auf die Möglichkeit solcher Schäden hingewiesen wurden, die aus der Nutzung oder Leistung von',
+      },
+
+      indemnity: {
+        title: 'Freistellung',
+        beforeAcademy:
+          'Sie erklären sich damit einverstanden, uns, die aufgeführten Studierenden, die',
+        betweenAcademyAndProduct:
+          ' sowie unsere verbundenen Unternehmen, Partner, Führungskräfte, Direktoren, Vertreter und Beschäftigten von allen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen einschließlich angemessener Rechtskosten freizustellen, zu verteidigen und schadlos zu halten, die aus Ihrer Nutzung von',
+        afterProduct:
+          'und/oder Ihrem Verstoß gegen dieses Impressum entstehen oder damit zusammenhängen.',
+        contactBeforeEmail:
+          'Bei Fragen oder Mitteilungen kontaktieren Sie uns bitte unter',
+        contactEmail: '[Kontakt-E-Mail]',
+        dateLabel: 'Datum',
+        date: '26. Juli 2025',
+      },
+    },
+
+    privacyPolicyPage: {
+      title: 'Datenschutzerklärung',
+      backLabel: 'Zurück zur Startseite',
+      firstSectionTitle: 'Untertitel',
+      firstParagraph:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, tempora. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      secondSectionTitle: 'Untertitel',
+      secondParagraph:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, tempora. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    },
+
     footer: {
       legalNotice: 'Impressum',
       privacyPolicy: 'Datenschutzerklärung',
@@ -251,6 +420,100 @@ export const translations: Record<LangCode, TranslationModel> = {
         privacyRequired: 'Please accept the privacy policy.',
         messageMaxLength: 'Your message must not be longer than 5000 characters.',
       },
+    },
+
+    legalNoticePage: {
+      title: 'Legal notice',
+      backLabel: 'Back to homepage',
+
+      imprint: {
+        title: 'Imprint',
+        studentNames: '[Student Names List]',
+        address: '[Address of the Portfolio operator]',
+        postcodeCity: '[Postcode and city]',
+        contactTitle: 'Exploring the Board',
+        emailLabel: 'Email',
+      },
+
+      acceptance: {
+        title: 'Acceptance of terms',
+        firstBeforeProduct: 'By accessing and using',
+        firstAfterProduct:
+          '(Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time.',
+        second:
+          'We, the listed students, may update or change the terms and conditions from time to time without notice.',
+      },
+
+      scope: {
+        title: 'Scope and ownership of the product',
+        firstAfterProduct:
+          'has been developed as part of a student group project in a web development bootcamp at the',
+        firstAfterAcademy:
+          '. It has an educational purpose and is not intended for extensive personal and business usage.',
+        second:
+          'As such, we cannot guarantee consistent availability, reliability, accuracy, or any other aspect of quality regarding this Product.',
+        thirdBeforeProduct: 'The design of',
+        thirdBetweenProductAndAcademy: 'is owned by the',
+        thirdAfterAcademy:
+          '. Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.',
+      },
+
+      proprietaryRights: {
+        title: 'Proprietary rights',
+        beforeAcademy: 'Aside from the design owned by',
+        betweenAcademyAndProduct:
+          ', we, the listed students, retain all proprietary rights in',
+        afterProduct:
+          ', including any associated copyrighted material, trademarks, and other proprietary information.',
+      },
+
+      use: {
+        title: 'Use of the product',
+        firstAfterProduct:
+          'is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations.',
+        secondBeforeProduct: 'Any use of',
+        secondAfterProduct:
+          'for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited.',
+        thirdBeforeProduct:
+          'You are solely responsible for your interactions with other users of',
+      },
+
+      disclaimer: {
+        title: 'Disclaimer of warranties and limitation of liability',
+        firstAfterProduct:
+          'is provided "as is" without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.',
+        secondBeforeAcademy:
+          'In no event will we, the listed students, or the',
+        secondAfterAcademy:
+          ', be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses.',
+        thirdBeforeProduct:
+          'This applies even if we have been advised of the possibility of such damages arising out of or in connection with the use or performance of',
+      },
+
+      indemnity: {
+        title: 'Indemnity',
+        beforeAcademy:
+          'You agree to indemnify, defend, and hold harmless us, the listed students, the',
+        betweenAcademyAndProduct:
+          ', and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability, including reasonable legal fees, arising out of or relating to your use of',
+        afterProduct: 'and/or your breach of this Legal Notice.',
+        contactBeforeEmail:
+          'For any questions or notices, please contact us at',
+        contactEmail: '[Contact Email]',
+        dateLabel: 'Date',
+        date: 'July 26, 2025',
+      },
+    },
+
+    privacyPolicyPage: {
+      title: 'Privacy policy',
+      backLabel: 'Back to homepage',
+      firstSectionTitle: 'Subtitle',
+      firstParagraph:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, tempora. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      secondSectionTitle: 'Subtitle',
+      secondParagraph:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, tempora. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     },
 
     footer: {

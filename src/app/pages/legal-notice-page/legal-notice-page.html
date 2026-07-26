@@ -1,8 +1,8 @@
 <main class="legal-page page-width">
   <article class="legal-page__container">
-    <header class="legal-page__header">
+    <header>
       <div class="legal-page__back">
-        <a routerLink="/" aria-label="Back to homepage">
+        <a routerLink="/" [attr.aria-label]="text().backLabel">
           <img class="legal-page__back-link" src="assets/shared/back_button.svg" alt=""
         /></a>
       </div>
@@ -11,153 +11,143 @@
         <span class="legal-page__title-line-left" aria-hidden="true"></span>
 
         <span class="legal-page__title-text">
-          {{ title() }}
+          {{ text().title }}
         </span>
       </h1>
     </header>
 
     <section class="legal-page__section">
-      <h2 class="legal-page__section-title legal-page__section-title--imprint">Imprint</h2>
+      <h2 class="legal-page__section-title">{{ text().imprint.title }}</h2>
 
-      <ul class="legal-page__list">
-        <li>[Student Names List]</li>
-        <li>[Address of the Portfolio operator]</li>
-        <li>[Postcode and city]</li>
+      <ul>
+        <li>{{ text().imprint.studentNames }}</li>
+        <li>{{ text().imprint.address }}</li>
+        <li>{{ text().imprint.postcodeCity }}</li>
       </ul>
 
-      <div class="legal-page__contact">
-        <h3 class="legal-page__contact-title legal-page__section-title">Exploring the Board</h3>
+      <div>
+        <h3 class="legal-page__section-title">{{ text().imprint.contactTitle }}</h3>
 
-        <p class="legal-page__contact-text">
-          Email:
-          <a class="legal-page__link" href="mailto:example@example.com"> example@example.com </a>
+        <p>
+          {{ text().imprint.emailLabel }}:
+          <a href="mailto:example@example.com"> example@example.com </a>
         </p>
       </div>
     </section>
 
     <section class="legal-page__section">
-      <h2 class="legal-page__section-title">Acceptance of terms</h2>
+      <h2 class="legal-page__section-title">{{ text().acceptance.title }}</h2>
 
       <p>
-        By accessing and using
+        {{ text().acceptance.firstBeforeProduct }}
         <span class="legal-page__highlight">Portfolio</span>
-        (Product), you acknowledge and agree to the following terms and conditions, and any
-        policies, guidelines, or amendments thereto that may be presented to you from time to time.
+        {{ text().acceptance.firstAfterProduct }}
       </p>
 
       <p>
-        We, the listed students, may update or change the terms and conditions from time to time
-        without notice.
+        {{ text().acceptance.second }}
       </p>
     </section>
 
     <section class="legal-page__section">
-      <h2 class="legal-page__section-title">Scope and ownership of the product</h2>
+      <h2 class="legal-page__section-title">{{ text().scope.title }}</h2>
 
       <p>
         <span class="legal-page__highlight">Portfolio</span>
-        has been developed as part of a student group project in a web development bootcamp at the
-        <span class="legal-page__highlight">Developer Akademie GmbH</span>. It has an educational
-        purpose and is not intended for extensive personal and business usage.
+        {{ text().scope.firstAfterProduct }}
+        <span class="legal-page__highlight">Developer Akademie GmbH</span
+        >{{ text().scope.firstAfterAcademy }}
       </p>
 
       <p>
-        As such, we cannot guarantee consistent availability, reliability, accuracy, or any other
-        aspect of quality regarding this Product.
+        {{ text().scope.second }}
       </p>
 
       <p>
-        The design of
+        {{ text().scope.thirdBeforeProduct }}
         <span class="legal-page__highlight">Portfolio</span>
-        is owned by the
-        <span class="legal-page__highlight">Developer Akademie GmbH</span>. Unauthorized use,
-        reproduction, modification, distribution, or replication of the design is strictly
-        prohibited.
+        {{ text().scope.thirdBetweenProductAndAcademy }}
+        <span class="legal-page__highlight">Developer Akademie GmbH</span
+        >{{ text().scope.thirdAfterAcademy }}
       </p>
     </section>
 
     <section class="legal-page__section">
-      <h2 class="legal-page__section-title">Proprietary rights</h2>
+      <h2 class="legal-page__section-title">{{ text().proprietaryRights.title }}</h2>
 
       <p>
-        Aside from the design owned by
-        <span class="legal-page__highlight">Developer Akademie GmbH</span>, we, the listed students,
-        retain all proprietary rights in <span class="legal-page__highlight">Portfolio</span>,
-        including any associated copyrighted material, trademarks, and other proprietary
-        information.
+        {{ text().proprietaryRights.beforeAcademy }}
+        <span class="legal-page__highlight">Developer Akademie GmbH</span
+        >{{ text().proprietaryRights.betweenAcademyAndProduct }}
+        <span class="legal-page__highlight">Portfolio</span
+        >{{ text().proprietaryRights.afterProduct }}
       </p>
     </section>
 
     <section class="legal-page__section">
-      <h2 class="legal-page__section-title">Use of the product</h2>
+      <h2 class="legal-page__section-title">{{ text().use.title }}</h2>
 
       <p>
         <span class="legal-page__highlight">Portfolio</span>
-        is intended to be used for lawful purposes only, in accordance with all applicable laws and
-        regulations.
+        {{ text().use.firstAfterProduct }}
       </p>
 
       <p>
-        Any use of
+        {{ text().use.secondBeforeProduct }}
         <span class="legal-page__highlight">Portfolio</span>
-        for illegal activities, or to harass, harm, threaten, or intimidate another person, is
-        strictly prohibited.
+        {{ text().use.secondAfterProduct }}
       </p>
 
       <p>
-        You are solely responsible for your interactions with other users of
+        {{ text().use.thirdBeforeProduct }}
         <span class="legal-page__highlight">Portfolio</span>.
       </p>
     </section>
 
     <section class="legal-page__section">
       <h2 class="legal-page__section-title">
-        Disclaimer of warranties and limitation of liability
+        {{ text().disclaimer.title }}
       </h2>
 
       <p>
         <span class="legal-page__highlight">Portfolio</span>
-        is provided "as is" without warranty of any kind, whether express or implied, including but
-        not limited to the implied warranties of merchantability, fitness for a particular purpose,
-        and non-infringement.
+        {{ text().disclaimer.firstAfterProduct }}
       </p>
 
       <p>
-        In no event will we, the listed students, or the
-        <span class="legal-page__highlight">Developer Akademie</span>, be liable for any direct,
-        indirect, incidental, special, consequential, or exemplary damages, including but not
-        limited to damages for loss of profits, goodwill, use, data, or other intangible losses.
+        {{ text().disclaimer.secondBeforeAcademy }}
+        <span class="legal-page__highlight">Developer Akademie</span
+        >{{ text().disclaimer.secondAfterAcademy }}
       </p>
 
       <p>
-        This applies even if we have been advised of the possibility of such damages arising out of
-        or in connection with the use or performance of
+        {{ text().disclaimer.thirdBeforeProduct }}
         <span class="legal-page__highlight">Portfolio</span>.
       </p>
     </section>
 
     <section class="legal-page__section">
-      <h2 class="legal-page__section-title">Indemnity</h2>
+      <h2 class="legal-page__section-title">{{ text().indemnity.title }}</h2>
 
       <p>
-        You agree to indemnify, defend, and hold harmless us, the listed students, the
-        <span class="legal-page__highlight">Developer Akademie</span>, and our affiliates, partners,
-        officers, directors, agents, and employees, from and against any claim, demand, loss,
-        damage, cost, or liability, including reasonable legal fees, arising out of or relating to
-        your use of
+        {{ text().indemnity.beforeAcademy }}
+        <span class="legal-page__highlight">Developer Akademie</span
+        >{{ text().indemnity.betweenAcademyAndProduct }}
         <span class="legal-page__highlight">Portfolio</span>
-        and/or your breach of this Legal Notice.
+        {{ text().indemnity.afterProduct }}
       </p>
 
       <br />
       <p>
-        For any questions or notices, please contact us at
-        <a href="mailto:[Contact Email]" class="legal-page__link">[Contact Email]</a>.
+        {{ text().indemnity.contactBeforeEmail }}
+        <a href="mailto:[Contact Email]">{{ text().indemnity.contactEmail }}</a>.
       </p>
 
       <br />
       <p>
-        <time datetime="2025-07-26">Date: July 26, 2025</time>
+        <time datetime="2025-07-26">
+          {{ text().indemnity.dateLabel }}: {{ text().indemnity.date }}
+        </time>
       </p>
     </section>
   </article>

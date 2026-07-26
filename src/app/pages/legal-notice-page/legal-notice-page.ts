@@ -10,5 +10,5 @@ import { RouterLink } from '@angular/router';
 })
 export class LegalNoticePage {
   private readonly lang = inject(Language);
-  readonly title = computed(() => this.lang.texts().footer.legalNotice);
+  readonly text = computed(() => this.lang.texts().legalNoticePage);
 }

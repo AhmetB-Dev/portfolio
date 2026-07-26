@@ -15,16 +15,16 @@
         </p>
       </div>
     </div>
-    <div class="projects__list-container descri-project">
-      <div class="projects__grid project-grid">
+    <div class="projects__list-container">
+      <div class="projects__grid">
         @for (project of projects(); track project.id) {
-          <div class="projects__card project-card">
-            <img class="projects__image project-image" [src]="project.src" [alt]="project.name" />
+          <div class="projects__card">
+            <img class="projects__image" [src]="project.src" [alt]="project.name" />
 
-            <div class="projects__overlay project-overlay">
-              <div class="projects__actions project-actions">
+            <div class="projects__overlay">
+              <div class="projects__actions">
                 <a
-                  class="projects__button projects__button--live live-btn"
+                  class="projects__button projects__button--live"
                   [href]="project.liveUrl"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -33,7 +33,7 @@
                 </a>
 
                 <a
-                  class="projects__button projects__button--github project-btn"
+                  class="projects__button projects__button--github"
                   [href]="project.githubUrl"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -42,9 +42,9 @@
                 </a>
               </div>
 
-              <div class="projects__details overlay-descr">
+              <div class="projects__details">
                 <h3 class="projects__name">{{ project.name }}</h3>
-                <p class="projects__description">{{ project.description }}</p>
+                <p>{{ project.description }}</p>
                 <span class="projects__technologies">{{ project.technologies }}</span>
               </div>
             </div>

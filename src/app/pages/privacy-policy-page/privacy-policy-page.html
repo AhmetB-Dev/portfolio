@@ -1,7 +1,7 @@
 <main class="privacy-page page-width">
-  <header class="privacy-page__header">
+  <header>
     <div class="privacy-page__back">
-      <a routerLink="/" aria-label="Back to homepage">
+      <a routerLink="/" [attr.aria-label]="text().backLabel">
         <img class="privacy-page__back-link" src="assets/shared/back_button.svg" alt="" />
       </a>
     </div>
@@ -10,27 +10,25 @@
       <span class="privacy-page__title-line-left" aria-hidden="true"></span>
 
       <span class="privacy-page__title-text">
-        {{ title() }}
+        {{ text().title }}
       </span>
     </h1>
   </header>
 
   <article class="privacy-page__container">
     <section class="privacy-page__section">
-      <h2 class="privacy-page__section-title">Subtitle</h2>
+      <h2 class="privacy-page__section-title">{{ text().firstSectionTitle }}</h2>
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, tempora. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit.
+        {{ text().firstParagraph }}
       </p>
     </section>
 
     <section class="privacy-page__section">
-      <h2 class="privacy-page__section-title">Subtitle</h2>
+      <h2 class="privacy-page__section-title">{{ text().secondSectionTitle }}</h2>
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, tempora. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit.
+        {{ text().secondParagraph }}
       </p>
     </section>
   </article>

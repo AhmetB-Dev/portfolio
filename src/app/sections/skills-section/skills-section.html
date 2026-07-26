@@ -1,4 +1,4 @@
-<section class="skills page-width" id="skills">
+<section class="skills page-width">
   <div class="skills__info">
     <div class="skills__heading">
       <div>
@@ -35,7 +35,7 @@
 
         <p class="skills__label">
           @for (line of skill.labelLines ?? [skill.name]; track line) {
-            <span class="skills__label-line">{{ line }}</span>
+            <span>{{ line }}</span>
           }
         </p>
       </div>

@@ -6,6 +6,7 @@ $checkbox-color: #70e61c;
 
   background-position: bottom right;
   background-size: 70% 55%;
+
   padding-top: 3rem;
   padding-bottom: 3rem;
 
@@ -68,16 +69,6 @@ $checkbox-color: #70e61c;
     display: flex;
     align-items: flex-start;
     gap: 2em;
-  }
-
-  &__description-line {
-    display: none;
-  }
-
-  &__form {
-    // display: flex;
-    // flex-direction: column;
-    // gap: 2em;
   }
 
   &__fields {
@@ -327,12 +318,6 @@ $checkbox-color: #70e61c;
       border-color: #e61c40;
       background-color: rgba(230, 28, 64, 0.08);
     }
-  }
-
-  &__status-text {
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.35;
   }
 
   &__success-icon {
