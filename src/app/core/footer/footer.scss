@@ -17,9 +17,7 @@
   }
 
   &__logo {
-    --logo-size: clamp(1.5rem, 2.5vw, 4rem);
-
-    z-index: 12;
+    font-size: var(--logo-size);
   }
 
   &__social-links {

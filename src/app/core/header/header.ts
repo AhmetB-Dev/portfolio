@@ -1,4 +1,5 @@
-import { Component, OnDestroy, computed, inject, signal } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, OnDestroy, computed, effect, inject, signal } from '@angular/core';
 import { RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 import { Language } from '../services/language';
 
@@ -11,6 +12,8 @@ import { Language } from '../services/language';
 export class Header implements OnDestroy {
   readonly lang = inject(Language);
   readonly text = computed(() => this.lang.texts().header);
+
+  private readonly document = inject(DOCUMENT);
 
   readonly menuOpen = signal(false);
   readonly menuIcon = signal('/assets/icon/header/menu-open.svg');
@@ -31,8 +34,16 @@ export class Header implements OnDestroy {
   private readonly frameDuration = 70;
   private animationTimeouts: number[] = [];
   private isAnimating = false;
+
   private readonly navTransitionDuration = 160;
   private menuTransitionTimeout?: number;
+
+  constructor() {
+    effect(() => {
+      this.document.body.classList.toggle('menu-open', this.menuOpen());
+    });
+  }
+
   private enableMenuTransitionTemporarily(): void {
     this.menuAnimation.set(true);
 
@@ -45,6 +56,7 @@ export class Header implements OnDestroy {
       this.menuTransitionTimeout = undefined;
     }, this.navTransitionDuration + 30);
   }
+
   toggleMobileMenu(): void {
     if (this.isAnimating) {
       return;
@@ -57,6 +69,7 @@ export class Header implements OnDestroy {
     this.menuOpen.set(shouldOpen);
     this.animateMenuIcon(shouldOpen);
   }
+
   closeMobileMenu(): void {
     if (!this.menuOpen()) {
       return;
@@ -94,7 +107,7 @@ export class Header implements OnDestroy {
   }
 
   private clearAnimationTimeouts(): void {
-    this.animationTimeouts.forEach((timeout) => clearTimeout(timeout));
+    this.animationTimeouts.forEach((timeout) => window.clearTimeout(timeout));
     this.animationTimeouts = [];
   }
 
@@ -104,5 +117,7 @@ export class Header implements OnDestroy {
     if (this.menuTransitionTimeout) {
       window.clearTimeout(this.menuTransitionTimeout);
     }
+
+    this.document.body.classList.remove('menu-open');
   }
 }

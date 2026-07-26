@@ -8,6 +8,9 @@
 html {
   scroll-behavior: smooth;
 }
+body.menu-open {
+  overflow: hidden;
+}
 
 body {
   margin: 0;
