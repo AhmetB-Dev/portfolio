@@ -1,6 +1,6 @@
 export type LangCode = 'de' | 'en';
 
-type ProjectId = 'join' | 'sharkie' | 'memory' | 'app' | 'pollApp';
+type ProjectId = 'join' | 'pollApp' | 'sharkie';
 
 export type TranslationModel = {
   header: {
@@ -125,24 +125,14 @@ export const translations: Record<LangCode, TranslationModel> = {
             'Ein Kanban-Task-Management-Tool zum Erstellen, Organisieren und Verwalten von Aufgaben im Team.',
         },
 
-        sharkie: {
-          description:
-            'Ein 2D-Jump-and-Run-Spiel mit einer Unterwasserwelt, Gegnern und sammelbaren Objekten.',
-        },
-
-        memory: {
-          description:
-            'Ein klassisches Memory-Spiel, bei dem passende Kartenpaare gefunden werden müssen.',
-        },
-
-        app: {
-          description:
-            'Eine Produktivitäts-App, die Nutzer dabei unterstützt, Aufgaben zu verwalten und organisiert zu bleiben.',
-        },
-
         pollApp: {
           description:
             'Eine Umfrage-App zum Erstellen, Teilen und Auswerten von Abstimmungen und Nutzerfeedback.',
+        },
+
+        sharkie: {
+          description:
+            'Ein 2D-Jump-and-Run-Spiel mit einer Unterwasserwelt, Gegnern und sammelbaren Objekten.',
         },
       },
     },
@@ -225,22 +215,14 @@ export const translations: Record<LangCode, TranslationModel> = {
             'A Kanban task management tool for creating, organizing, and managing tasks in a team.',
         },
 
-        sharkie: {
-          description:
-            'A 2D platformer game featuring an underwater world, enemies, and collectible items.',
-        },
-
-        memory: {
-          description: 'A classic memory game where players flip cards to find matching pairs.',
-        },
-
-        app: {
-          description: 'A productivity app that helps users manage their tasks and stay organized.',
-        },
-
         pollApp: {
           description:
             'A polling app for creating, sharing, and evaluating polls and user feedback.',
+        },
+
+        sharkie: {
+          description:
+            'A 2D platformer game featuring an underwater world, enemies, and collectible items.',
         },
       },
     },

@@ -1,7 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { Language } from '../../core/services/language';
 
-type ProjectId = 'join' | 'sharkie' | 'memory' | 'app' | 'pollApp';
+type ProjectId = 'join' | 'sharkie' | 'pollApp';
 
 type ProjectBase = {
   id: ProjectId;
@@ -33,7 +33,15 @@ export class ProjectsSection {
       technologies: 'HTML | CSS | JavaScript | Firebase',
       src: 'assets/img/portfolio/join_cover.webp',
       liveUrl: 'https://example.com/join',
-      githubUrl: 'https://github.com/example/join',
+      githubUrl: 'https://github.com/AhmetB-Dev/Join',
+    },
+    {
+      id: 'pollApp',
+      name: 'PollApp',
+      technologies: 'Angular | TypeScript | SCSS | Supabase',
+      src: 'assets/img/portfolio/pollApp_cover.webp',
+      liveUrl: 'https://example.com/app',
+      githubUrl: 'https://github.com/AhmetB-Dev/poll-app',
     },
     {
       id: 'sharkie',
@@ -41,31 +49,7 @@ export class ProjectsSection {
       technologies: 'HTML | CSS | JavaScript',
       src: 'assets/img/portfolio/sharkie_cover.webp',
       liveUrl: 'https://example.com/sharkie',
-      githubUrl: 'https://github.com/example/sharkie',
-    },
-    {
-      id: 'memory',
-      name: 'Memory',
-      technologies: 'Angular | TypeScript | SCSS | Firebase',
-      src: 'assets/img/portfolio/sharkie_cover.webp',
-      liveUrl: 'https://example.com/memory',
-      githubUrl: 'https://github.com/example/memory',
-    },
-    {
-      id: 'app',
-      name: 'App',
-      technologies: 'Angular | TypeScript | SCSS | Firebase',
-      src: 'assets/img/portfolio/sharkie_cover.webp',
-      liveUrl: 'https://example.com/app',
-      githubUrl: 'https://github.com/example/app',
-    },
-    {
-      id: 'pollApp',
-      name: 'PollApp',
-      technologies: 'Angular | TypeScript | SCSS | Supabase',
-      src: 'assets/img/portfolio/sharkie_cover.webp',
-      liveUrl: 'https://example.com/app',
-      githubUrl: 'https://github.com/example/app',
+      githubUrl: 'https://github.com/AhmetB-Dev/Sharkie',
     },
   ];
 

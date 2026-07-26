@@ -29,8 +29,7 @@
     padding-inline-start: 1rem;
 
     color: #70e61c;
-    font-size: clamp(1.75rem, 8vw, 2.2rem);
-
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
     &::after {
       content: '';
 
@@ -63,6 +62,17 @@
   &__container {
     padding: 1rem 1rem 0;
   }
+
+  &__section-title {
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
+    color: rgba(151, 71, 255, 1);
+  }
+
+  &__section {
+    p {
+      font-size: var(--fs-text);
+    }
+  }
 }
 
 @media (min-width: 960px) {
@@ -72,7 +82,7 @@
     }
 
     &__container {
-      padding: 2rem 4rem 0;
+      padding: 0rem 4rem 0;
     }
 
     &__title {

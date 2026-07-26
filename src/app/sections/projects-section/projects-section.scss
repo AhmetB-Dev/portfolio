@@ -79,7 +79,7 @@
     }
 
     &:hover .projects__image {
-      transform: translateY(-50px) scale(1.5);
+      transform: translateY(-50px) scale(1.6);
     }
   }
 
@@ -92,16 +92,16 @@
   }
 
   &__overlay {
-    position: absolute;
-    inset: 0;
     display: flex;
-    background-color: rgba(17, 18, 20, 0.6588235294);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    gap: clamp(2rem, 1rem + 2vw, 4rem);
     flex-direction: column;
     justify-content: flex-end;
+    gap: clamp(2rem, 1rem + 2vw, 4rem);
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background-color: rgb(17 18 20 / 70%);
 
     p {
       margin: 0;

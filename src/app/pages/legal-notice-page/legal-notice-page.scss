@@ -23,7 +23,7 @@
     column-gap: 0.75rem;
 
     color: rgba(112, 230, 28, 1);
-    font-size: clamp(1.75rem, 8vw, 2.2rem);
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
 
     &::after {
       content: '';
@@ -86,7 +86,7 @@
         minmax(0, 1fr);
 
       column-gap: clamp(0.75rem, 2vw, 2rem);
-      font-size: clamp(2.2rem, 0.9rem + 3vw, 5.5rem);
+      font-size: clamp(2.2rem, 0.9rem + 3vw, 5rem);
 
       &::after {
         grid-column: 3;
