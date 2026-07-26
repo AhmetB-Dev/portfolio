@@ -40,5 +40,58 @@
         </p>
       </div>
     }
+
+    <div class="skills__item skills__item--learning">
+      <button
+        class="skills__learning-trigger"
+        type="button"
+        aria-describedby="continually-learning-details"
+      >
+        <span class="skills__learning-icon" aria-hidden="true">
+          <img
+            class="skills__learning-icon-image skills__learning-icon-image--blue"
+            src="assets/icon/skills/continually-learningBlue.svg"
+            alt=""
+          />
+          <img
+            class="skills__learning-icon-image skills__learning-icon-image--violet"
+            src="assets/icon/skills/continually-learningViolet.svg"
+            alt=""
+          />
+          <img
+            class="skills__learning-icon-image skills__learning-icon-image--white"
+            src="assets/icon/skills/continually-learning.svg"
+            alt=""
+          />
+        </span>
+
+        <span class="skills__label skills__label--learning">
+          <span>Continually</span>
+          <span>learning</span>
+        </span>
+
+        <span
+          class="skills__learning-popover"
+          id="continually-learning-details"
+          role="tooltip"
+        >
+          <span class="skills__learning-message">
+            {{ text().learningInterest }}
+          </span>
+
+          <span class="skills__learning-technologies">
+            <span class="skills__learning-technology">
+              <img src="assets/icon/skills/react.svg" alt="" loading="lazy" />
+              <span>React</span>
+            </span>
+
+            <span class="skills__learning-technology">
+              <img src="assets/icon/skills/vueJs.svg" alt="" loading="lazy" />
+              <span>Vue.js</span>
+            </span>
+          </span>
+        </span>
+      </button>
+    </div>
   </div>
 </section>

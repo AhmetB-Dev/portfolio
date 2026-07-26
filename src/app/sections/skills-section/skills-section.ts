@@ -30,10 +30,5 @@ export class SkillsSection {
       name: 'Material Design',
       labelLines: ['Material', 'Design'],
     },
-    {
-      src: 'assets/icon/skills/continually-learningBlue.svg',
-      name: 'Continually learning',
-      labelLines: ['Continually', 'learning'],
-    },
   ];
 }

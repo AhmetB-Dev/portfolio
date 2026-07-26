@@ -30,6 +30,7 @@ export type TranslationModel = {
     lead: string;
     otherSkillTitle: string;
     otherSkillText: string;
+    learningInterest: string;
     cta: string;
   };
 
@@ -184,6 +185,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       otherSkillTitle: 'Du suchst noch einen anderen Skill?',
       otherSkillText:
         'Ich lerne schnell und erweitere meinen Stack gerne – besonders, wenn es hilft, bessere Produkte zu bauen.',
+      learningInterest: 'Ich interessiere mich besonders dafür, Folgendes zu lernen:',
       cta: 'Kontakt aufnehmen',
     },
 
@@ -289,16 +291,14 @@ export const translations: Record<LangCode, TranslationModel> = {
         secondBeforeProduct: 'Jede Nutzung von',
         secondAfterProduct:
           'für rechtswidrige Aktivitäten oder um eine andere Person zu belästigen, zu schädigen, zu bedrohen oder einzuschüchtern, ist strengstens untersagt.',
-        thirdBeforeProduct:
-          'Sie sind allein für Ihre Interaktionen mit anderen Nutzern von',
+        thirdBeforeProduct: 'Sie sind allein für Ihre Interaktionen mit anderen Nutzern von',
       },
 
       disclaimer: {
         title: 'Gewährleistungsausschluss und Haftungsbeschränkung',
         firstAfterProduct:
           'wird „wie besehen“ ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt. Dies schließt insbesondere stillschweigende Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten ein.',
-        secondBeforeAcademy:
-          'In keinem Fall haften wir, die aufgeführten Studierenden oder die',
+        secondBeforeAcademy: 'In keinem Fall haften wir, die aufgeführten Studierenden oder die',
         secondAfterAcademy:
           ', für unmittelbare, mittelbare, zufällige, besondere, Folge- oder exemplarische Schäden. Dies schließt insbesondere Schäden durch entgangenen Gewinn, Verlust von Ansehen, Nutzung, Daten oder andere immaterielle Verluste ein.',
         thirdBeforeProduct:
@@ -313,8 +313,7 @@ export const translations: Record<LangCode, TranslationModel> = {
           ' sowie unsere verbundenen Unternehmen, Partner, Führungskräfte, Direktoren, Vertreter und Beschäftigten von allen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen einschließlich angemessener Rechtskosten freizustellen, zu verteidigen und schadlos zu halten, die aus Ihrer Nutzung von',
         afterProduct:
           'und/oder Ihrem Verstoß gegen dieses Impressum entstehen oder damit zusammenhängen.',
-        contactBeforeEmail:
-          'Bei Fragen oder Mitteilungen kontaktieren Sie uns bitte unter',
+        contactBeforeEmail: 'Bei Fragen oder Mitteilungen kontaktieren Sie uns bitte unter',
         contactEmail: '[Kontakt-E-Mail]',
         dateLabel: 'Datum',
         date: '26. Juli 2025',
@@ -369,6 +368,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       otherSkillTitle: 'Looking for another skill?',
       otherSkillText:
         'I learn fast and enjoy expanding my stack – especially when it helps build better products.',
+      learningInterest: 'I have a special interest in learning',
       cta: 'Get in touch',
     },
 
@@ -461,8 +461,7 @@ export const translations: Record<LangCode, TranslationModel> = {
       proprietaryRights: {
         title: 'Proprietary rights',
         beforeAcademy: 'Aside from the design owned by',
-        betweenAcademyAndProduct:
-          ', we, the listed students, retain all proprietary rights in',
+        betweenAcademyAndProduct: ', we, the listed students, retain all proprietary rights in',
         afterProduct:
           ', including any associated copyrighted material, trademarks, and other proprietary information.',
       },
@@ -474,16 +473,14 @@ export const translations: Record<LangCode, TranslationModel> = {
         secondBeforeProduct: 'Any use of',
         secondAfterProduct:
           'for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited.',
-        thirdBeforeProduct:
-          'You are solely responsible for your interactions with other users of',
+        thirdBeforeProduct: 'You are solely responsible for your interactions with other users of',
       },
 
       disclaimer: {
         title: 'Disclaimer of warranties and limitation of liability',
         firstAfterProduct:
           'is provided "as is" without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.',
-        secondBeforeAcademy:
-          'In no event will we, the listed students, or the',
+        secondBeforeAcademy: 'In no event will we, the listed students, or the',
         secondAfterAcademy:
           ', be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses.',
         thirdBeforeProduct:
@@ -497,8 +494,7 @@ export const translations: Record<LangCode, TranslationModel> = {
         betweenAcademyAndProduct:
           ', and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability, including reasonable legal fees, arising out of or relating to your use of',
         afterProduct: 'and/or your breach of this Legal Notice.',
-        contactBeforeEmail:
-          'For any questions or notices, please contact us at',
+        contactBeforeEmail: 'For any questions or notices, please contact us at',
         contactEmail: '[Contact Email]',
         dateLabel: 'Date',
         date: 'July 26, 2025',
