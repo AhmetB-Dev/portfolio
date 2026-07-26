@@ -72,8 +72,9 @@
 
 @media (min-width: 961px) {
   .about {
+    display: flex;
+    gap: clamp(0rem, 0rem + 0.5vw, 1rem);
     flex-direction: row;
-
     background-image: url('/assets/img/about/bg.webp');
     background-repeat: no-repeat;
     background-position: 0 120%;
@@ -96,17 +97,20 @@
 
     &__image-stack {
       background-position:
-        right center,
-        left center;
+        0rem center,
+        12rem center;
       background-size:
-        25rem 40rem,
-        30rem 40rem;
+        20rem 30rem,
+        22rem 30rem;
     }
 
     &__portrait {
-      bottom: 1em;
-      height: 58rem;
-      object-fit: fill;
+      height: 44rem;
+      width: 33rem;
+      object-fit: cover;
+      position: relative;
+      z-index: -1;
+      top: clamp(0.1rem, calc(2rem - 2vw), 1rem);
     }
   }
 }
