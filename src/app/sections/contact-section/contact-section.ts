@@ -1,8 +1,8 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, HostListener, computed, inject } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { Language } from '../../core/services/language';
 import { HttpClient } from '@angular/common/http';
+import { Language } from '../../core/services/language';
 
 type ContactField = 'name' | 'email' | 'message' | 'privacy';
 
@@ -26,12 +26,13 @@ type MailResponse = {
 })
 export class ContactSection {
   private readonly http = inject(HttpClient);
+  private readonly formBuilder = inject(NonNullableFormBuilder);
 
   private readonly mailUrl = 'http://localhost:8000/send-mail.php';
+  readonly contactEmail = 'ahmet_ba@web.de';
+
   readonly lang = inject(Language);
   readonly text = computed(() => this.lang.texts().contact);
-
-  private readonly formBuilder = inject(NonNullableFormBuilder);
 
   submitted = false;
   successMessage = false;
@@ -47,17 +48,26 @@ export class ContactSection {
 
   onSubmit(): void {
     this.submitted = true;
-    this.successMessage = false;
-    this.sendErrorMessage = '';
+    this.closeStatus();
     this.contactForm.markAllAsTouched();
 
     if (this.contactForm.invalid || this.isSending) {
       return;
     }
 
-    const payload = this.createContactPayload();
+    this.sendContactMail(this.createContactPayload());
+  }
 
-    this.sendContactMail(payload);
+  closeStatus(): void {
+    this.successMessage = false;
+    this.sendErrorMessage = '';
+  }
+
+  @HostListener('document:keydown.escape')
+  closeStatusWithEscape(): void {
+    if (this.successMessage || this.sendErrorMessage) {
+      this.closeStatus();
+    }
   }
 
   private createContactPayload(): ContactPayload {
@@ -73,14 +83,15 @@ export class ContactSection {
 
   private sendContactMail(payload: ContactPayload): void {
     this.isSending = true;
-    this.sendErrorMessage = '';
+    this.closeStatus();
 
     this.http.post<MailResponse>(this.mailUrl, payload).subscribe({
       next: (response) => {
         this.isSending = false;
 
         if (!response.success) {
-          this.sendErrorMessage = response.error ?? 'Mail delivery failed.';
+          this.sendErrorMessage = this.text().sendErrorMessage;
+          console.error('Mail delivery failed:', response.error);
           return;
         }
 
@@ -91,8 +102,7 @@ export class ContactSection {
 
       error: (error) => {
         this.isSending = false;
-        this.sendErrorMessage =
-          'Die Nachricht konnte nicht gesendet werden. Bitte versuche es später erneut.';
+        this.sendErrorMessage = this.text().sendErrorMessage;
         console.error('Mail request failed:', error);
       },
     });
@@ -110,6 +120,14 @@ export class ContactSection {
 
   successText(): string {
     return this.text().successMessage;
+  }
+
+  manualMailUrl(): string {
+    const subject = this.lang.current() === 'de'
+      ? 'Kontaktanfrage über das Portfolio'
+      : 'Portfolio contact request';
+
+    return `mailto:${this.contactEmail}?subject=${encodeURIComponent(subject)}`;
   }
 
   errorMessage(field: ContactField): string {

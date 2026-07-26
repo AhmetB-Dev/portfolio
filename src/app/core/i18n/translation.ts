@@ -58,8 +58,18 @@ export type TranslationModel = {
     privacyLink: string;
     privacySuffix: string;
     button: string;
+    sendingButton: string;
     goUpLabel: string;
+    successLabel: string;
+    successTitle: string;
     successMessage: string;
+    errorLabel: string;
+    errorTitle: string;
+    sendErrorMessage: string;
+    manualSendText: string;
+    manualSendButton: string;
+    closeStatusLabel: string;
+    closeStatusButton: string;
 
     errors: {
       nameRequired: string;
@@ -215,27 +225,37 @@ export const translations: Record<LangCode, TranslationModel> = {
 
     contact: {
       title: 'Kontakt',
-      headline: 'Hast du ein Problem zu lösen?',
-      text: 'Du suchst Unterstützung bei der Entwicklung einer modernen Webanwendung oder möchtest dich über ein gemeinsames Projekt austauschen? Schreib mir gerne eine Nachricht.',
-      namePlaceholder: 'Dein Name',
-      emailPlaceholder: 'Deine E-Mail',
-      messagePlaceholder: 'Deine Nachricht',
+      headline: 'Haben Sie ein Projekt im Kopf?',
+      text: 'Sie suchen Unterstützung bei der Entwicklung einer modernen Webanwendung oder möchten sich über ein gemeinsames Projekt austauschen? Senden Sie mir gerne eine Nachricht.',
+      namePlaceholder: 'Ihr Name',
+      emailPlaceholder: 'Ihre E-Mail-Adresse',
+      messagePlaceholder: 'Ihre Nachricht',
       privacyPrefix: 'Ich habe die',
       privacyLink: 'Datenschutzerklärung',
       privacySuffix: 'gelesen und stimme zu.',
       button: 'Nachricht senden :)',
+      sendingButton: 'Wird gesendet ...',
       goUpLabel: 'Nach oben',
-      successMessage: 'Danke! Deine Nachricht wurde erfolgreich gesendet.',
+      successLabel: 'Nachricht gesendet',
+      successTitle: 'Vielen Dank!',
+      successMessage: 'Vielen Dank! Ich melde mich so bald wie möglich bei Ihnen.',
+      errorLabel: 'Nachricht konnte nicht gesendet werden',
+      errorTitle: 'Das hat leider nicht funktioniert',
+      sendErrorMessage: 'Bitte versuchen Sie es später erneut.',
+      manualSendText: 'Alternativ können Sie Ihre Nachricht direkt per E-Mail senden:',
+      manualSendButton: 'E-Mail an ahmet_ba@web.de senden',
+      closeStatusLabel: 'Statusmeldung schließen',
+      closeStatusButton: 'Schließen',
 
       errors: {
-        nameRequired: 'Bitte gib deinen Namen ein.',
-        nameMinLength: 'Dein Name sollte mindestens 2 Zeichen haben.',
-        emailRequired: 'Bitte gib deine E-Mail-Adresse ein.',
-        emailInvalid: 'Bitte gib eine gültige E-Mail-Adresse ein.',
-        messageRequired: 'Bitte gib eine Nachricht ein.',
-        messageMinLength: 'Deine Nachricht sollte mindestens 10 Zeichen haben.',
-        privacyRequired: 'Bitte akzeptiere die Datenschutzerklärung.',
-        messageMaxLength: 'Deine Nachricht darf maximal 5000 Zeichen lang sein.',
+        nameRequired: 'Bitte geben Sie Ihren Namen ein.',
+        nameMinLength: 'Ihr Name sollte mindestens 2 Zeichen enthalten.',
+        emailRequired: 'Bitte geben Sie Ihre E-Mail-Adresse ein.',
+        emailInvalid: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+        messageRequired: 'Bitte geben Sie eine Nachricht ein.',
+        messageMinLength: 'Ihre Nachricht sollte mindestens 10 Zeichen enthalten.',
+        privacyRequired: 'Bitte akzeptieren Sie die Datenschutzerklärung.',
+        messageMaxLength: 'Ihre Nachricht darf maximal 5000 Zeichen lang sein.',
       },
     },
 
@@ -407,8 +427,18 @@ export const translations: Record<LangCode, TranslationModel> = {
       privacyLink: 'privacy policy',
       privacySuffix: 'and agree to it.',
       button: 'Send message :)',
+      sendingButton: 'Sending ...',
       goUpLabel: 'Go up',
-      successMessage: 'Thank you! Your message was sent successfully.',
+      successLabel: 'Message sent',
+      successTitle: 'Thank you!',
+      successMessage: 'Thank you! I will get back to you as soon as possible.',
+      errorLabel: 'Message could not be sent',
+      errorTitle: 'That did not work',
+      sendErrorMessage: 'Please try again later.',
+      manualSendText: 'Alternatively, you can send your message directly by email:',
+      manualSendButton: 'Email ahmet_ba@web.de',
+      closeStatusLabel: 'Close status message',
+      closeStatusButton: 'Close',
 
       errors: {
         nameRequired: 'Please enter your name.',

@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" [attr.aria-busy]="isSending">
       <div class="contact__fields">
         <div
           class="contact__field"
@@ -177,25 +177,9 @@
           [class.contact__submit--valid]="contactForm.valid"
           [disabled]="isSending"
         >
-          {{ isSending ? 'Wird gesendet...' : text().button }}
+          {{ isSending ? text().sendingButton : text().button }}
         </button>
 
-        @if (sendErrorMessage) {
-          <div class="contact__status contact__status--error">
-            <img
-              class="contact__field-icon contact__field-icon--error"
-              src="/assets/icon/contact/error.svg"
-              alt=""
-            />
-            <p>{{ sendErrorMessage }}</p>
-          </div>
-        }
-        @if (successMessage) {
-          <div class="contact__status contact__status--success">
-            <span class="contact__success-icon">✓</span>
-            <p>{{ successText() }}</p>
-          </div>
-        }
       </div>
 
       <div class="contact__up-button">
@@ -220,4 +204,71 @@
       </div>
     </form>
   </div>
+
+  @if (sendErrorMessage || successMessage) {
+    <div
+      class="contact__status-overlay"
+      role="presentation"
+      (click)="closeStatus()"
+    >
+      <div
+        class="contact__status-dialog"
+        [class.contact__status-dialog--error]="!!sendErrorMessage"
+        [class.contact__status-dialog--success]="successMessage"
+        role="alertdialog"
+        aria-modal="true"
+        [attr.aria-labelledby]="successMessage ? 'contact-success-label' : 'contact-error-label'"
+        [attr.aria-describedby]="successMessage ? 'contact-success-message' : 'contact-error-message'"
+        (click)="$event.stopPropagation()"
+      >
+
+        <div class="contact__status-icon-wrap" aria-hidden="true">
+          <img
+            class="contact__status-icon"
+            [src]="successMessage
+              ? '/assets/icon/contact/success.svg'
+              : '/assets/icon/contact/error.svg'"
+            alt=""
+          />
+        </div>
+
+        @if (successMessage) {
+          <h3 id="contact-success-label" class="contact__status-label">
+            {{ text().successLabel }}
+          </h3>
+          <p id="contact-success-message" class="contact__status-message">
+            {{ successText() }}
+          </p>
+        } @else {
+          <h3 id="contact-error-label" class="contact__status-label">
+            {{ text().errorLabel }}
+          </h3>
+          <p id="contact-error-message" class="contact__status-message">
+            {{ sendErrorMessage }}
+          </p>
+
+          <div class="contact__status-manual-send">
+            <p class="contact__status-manual-text">
+              {{ text().manualSendText }}
+            </p>
+            <a
+              class="contact__status-mail-link"
+              [href]="manualMailUrl()"
+            >
+              {{ text().manualSendButton }}
+            </a>
+          </div>
+        }
+
+        <button
+          class="contact__status-confirm"
+          type="button"
+          autofocus
+          (click)="closeStatus()"
+        >
+          {{ text().closeStatusButton }}
+        </button>
+      </div>
+    </div>
+  }
 </section>
