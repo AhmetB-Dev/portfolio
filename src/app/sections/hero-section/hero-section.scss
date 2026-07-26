@@ -1,12 +1,12 @@
 .hero {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   min-height: 100vh;
   min-height: 100dvh;
+  padding-bottom: clamp(1rem, 2vw, 2rem);
 
   background-image:
-    url(/assets/img/hero/purple-shadow.webp), url(/assets/img/hero/blue-shadow.webp);
+    url('/assets/img/hero/purple-shadow.webp'), url('/assets/img/hero/blue-shadow.webp');
   background-repeat: no-repeat;
   background-position:
     top left,
@@ -15,19 +15,25 @@
     50% 55%,
     25% 60%;
 
+  &__main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   &__content {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding-top: clamp(0rem, 1vw, 4rem);
+    justify-content: center;
   }
 
   &__subtitle-vert {
     display: flex;
-    writing-mode: sideways-lr;
     justify-content: center;
-    font-size: clamp(1.4rem, 5.5vw, 8rem);
     margin: 0 0 1.6%;
+    writing-mode: sideways-lr;
+    font-size: clamp(1.4rem, 5.5vw, 8rem);
   }
 
   &__title-group {
@@ -43,8 +49,8 @@
 
   &__role {
     margin: 0;
-    font-size: clamp(1.3rem, 4.3vw, 6.5rem);
     color: #9747ff;
+    font-size: clamp(1.3rem, 4.3vw, 6.5rem);
   }
 
   &__action {
@@ -59,7 +65,9 @@
     background-color: #70e61c;
     color: white;
     font-size: clamp(0.6rem, 0.5rem + 1.1vw, 2.2rem);
-    transition: transform 300ms ease;
+    transition:
+      background-color 300ms ease,
+      transform 300ms ease;
 
     &:hover {
       background-color: #9747ff;
@@ -69,9 +77,9 @@
 
   &__meta {
     display: flex;
-    justify-content: space-between;
+    flex-shrink: 0;
     align-items: flex-end;
-    padding-top: clamp(1rem, 30vw, 10rem);
+    justify-content: space-between;
     padding-right: 3rem;
     padding-left: clamp(4rem, 24vw, 14rem);
   }
@@ -87,9 +95,15 @@
       right: calc(100% + 2em);
       width: 100vw;
       height: 3px;
-      background-color: #22c55e;
       border-radius: 10px;
+      background-color: #22c55e;
     }
+  }
+
+  &__social-links {
+    display: flex;
+    gap: 2em;
+    width: clamp(1rem, 2.3vw, 3rem);
   }
 
   &__social-link {
@@ -106,12 +120,6 @@
     }
   }
 
-  &__social-links {
-    display: flex;
-    gap: 2em;
-    width: clamp(1rem, 2.3vw, 3rem);
-  }
-
   &__scroll {
     display: none;
 
@@ -125,13 +133,12 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    writing-mode: vertical-rl;
     margin: 0;
+    writing-mode: vertical-rl;
     font-size: clamp(0rem, 1.4vw, 1.9rem);
   }
 }
 
-// Desktop ab 961px
 @media (min-width: 961px) {
   .hero {
     background-position:
@@ -141,12 +148,7 @@
       45% 100%,
       22% 80%;
 
-    &__content {
-      padding-top: clamp(1em, 7vw, 15rem);
-    }
-
     &__meta {
-      padding-top: clamp(1rem, 11vw, 12rem);
       padding-left: 6rem;
     }
 
