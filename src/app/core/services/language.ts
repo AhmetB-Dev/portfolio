@@ -1,5 +1,6 @@
 import { Injectable, computed, effect, signal } from '@angular/core';
-import { LangCode, translations, TranslationModel } from '../i18n/translation';
+import { translations } from '../i18n/translation';
+import type { LangCode, TranslationModel } from '../i18n/translation';
 
 export type LangOption = { code: LangCode; short: string; label: string };
 
@@ -16,6 +17,9 @@ export class Language {
 
   readonly texts = computed<TranslationModel>(() => translations[this.current()]);
 
+  /**
+   * Creates the language service and persists every language change.
+   */
   constructor() {
     effect(() => {
       const lang = this.current();
@@ -23,10 +27,20 @@ export class Language {
     });
   }
 
-  set(lang: LangCode) {
+  /**
+   * Changes the active application language.
+   *
+   * @param lang The supported language code to activate.
+   */
+  set(lang: LangCode): void {
     this.current.set(lang);
   }
 
+  /**
+   * Resolves the initial language from local storage or the browser language.
+   *
+   * @returns The language code that should be active on startup.
+   */
   private readInitial(): LangCode {
     try {
       if (typeof localStorage !== 'undefined') {
@@ -39,7 +53,12 @@ export class Language {
     return nav.startsWith('de') ? 'de' : 'en';
   }
 
-  private persist(lang: LangCode) {
+  /**
+   * Stores the selected language when browser storage is available.
+   *
+   * @param lang The language code to store.
+   */
+  private persist(lang: LangCode): void {
     try {
       if (typeof localStorage !== 'undefined') {
         localStorage.setItem(this.STORAGE_KEY, lang);

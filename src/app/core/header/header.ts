@@ -38,12 +38,18 @@ export class Header implements OnDestroy {
   private readonly navTransitionDuration = 160;
   private menuTransitionTimeout?: number;
 
+  /**
+   * Creates the header and synchronizes the mobile-menu state with the document body.
+   */
   constructor() {
     effect(() => {
       this.document.body.classList.toggle('menu-open', this.menuOpen());
     });
   }
 
+  /**
+   * Enables the navigation transition for the duration of a single menu state change.
+   */
   private enableMenuTransitionTemporarily(): void {
     this.menuAnimation.set(true);
 
@@ -57,6 +63,9 @@ export class Header implements OnDestroy {
     }, this.navTransitionDuration + 30);
   }
 
+  /**
+   * Toggles the mobile navigation and starts the matching menu-icon animation.
+   */
   toggleMobileMenu(): void {
     if (this.isAnimating) {
       return;
@@ -70,6 +79,9 @@ export class Header implements OnDestroy {
     this.animateMenuIcon(shouldOpen);
   }
 
+  /**
+   * Closes the mobile navigation when it is currently open.
+   */
   closeMobileMenu(): void {
     if (!this.menuOpen()) {
       return;
@@ -81,36 +93,72 @@ export class Header implements OnDestroy {
     this.animateMenuIcon(false);
   }
 
+  /**
+   * Animates the menu icon frame by frame for the requested menu direction.
+   *
+   * @param opening Whether the menu is opening rather than closing.
+   */
   private animateMenuIcon(opening: boolean): void {
     this.clearAnimationTimeouts();
-
     this.isAnimating = true;
 
-    const frames = opening ? this.openAnimationFrames : this.closeAnimationFrames;
-
-    frames.forEach((frame, index) => {
-      const timeout = window.setTimeout(
-        () => {
-          this.menuIcon.set(frame);
-
-          const isLastFrame = index === frames.length - 1;
-
-          if (isLastFrame) {
-            this.isAnimating = false;
-          }
-        },
-        this.frameDuration * (index + 1),
-      );
-
-      this.animationTimeouts.push(timeout);
-    });
+    const frames = this.getAnimationFrames(opening);
+    frames.forEach((frame, index) => this.scheduleMenuIconFrame(frame, index, frames.length));
   }
 
+  /**
+   * Returns the icon frames for the requested menu direction.
+   *
+   * @param opening Whether the menu is opening rather than closing.
+   * @returns The ordered animation frames.
+   */
+  private getAnimationFrames(opening: boolean): readonly string[] {
+    return opening ? this.openAnimationFrames : this.closeAnimationFrames;
+  }
+
+  /**
+   * Schedules a single menu-icon frame and stores its timeout identifier.
+   *
+   * @param frame The image path for the scheduled frame.
+   * @param index The zero-based frame index.
+   * @param frameCount The total number of animation frames.
+   */
+  private scheduleMenuIconFrame(frame: string, index: number, frameCount: number): void {
+    const delay = this.frameDuration * (index + 1);
+    const timeout = window.setTimeout(
+      () => this.applyMenuIconFrame(frame, index, frameCount),
+      delay,
+    );
+
+    this.animationTimeouts.push(timeout);
+  }
+
+  /**
+   * Displays a menu-icon frame and completes the animation after the last frame.
+   *
+   * @param frame The image path to display.
+   * @param index The zero-based frame index.
+   * @param frameCount The total number of animation frames.
+   */
+  private applyMenuIconFrame(frame: string, index: number, frameCount: number): void {
+    this.menuIcon.set(frame);
+
+    if (index === frameCount - 1) {
+      this.isAnimating = false;
+    }
+  }
+
+  /**
+   * Cancels every pending menu-icon animation timeout.
+   */
   private clearAnimationTimeouts(): void {
     this.animationTimeouts.forEach((timeout) => window.clearTimeout(timeout));
     this.animationTimeouts = [];
   }
 
+  /**
+   * Releases timers and removes the global menu state when the header is destroyed.
+   */
   ngOnDestroy(): void {
     this.clearAnimationTimeouts();
 
