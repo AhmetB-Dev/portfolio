@@ -19,7 +19,7 @@ export const deTranslation: TranslationModel = {
   about: {
     title: 'Über mich',
     lead: 'Ich entwickle moderne Webanwendungen und begeistere mich dafür, aus Ideen funktionierende und benutzerfreundliche Lösungen zu schaffen. Dabei lege ich Wert auf klare Strukturen, sauberen Code und kontinuierliche Weiterentwicklung.',
-    cardLocation: `Ich lebe in Siegen und arbeite bevorzugt remote, bin aber auch für hybride Arbeitsmodelle offen.`,
+    cardLocation: `Ich arbeite bevorzugt remote, bin aber auch für hybride Arbeitsmodelle offen.`,
     cardLearning:
       'Neue Technologien lerne ich am besten durch praktische Projekte. Dabei erweitere ich Schritt für Schritt meine Kenntnisse in der modernen Webentwicklung.',
     cardProblemSolving:
@@ -102,11 +102,11 @@ export const deTranslation: TranslationModel = {
 
     imprint: {
       title: 'Impressum',
-      studentNames: '[Liste der Namen]',
+      studentNames: 'Ahmet Balci',
       address: '[Adresse des Portfolio-Betreibers]',
       postcodeCity: '[Postleitzahl und Ort]',
       contactTitle: 'Das Board erkunden',
-      emailLabel: 'E-Mail',
+      emailLabel: 'Ahmet_ba@web.de',
     },
 
     acceptance: {
@@ -171,7 +171,7 @@ export const deTranslation: TranslationModel = {
       afterProduct:
         'und/oder Ihrem Verstoß gegen dieses Impressum entstehen oder damit zusammenhängen.',
       contactBeforeEmail: 'Bei Fragen oder Mitteilungen kontaktieren Sie uns bitte unter',
-      contactEmail: '[Kontakt-E-Mail]',
+      contactEmail: 'Ahmet_ba@web.de',
       dateLabel: 'Datum',
       date: '26. Juli 2025',
     },

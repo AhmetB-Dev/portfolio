@@ -19,7 +19,7 @@ export const enTranslation: TranslationModel = {
   about: {
     title: 'About me',
     lead: 'I develop modern web applications and enjoy turning ideas into functional and user-friendly solutions. I focus on clear structures, clean code, and continuous improvement.',
-    cardLocation: `I am based in Siegen and prefer working remotely, but I am also open to hybrid work models.`,
+    cardLocation: `I prefer working remotely, but I’m also open to hybrid work arrangements.`,
     cardLearning:
       'I learn new technologies best through practical projects, continuously expanding my skills in modern web development.',
     cardProblemSolving:
@@ -49,8 +49,7 @@ export const enTranslation: TranslationModel = {
       },
 
       pollApp: {
-        description:
-          'A polling app for creating, sharing, and evaluating polls and user feedback.',
+        description: 'A polling app for creating, sharing, and evaluating polls and user feedback.',
       },
 
       sharkie: {
@@ -102,11 +101,11 @@ export const enTranslation: TranslationModel = {
 
     imprint: {
       title: 'Imprint',
-      studentNames: '[Student Names List]',
+      studentNames: 'Ahmet Balci',
       address: '[Address of the Portfolio operator]',
       postcodeCity: '[Postcode and city]',
       contactTitle: 'Exploring the Board',
-      emailLabel: 'Email',
+      emailLabel: 'Ahmet_ba@web.de',
     },
 
     acceptance: {
@@ -169,7 +168,7 @@ export const enTranslation: TranslationModel = {
         ', and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability, including reasonable legal fees, arising out of or relating to your use of',
       afterProduct: 'and/or your breach of this Legal Notice.',
       contactBeforeEmail: 'For any questions or notices, please contact us at',
-      contactEmail: '[Contact Email]',
+      contactEmail: 'Ahmet_ba@web.de',
       dateLabel: 'Date',
       date: 'July 26, 2025',
     },

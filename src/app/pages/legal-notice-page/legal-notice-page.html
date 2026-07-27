@@ -29,8 +29,8 @@
         <h3 class="legal-page__section-title">{{ text().imprint.contactTitle }}</h3>
 
         <p>
-          {{ text().imprint.emailLabel }}:
-          <a href="mailto:example@example.com"> example@example.com </a>
+          Email:
+          <a href="mailto:example@example.com"> {{ text().imprint.emailLabel }}</a>
         </p>
       </div>
     </section>
@@ -140,7 +140,8 @@
       <br />
       <p>
         {{ text().indemnity.contactBeforeEmail }}
-        <a href="mailto:[Contact Email]">{{ text().indemnity.contactEmail }}</a>.
+        <a href="mailto:[Contact Email]">{{ text().indemnity.contactEmail }}</a
+        >.
       </p>
 
       <br />
