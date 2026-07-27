@@ -12,7 +12,6 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
 
-  // Information area
   &__info {
     display: contents;
     text-align: left;
@@ -253,7 +252,6 @@
   }
 }
 
-// Mobile and touch interaction
 @media (max-width: 960px), (hover: none), (pointer: coarse) {
   .skills {
     &__learning-trigger:hover,
@@ -276,8 +274,7 @@
   }
 }
 
-// Desktop layout and interaction
-@media (min-width: 961px) {
+@media (min-width: 975px) {
   .skills {
     display: flex;
     align-items: center;

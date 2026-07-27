@@ -215,20 +215,3 @@
     }
   }
 }
-
-@media (min-width: 2560px) {
-  .contact {
-    &__status-dialog {
-      width: min(100%, 44rem);
-      padding: 3rem;
-    }
-
-    &__status-icon-wrap {
-      width: 5.75rem;
-    }
-
-    &__status-message {
-      font-size: 1.2rem;
-    }
-  }
-}

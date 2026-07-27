@@ -1,24 +1,38 @@
 <section class="about page-width">
   <div class="about__content">
-    <h2 class="about__title">{{ text().title }}</h2>
-    <p class="about__lead">{{ text().lead }}</p>
+    <h2 class="about__title">
+      {{ text().title }}
+    </h2>
+
+    <p class="about__lead">
+      {{ text().lead }}
+    </p>
+
     <div class="about__card">
       <img class="about__card-icon" src="./assets/icon/about/location.svg" alt="" />
+
       <p class="about__card-text">
         {{ text().cardLocation }}
       </p>
     </div>
+
     <div class="about__card">
       <img class="about__card-icon" src="./assets/icon/about/bulb.svg" alt="" />
+
       <p class="about__card-text">
         {{ text().cardLearning }}
       </p>
     </div>
+
     <div class="about__card">
       <img class="about__card-icon" src="./assets/icon/about/puzzle.svg" alt="" />
-      <p class="about__card-text">{{ text().cardProblemSolving }}</p>
+
+      <p class="about__card-text">
+        {{ text().cardProblemSolving }}
+      </p>
     </div>
   </div>
+
   <div class="about__visual">
     <img class="about__portrait about__image-stack" src="/assets/img/about/cover_me.png" alt="" />
   </div>

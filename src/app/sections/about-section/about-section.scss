@@ -24,16 +24,18 @@
 
   &__card {
     display: flex;
-    align-items: flex-start;
+    gap: 0.6rem;
   }
 
   &__card-icon {
-    height: clamp(2em, 7vh, 8em);
-    padding-right: 0.8em;
+    height: clamp(2rem, 4.5vw, 5rem);
+    object-fit: contain;
+    justify-self: center;
+    flex-shrink: 0;
   }
 
   &__card-text {
-    margin-top: 0;
+    margin: 0;
     font-size: var(--fs-text);
   }
 
@@ -51,10 +53,13 @@
 
     background-image:
       url('/assets/img/about/purple_shadow.webp'), url('/assets/img/about/green_shadow.webp');
+
     background-repeat: no-repeat, no-repeat;
+
     background-position:
       -10% 47%,
       110% 40%;
+
     background-size:
       60% 70%,
       70% 70%;
@@ -70,25 +75,22 @@
   }
 }
 
-@media (min-width: 961px) {
+@media (min-width: 975px) {
   .about {
     display: flex;
-    gap: clamp(0rem, 0rem + 0.5vw, 1rem);
     flex-direction: row;
+    gap: clamp(0rem, 0rem + 0.5vw, 1rem);
+
     background-image: url('/assets/img/about/bg.webp');
     background-repeat: no-repeat;
     background-position: 0 120%;
     background-size: 100% 30%;
 
     &__content {
+      width: 70%;
       margin-top: 0;
       padding: 0 0 8rem 4rem;
       gap: 2em;
-      width: 70%;
-    }
-
-    &__card-icon {
-      height: clamp(2em, 3.5vh, 5em);
     }
 
     &__visual {
@@ -97,16 +99,17 @@
 
     &__image-stack {
       background-position:
-        0rem center,
+        0 center,
         12rem center;
+
       background-size:
         20rem 30rem,
         22rem 30rem;
     }
 
     &__portrait {
-      height: 44rem;
       width: 33rem;
+      height: 44rem;
       object-fit: cover;
       position: relative;
       z-index: -1;
