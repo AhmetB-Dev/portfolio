@@ -17,19 +17,48 @@
 
   <article class="privacy-page__container">
     <section class="privacy-page__section">
-      <h2 class="privacy-page__section-title">{{ text().firstSectionTitle }}</h2>
+      <h2 class="privacy-page__section-title">{{ text().responsible.title }}</h2>
+
+      <p>{{ text().responsible.intro }}</p>
 
       <p>
-        {{ text().firstParagraph }}
+        <strong>{{ text().responsible.name }}</strong><br />
+        {{ text().responsible.addressLabel }}
+        <a routerLink="/legal-notice">{{ text().responsible.legalNoticeLink }}</a><br />
+        {{ text().responsible.emailLabel }}
+        <a [href]="'mailto:' + text().responsible.emailAddress">
+          {{ text().responsible.emailAddress }}
+        </a>
       </p>
     </section>
 
     <section class="privacy-page__section">
-      <h2 class="privacy-page__section-title">{{ text().secondSectionTitle }}</h2>
-
-      <p>
-        {{ text().secondParagraph }}
-      </p>
+      <h2 class="privacy-page__section-title">{{ text().hosting.title }}</h2>
+      <p>{{ text().hosting.paragraph }}</p>
     </section>
+
+    <section class="privacy-page__section">
+      <h2 class="privacy-page__section-title">{{ text().contactForm.title }}</h2>
+      <p>{{ text().contactForm.paragraph }}</p>
+    </section>
+
+    <section class="privacy-page__section">
+      <h2 class="privacy-page__section-title">{{ text().languageStorage.title }}</h2>
+      <p>{{ text().languageStorage.paragraph }}</p>
+    </section>
+
+    <section class="privacy-page__section">
+      <h2 class="privacy-page__section-title">{{ text().fonts.title }}</h2>
+      <p>{{ text().fonts.paragraph }}</p>
+    </section>
+
+    <section class="privacy-page__section">
+      <h2 class="privacy-page__section-title">{{ text().rights.title }}</h2>
+      <p>{{ text().rights.paragraph }}</p>
+    </section>
+
+    <p>
+      <time datetime="2026-07">{{ text().status.label }}: {{ text().status.date }}</time>
+    </p>
   </article>
 </main>

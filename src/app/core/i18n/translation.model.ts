@@ -151,10 +151,46 @@ export type TranslationModel = {
   privacyPolicyPage: {
     title: string;
     backLabel: string;
-    firstSectionTitle: string;
-    firstParagraph: string;
-    secondSectionTitle: string;
-    secondParagraph: string;
+
+    responsible: {
+      title: string;
+      intro: string;
+      name: string;
+      addressLabel: string;
+      legalNoticeLink: string;
+      emailLabel: string;
+      emailAddress: string;
+    };
+
+    hosting: {
+      title: string;
+      paragraph: string;
+    };
+
+    contactForm: {
+      title: string;
+      paragraph: string;
+    };
+
+    languageStorage: {
+      title: string;
+      paragraph: string;
+    };
+
+    fonts: {
+      title: string;
+      paragraph: string;
+    };
+
+    rights: {
+      title: string;
+      paragraph: string;
+    };
+
+    status: {
+      label: string;
+      date: string;
+    };
   };
 
   footer: {

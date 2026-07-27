@@ -175,14 +175,53 @@ export const enTranslation: TranslationModel = {
   },
 
   privacyPolicyPage: {
-    title: 'Privacy policy',
+    title: 'Privacy Policy',
     backLabel: 'Back to homepage',
-    firstSectionTitle: 'Subtitle',
-    firstParagraph:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, tempora. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    secondSectionTitle: 'Subtitle',
-    secondParagraph:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, tempora. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+
+    responsible: {
+      title: '1. Controller',
+      intro: 'The controller responsible for processing personal data on this website is:',
+      name: 'Ahmet Balci',
+      addressLabel: 'Address:',
+      legalNoticeLink: 'see Legal Notice',
+      emailLabel: 'Email:',
+      emailAddress: 'ahmet_ba@web.de',
+    },
+
+    hosting: {
+      title: '2. Website Provision',
+      paragraph:
+        'When you access this website, the hosting provider processes technically necessary data, such as your IP address, the time of access, the requested page and browser information. This processing is necessary to provide the website securely and without errors and is based on Article 6(1)(f) GDPR. The data is deleted as soon as it is no longer required for this purpose.',
+    },
+
+    contactForm: {
+      title: '3. Contact Form',
+      paragraph:
+        'When you use the contact form, your name, email address and message are processed. The data is used only to handle your request and may be processed by the hosting and email providers. The legal basis is Article 6(1)(b) GDPR for contract-related requests and Article 6(1)(f) GDPR for general requests. The data is deleted once the request has been completed, unless statutory retention obligations apply.',
+    },
+
+    languageStorage: {
+      title: '4. Language Setting',
+      paragraph:
+        "The selected language is stored in your browser's local storage under the name “app_lang”. This is used only to retain your language preference. No analytics or advertising cookies are used. You can delete the stored setting at any time through your browser.",
+    },
+
+    fonts: {
+      title: '5. Fonts',
+      paragraph:
+        'The “Poppins” font used on this website is hosted locally. No connection to Google Fonts is established when the font is loaded.',
+    },
+
+    rights: {
+      title: '6. Your Rights',
+      paragraph:
+        'Subject to the applicable legal requirements, you have the right to access, correct, delete or restrict the processing of your data, as well as the right to data portability and to object to processing. You may also lodge a complaint with a competent data protection supervisory authority. For privacy-related questions, you can use the email address stated above.',
+    },
+
+    status: {
+      label: 'Last updated',
+      date: 'July 2026',
+    },
   },
 
   footer: {

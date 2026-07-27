@@ -180,12 +180,51 @@ export const deTranslation: TranslationModel = {
   privacyPolicyPage: {
     title: 'Datenschutzerklärung',
     backLabel: 'Zurück zur Startseite',
-    firstSectionTitle: 'Untertitel',
-    firstParagraph:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, tempora. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    secondSectionTitle: 'Untertitel',
-    secondParagraph:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, tempora. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+
+    responsible: {
+      title: '1. Verantwortlicher',
+      intro: 'Verantwortlich für die Datenverarbeitung auf dieser Website ist:',
+      name: 'Ahmet Balci',
+      addressLabel: 'Anschrift:',
+      legalNoticeLink: 'siehe Impressum',
+      emailLabel: 'E-Mail:',
+      emailAddress: 'ahmet_ba@web.de',
+    },
+
+    hosting: {
+      title: '2. Bereitstellung der Website',
+      paragraph:
+        'Beim Aufruf dieser Website verarbeitet der Hosting-Anbieter technisch notwendige Daten, beispielsweise die IP-Adresse, den Zeitpunkt des Zugriffs, die aufgerufene Seite und Browserinformationen. Die Verarbeitung dient der sicheren und fehlerfreien Bereitstellung der Website und erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, sobald sie für diesen Zweck nicht mehr erforderlich sind.',
+    },
+
+    contactForm: {
+      title: '3. Kontaktformular',
+      paragraph:
+        'Wenn Sie das Kontaktformular verwenden, werden Ihr Name, Ihre E-Mail-Adresse und Ihre Nachricht verarbeitet. Die Daten werden nur zur Bearbeitung Ihrer Anfrage verwendet und können dabei durch den Hosting- und E-Mail-Anbieter verarbeitet werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vertragsbezogenen Anfragen und Art. 6 Abs. 1 lit. f DSGVO bei allgemeinen Anfragen. Die Daten werden gelöscht, sobald die Anfrage abgeschlossen ist und keine gesetzlichen Aufbewahrungspflichten bestehen.',
+    },
+
+    languageStorage: {
+      title: '4. Spracheinstellung',
+      paragraph:
+        'Die ausgewählte Sprache wird unter dem Namen „app_lang“ im lokalen Speicher Ihres Browsers gespeichert. Dies dient ausschließlich dazu, Ihre Spracheinstellung beizubehalten. Es werden keine Analyse- oder Werbe-Cookies eingesetzt. Die gespeicherte Einstellung können Sie jederzeit über Ihren Browser löschen.',
+    },
+
+    fonts: {
+      title: '5. Schriftarten',
+      paragraph:
+        'Die auf dieser Website verwendete Schriftart „Poppins“ wird lokal eingebunden. Beim Laden der Schriftart wird keine Verbindung zu Google Fonts hergestellt.',
+    },
+
+    rights: {
+      title: '6. Ihre Rechte',
+      paragraph:
+        'Sie haben im Rahmen der gesetzlichen Voraussetzungen insbesondere das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem können Sie sich bei einer zuständigen Datenschutzaufsichtsbehörde beschweren. Für Fragen zum Datenschutz können Sie die oben genannte E-Mail-Adresse verwenden.',
+    },
+
+    status: {
+      label: 'Stand',
+      date: 'Juli 2026',
+    },
   },
 
   footer: {
