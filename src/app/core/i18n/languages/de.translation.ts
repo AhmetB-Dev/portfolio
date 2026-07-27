@@ -28,45 +28,45 @@ export const deTranslation: TranslationModel = {
 
   skills: {
     title: 'Skills',
-    lead: 'Eine Auswahl an Technologien, die ich in meinen Projekten verwendet habe – mit Fokus auf saubere, wartbare und skalierbare Webentwicklung.',
+    lead: 'Eine Auswahl an Technologien, die ich in meinen Projekten verwendet habe, mit Fokus auf saubere, wartbare und skalierbare Webentwicklung.',
     otherSkillTitle: 'Du suchst noch einen anderen Skill?',
     otherSkillText:
-      'Ich lerne schnell und erweitere meinen Stack gerne – besonders, wenn es hilft, bessere Produkte zu bauen.',
+      'Ich lerne schnell und erweitere meinen Stack gerne, besonders wenn dadurch bessere Produkte entstehen.',
     learningInterest: 'Ich interessiere mich besonders dafür, Folgendes zu lernen:',
     cta: 'Kontakt aufnehmen',
   },
 
   projects: {
     title: 'Portfolio',
-    lead: 'Hier findest du eine Auswahl meiner Arbeiten – interagiere mit den Projekten und sieh meine Skills in Aktion.',
+    lead: 'Entdecke eine Auswahl meiner Arbeiten und sieh meine Fähigkeiten in Aktion.',
     liveBtn: 'Live Test',
     githubBtn: 'GitHub',
 
     items: {
       join: {
         description:
-          'Ein Kanban-Task-Management-Tool zum Erstellen, Organisieren und Verwalten von Aufgaben im Team.',
+          'Ein Kanban Board zum Erstellen, Organisieren und Verwalten von Aufgaben im Team.',
       },
 
       pollApp: {
         description:
-          'Eine Umfrage-App zum Erstellen, Teilen und Auswerten von Abstimmungen und Nutzerfeedback.',
+          'Eine Anwendung zum Erstellen und Teilen von Umfragen sowie zum Auswerten der Ergebnisse und des Nutzerfeedbacks.',
       },
 
       sharkie: {
         description:
-          'Ein 2D-Jump-and-Run-Spiel mit einer Unterwasserwelt, Gegnern und sammelbaren Objekten.',
+          'Ein zweidimensionales Plattformspiel mit einer Unterwasserwelt, Gegnern und sammelbaren Objekten.',
       },
     },
   },
 
   contact: {
     title: 'Kontakt',
-    headline: 'Haben Sie ein Projekt im Kopf?',
-    text: 'Sie suchen Unterstützung bei der Entwicklung einer modernen Webanwendung oder möchten sich über ein gemeinsames Projekt austauschen? Senden Sie mir gerne eine Nachricht.',
-    namePlaceholder: 'Ihr Name',
-    emailPlaceholder: 'Ihre E-Mail-Adresse',
-    messagePlaceholder: 'Ihre Nachricht',
+    headline: 'Hast du ein Problem zu lösen?',
+    text: 'Du hast eine Idee für eine moderne Webanwendung oder suchst Unterstützung bei der Umsetzung? Schreib mir gerne. Ich freue mich auf deine Nachricht..',
+    namePlaceholder: 'Dein Name',
+    emailPlaceholder: 'Deine Mailadresse',
+    messagePlaceholder: 'Deine Nachricht',
     privacyPrefix: 'Ich habe die',
     privacyLink: 'Datenschutzerklärung',
     privacySuffix: 'gelesen und stimme zu.',
@@ -75,12 +75,12 @@ export const deTranslation: TranslationModel = {
     goUpLabel: 'Nach oben',
     successLabel: 'Nachricht gesendet',
     successTitle: 'Vielen Dank!',
-    successMessage: 'Vielen Dank! Ich melde mich so bald wie möglich bei Ihnen.',
+    successMessage: 'Vielen Dank! Ich melde mich so bald wie möglich bei dir.',
     errorLabel: 'Nachricht konnte nicht gesendet werden',
-    errorTitle: 'Das hat leider nicht funktioniert',
-    sendErrorMessage: 'Bitte versuchen Sie es später erneut.',
-    manualSendText: 'Alternativ können Sie Ihre Nachricht direkt per E-Mail senden:',
-    manualSendButton: 'E-Mail an ahmet_ba@web.de senden',
+    errorTitle: 'Etwas ist schiefgelaufen. Bitte versuche es später erneut.',
+    sendErrorMessage: 'Bitte versuche es später erneut.',
+    manualSendText: 'Alternativ kannst du deine Nachricht direkt per Mail senden:',
+    manualSendButton: 'Mail an ahmet_ba@web.de senden',
     closeStatusLabel: 'Statusmeldung schließen',
     closeStatusButton: 'Schließen',
 
@@ -103,7 +103,7 @@ export const deTranslation: TranslationModel = {
     imprint: {
       title: 'Impressum',
       studentNames: 'Ahmet Balci',
-      address: '[Adresse des Portfolio-Betreibers]',
+      address: '[Adresse des Portfoliobetreibers]',
       postcodeCity: '[Postleitzahl und Ort]',
       contactTitle: 'Das Board erkunden',
       emailLabel: 'Ahmet_ba@web.de',
@@ -121,7 +121,7 @@ export const deTranslation: TranslationModel = {
     scope: {
       title: 'Umfang und Eigentum am Produkt',
       firstAfterProduct:
-        'wurde im Rahmen eines studentischen Gruppenprojekts in einem Webentwicklungs-Bootcamp bei der',
+        'wurde im Rahmen eines studentischen Gruppenprojekts während einer Weiterbildung für Webentwicklung bei der',
       firstAfterAcademy:
         ' entwickelt. Es dient Bildungszwecken und ist nicht für eine umfangreiche private oder geschäftliche Nutzung vorgesehen.',
       second:
@@ -157,7 +157,7 @@ export const deTranslation: TranslationModel = {
         'wird „wie besehen“ ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt. Dies schließt insbesondere stillschweigende Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten ein.',
       secondBeforeAcademy: 'In keinem Fall haften wir, die aufgeführten Studierenden oder die',
       secondAfterAcademy:
-        ', für unmittelbare, mittelbare, zufällige, besondere, Folge- oder exemplarische Schäden. Dies schließt insbesondere Schäden durch entgangenen Gewinn, Verlust von Ansehen, Nutzung, Daten oder andere immaterielle Verluste ein.',
+        ', für unmittelbare, mittelbare, zufällige, besondere Schäden, Folgeschäden oder exemplarische Schäden. Dies schließt insbesondere Schäden durch entgangenen Gewinn, Verlust von Ansehen, Nutzung, Daten oder andere immaterielle Verluste ein.',
       thirdBeforeProduct:
         'Dies gilt selbst dann, wenn wir auf die Möglichkeit solcher Schäden hingewiesen wurden, die aus der Nutzung oder Leistung von',
     },
@@ -194,19 +194,19 @@ export const deTranslation: TranslationModel = {
     hosting: {
       title: '2. Bereitstellung der Website',
       paragraph:
-        'Beim Aufruf dieser Website verarbeitet der Hosting-Anbieter technisch notwendige Daten, beispielsweise die IP-Adresse, den Zeitpunkt des Zugriffs, die aufgerufene Seite und Browserinformationen. Die Verarbeitung dient der sicheren und fehlerfreien Bereitstellung der Website und erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, sobald sie für diesen Zweck nicht mehr erforderlich sind.',
+        'Beim Aufruf dieser Website verarbeitet der Hostinganbieter technisch notwendige Daten, beispielsweise die IP Adresse, den Zeitpunkt des Zugriffs, die aufgerufene Seite und Browserinformationen. Die Verarbeitung dient der sicheren und fehlerfreien Bereitstellung der Website und erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, sobald sie für diesen Zweck nicht mehr erforderlich sind.',
     },
 
     contactForm: {
       title: '3. Kontaktformular',
       paragraph:
-        'Wenn Sie das Kontaktformular verwenden, werden Ihr Name, Ihre E-Mail-Adresse und Ihre Nachricht verarbeitet. Die Daten werden nur zur Bearbeitung Ihrer Anfrage verwendet und können dabei durch den Hosting- und E-Mail-Anbieter verarbeitet werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vertragsbezogenen Anfragen und Art. 6 Abs. 1 lit. f DSGVO bei allgemeinen Anfragen. Die Daten werden gelöscht, sobald die Anfrage abgeschlossen ist und keine gesetzlichen Aufbewahrungspflichten bestehen.',
+        'Wenn Sie das Kontaktformular verwenden, werden Ihr Name, Ihre Mailadresse und Ihre Nachricht verarbeitet. Die Daten werden nur zur Bearbeitung Ihrer Anfrage verwendet und können dabei durch die Anbieter für Hosting und Mail verarbeitet werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vertragsbezogenen Anfragen und Art. 6 Abs. 1 lit. f DSGVO bei allgemeinen Anfragen. Die Daten werden gelöscht, sobald die Anfrage abgeschlossen ist und keine gesetzlichen Aufbewahrungspflichten bestehen.',
     },
 
     languageStorage: {
       title: '4. Spracheinstellung',
       paragraph:
-        'Die ausgewählte Sprache wird unter dem Namen „app_lang“ im lokalen Speicher Ihres Browsers gespeichert. Dies dient ausschließlich dazu, Ihre Spracheinstellung beizubehalten. Es werden keine Analyse- oder Werbe-Cookies eingesetzt. Die gespeicherte Einstellung können Sie jederzeit über Ihren Browser löschen.',
+        'Die ausgewählte Sprache wird unter dem Namen „app_lang“ im lokalen Speicher Ihres Browsers gespeichert. Dies dient ausschließlich dazu, Ihre Spracheinstellung beizubehalten. Es werden keine Cookies für Analyse oder Werbung eingesetzt. Die gespeicherte Einstellung können Sie jederzeit über Ihren Browser löschen.',
     },
 
     fonts: {
