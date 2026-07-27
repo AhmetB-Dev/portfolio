@@ -42,7 +42,7 @@ export class ContactSection {
   readonly contactForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
-    message: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(5000)]],
+    message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(5000)]],
     privacy: [false, [Validators.requiredTrue]],
   });
 

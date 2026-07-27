@@ -89,7 +89,7 @@ export const enTranslation: TranslationModel = {
       emailRequired: 'Please enter your email address.',
       emailInvalid: 'Please enter a valid email address.',
       messageRequired: 'Please enter a message.',
-      messageMinLength: 'Your message should have at least 5 characters.',
+      messageMinLength: 'Your message should have at least 10 characters.',
       privacyRequired: 'Please accept the privacy policy.',
       messageMaxLength: 'Your message must not be longer than 5000 characters.',
     },
