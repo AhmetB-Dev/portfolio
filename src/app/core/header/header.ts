@@ -16,19 +16,19 @@ export class Header implements OnDestroy {
   private readonly document = inject(DOCUMENT);
 
   readonly menuOpen = signal(false);
-  readonly menuIcon = signal('/assets/icon/header/menu-open.svg');
+  readonly menuIcon = signal('assets/icon/header/menu-open.svg');
   readonly menuAnimation = signal(false);
 
   private readonly openAnimationFrames = [
-    '/assets/icon/header/menu-frame1.svg',
-    '/assets/icon/header/menu-frame2.svg',
-    '/assets/icon/header/menu-close.svg',
+    'assets/icon/header/menu-frame1.svg',
+    'assets/icon/header/menu-frame2.svg',
+    'assets/icon/header/menu-close.svg',
   ];
 
   private readonly closeAnimationFrames = [
-    '/assets/icon/header/menu-frame2.svg',
-    '/assets/icon/header/menu-frame1.svg',
-    '/assets/icon/header/menu-open.svg',
+    'assets/icon/header/menu-frame2.svg',
+    'assets/icon/header/menu-frame1.svg',
+    'assets/icon/header/menu-open.svg',
   ];
 
   private readonly frameDuration = 70;

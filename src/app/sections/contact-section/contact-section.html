@@ -28,14 +28,14 @@
             @if (isInvalid('name')) {
               <img
                 class="contact__field-icon contact__field-icon--error"
-                src="/assets/icon/contact/error.svg"
+                src="assets/icon/contact/error.svg"
                 alt=""
               />
             }
             @if (isValid('name')) {
               <img
                 class="contact__field-icon contact__field-icon--success"
-                src="/assets/icon/contact/success.svg"
+                src="assets/icon/contact/success.svg"
                 alt=""
               />
             }
@@ -69,14 +69,14 @@
             @if (isInvalid('email')) {
               <img
                 class="contact__field-icon contact__field-icon--error"
-                src="/assets/icon/contact/error.svg"
+                src="assets/icon/contact/error.svg"
                 alt=""
               />
             }
             @if (isValid('email')) {
               <img
                 class="contact__field-icon contact__field-icon--success"
-                src="/assets/icon/contact/success.svg"
+                src="assets/icon/contact/success.svg"
                 alt=""
               />
             }
@@ -110,14 +110,14 @@
             @if (isInvalid('message')) {
               <img
                 class="contact__field-icon contact__field-icon--error"
-                src="/assets/icon/contact/error.svg"
+                src="assets/icon/contact/error.svg"
                 alt=""
               />
             }
             @if (isValid('message')) {
               <img
                 class="contact__field-icon contact__field-icon--success"
-                src="/assets/icon/contact/success.svg"
+                src="assets/icon/contact/success.svg"
                 alt=""
               />
             }
@@ -140,10 +140,7 @@
           </p>
         </div>
 
-        <div
-          class="contact__privacy"
-          [class.contact__privacy--invalid]="isInvalid('privacy')"
-        >
+        <div class="contact__privacy" [class.contact__privacy--invalid]="isInvalid('privacy')">
           <div class="contact__privacy-row">
             <input
               id="privacy"
@@ -179,15 +176,10 @@
         >
           {{ isSending ? text().sendingButton : text().button }}
         </button>
-
       </div>
 
       <div class="contact__up-button">
-        <a
-          class="contact__up-link"
-          href="#header"
-          [attr.aria-label]="text().goUpLabel"
-        >
+        <a class="contact__up-link" href="#header" [attr.aria-label]="text().goUpLabel">
           <span class="contact__up-icons" aria-hidden="true">
             <img
               class="contact__up-icon contact__up-icon--default"
@@ -206,11 +198,7 @@
   </div>
 
   @if (sendErrorMessage || successMessage) {
-    <div
-      class="contact__status-overlay"
-      role="presentation"
-      (click)="closeStatus()"
-    >
+    <div class="contact__status-overlay" role="presentation" (click)="closeStatus()">
       <div
         class="contact__status-dialog"
         [class.contact__status-dialog--error]="!!sendErrorMessage"
@@ -218,16 +206,17 @@
         role="alertdialog"
         aria-modal="true"
         [attr.aria-labelledby]="successMessage ? 'contact-success-label' : 'contact-error-label'"
-        [attr.aria-describedby]="successMessage ? 'contact-success-message' : 'contact-error-message'"
+        [attr.aria-describedby]="
+          successMessage ? 'contact-success-message' : 'contact-error-message'
+        "
         (click)="$event.stopPropagation()"
       >
-
         <div class="contact__status-icon-wrap" aria-hidden="true">
           <img
             class="contact__status-icon"
-            [src]="successMessage
-              ? '/assets/icon/contact/success.svg'
-              : '/assets/icon/contact/error.svg'"
+            [src]="
+              successMessage ? 'assets/icon/contact/success.svg' : 'assets/icon/contact/error.svg'
+            "
             alt=""
           />
         </div>
@@ -251,21 +240,13 @@
             <p class="contact__status-manual-text">
               {{ text().manualSendText }}
             </p>
-            <a
-              class="contact__status-mail-link"
-              [href]="manualMailUrl()"
-            >
+            <a class="contact__status-mail-link" [href]="manualMailUrl()">
               {{ text().manualSendButton }}
             </a>
           </div>
         }
 
-        <button
-          class="contact__status-confirm"
-          type="button"
-          autofocus
-          (click)="closeStatus()"
-        >
+        <button class="contact__status-confirm" type="button" autofocus (click)="closeStatus()">
           {{ text().closeStatusButton }}
         </button>
       </div>
