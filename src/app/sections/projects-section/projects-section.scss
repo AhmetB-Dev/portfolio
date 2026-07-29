@@ -68,6 +68,8 @@
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    min-height: clamp(22rem, 13rem + 13vh, 45rem);
+    align-items: center;
     border: 1px solid #70e61c;
     background-color: rgba(20, 29, 47, 1);
     &:focus-visible {
@@ -94,8 +96,7 @@
   &__image {
     display: block;
     object-fit: contain;
-    height: clamp(18rem, 46vw, 42rem);
-    width: clamp(18rem, 40vw, 42rem);
+    height: clamp(10rem, 9rem + 9vw, 18rem);
     transition: transform 0.35s ease;
   }
 
@@ -117,6 +118,7 @@
     p {
       margin: 0;
       font-size: clamp(0.8rem, 0.6rem + 0.8vw, 1.5rem);
+      padding: 0 0.5rem;
     }
   }
 
@@ -223,8 +225,19 @@
       padding-left: 4rem;
     }
 
+    &__card {
+      min-height: clamp(25rem, 16rem + 22vh, 45rem); //deskop/
+    }
+
+    &__image {
+      display: block;
+      object-fit: contain;
+      height: clamp(18rem, 46vw, 42rem);
+      height: clamp(11rem, 10rem + 11vw, 23rem);
+      transition: transform 0.35s ease;
+    }
     &__details {
-      padding: 4em 1em 4em 1em;
+      padding: 2em 1em 2em 1em;
     }
   }
 }
