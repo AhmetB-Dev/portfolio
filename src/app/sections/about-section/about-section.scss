@@ -113,7 +113,7 @@
       object-fit: cover;
       position: relative;
       z-index: -1;
-      top: clamp(0.1rem, calc(2rem - 2vw), 1rem);
+      top: clamp(0rem, 1rem - 2vw, 1rem);
     }
   }
 }

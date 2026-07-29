@@ -141,15 +141,15 @@ function validateContactData(
 function createMailBody(string $name, string $email, string $message): string
 {
     return implode("\r\n", [
-        'Neue Kontaktanfrage über das Portfolio',
+        'New contact request',
         '',
         'Name: ' . $name,
-        'E-Mail: ' . $email,
+        'E-mail: ' . $email,
         '',
-        'Nachricht:',
+        'Message:',
         $message,
         '',
-        'Gesendet am: ' . date('d.m.Y H:i:s'),
+        'Submitted: ' . date('d.m.Y H:i:s'),
     ]);
 }
 
@@ -173,7 +173,7 @@ function sendContactMail(string $name, string $email, string $message): bool
     $arguments = '-f' . $sender;
     $sent = @mail(
         RECIPIENT_EMAIL,
-        'Neue Kontaktanfrage über das Portfolio',
+        'New contact request | ahmet-balci.de',
         createMailBody($name, $email, $message),
         $headers,
         $arguments
@@ -186,7 +186,7 @@ function sendContactMail(string $name, string $email, string $message): bool
     // Some shared-hosting configurations reject the fifth mail() argument.
     return @mail(
         RECIPIENT_EMAIL,
-        'Neue Kontaktanfrage über das Portfolio',
+        'New contact request | ahmet-balci.de',
         createMailBody($name, $email, $message),
         $headers
     );
