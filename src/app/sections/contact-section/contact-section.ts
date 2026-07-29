@@ -28,7 +28,7 @@ export class ContactSection {
   private readonly http = inject(HttpClient);
   private readonly formBuilder = inject(NonNullableFormBuilder);
 
-  private readonly mailUrl = 'http://localhost:8000/send-mail.php';
+  private readonly mailUrl = 'https://ahmet-balci.de/backend/send-mail.php';
   readonly contactEmail = 'ahmet_ba@web.de';
 
   readonly lang = inject(Language);

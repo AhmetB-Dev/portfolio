@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { Language } from '../../core/services/language';
 
 type ProjectId = 'join' | 'sharkie' | 'pollApp';
@@ -25,6 +25,7 @@ type ProjectView = ProjectBase & {
 export class ProjectsSection {
   readonly lang = inject(Language);
   readonly text = computed(() => this.lang.texts().projects);
+  readonly activeProjectId = signal<ProjectId | null>(null);
 
   private readonly baseProjects: ProjectBase[] = [
     {
@@ -52,6 +53,24 @@ export class ProjectsSection {
       githubUrl: 'https://github.com/AhmetB-Dev/Sharkie',
     },
   ];
+
+
+  /**
+   * Opens a project overlay on touch devices before its links become clickable.
+   */
+  activateProject(projectId: ProjectId, event: MouseEvent): void {
+    if (!this.usesTapInteraction() || this.activeProjectId() === projectId) {
+      return;
+    }
+
+    event.preventDefault();
+    this.activeProjectId.set(projectId);
+  }
+
+  /** Returns whether the device primarily uses touch or has no hover support. */
+  private usesTapInteraction(): boolean {
+    return window.matchMedia('(hover: none), (pointer: coarse)').matches;
+  }
 
   readonly projects = computed<ProjectView[]>(() => {
     const translatedItems = this.text().items;

@@ -15,10 +15,16 @@
         </p>
       </div>
     </div>
+
     <div class="projects__list-container">
       <div class="projects__grid">
         @for (project of projects(); track project.id) {
-          <div class="projects__card">
+          <article
+            class="projects__card"
+            [class.projects__card--active]="activeProjectId() === project.id"
+            tabindex="0"
+            (click)="activateProject(project.id, $event)"
+          >
             <img class="projects__image" [src]="project.src" [alt]="project.name" />
 
             <div class="projects__overlay">
@@ -48,7 +54,7 @@
                 <span class="projects__technologies">{{ project.technologies }}</span>
               </div>
             </div>
-          </div>
+          </article>
         }
       </div>
     </div>

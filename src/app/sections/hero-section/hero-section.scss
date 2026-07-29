@@ -33,7 +33,7 @@
     justify-content: center;
     margin: 0 0 1.6%;
     writing-mode: sideways-lr;
-    font-size: clamp(1.4rem, 5.5vw, 8rem);
+    font-size: clamp(1.5rem, 0.5rem + 5.5vw, 8rem);
   }
 
   &__title-group {
@@ -44,13 +44,13 @@
 
   &__title {
     margin: 0;
-    font-size: clamp(2.2rem, 9vw, 11rem);
+    font-size: clamp(2.6rem, 0.5rem + 9vw, 11rem);
   }
 
   &__role {
     margin: 0;
     color: #9747ff;
-    font-size: clamp(1.3rem, 4.3vw, 6.5rem);
+    font-size: clamp(1.4rem, 0.5rem + 4.3vw, 6.5rem);
   }
 
   &__action {
@@ -64,7 +64,7 @@
     border-radius: 4px;
     background-color: #70e61c;
     color: white;
-    font-size: clamp(0.6rem, 0.5rem + 1.1vw, 2.2rem);
+    font-size: clamp(0.6rem, 0.6rem + 1.1vw, 2.2rem);
     transition:
       background-color 300ms ease,
       transform 300ms ease;

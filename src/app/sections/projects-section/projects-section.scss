@@ -70,18 +70,25 @@
     border-radius: 10px;
     border: 1px solid #70e61c;
     background-color: rgba(20, 29, 47, 1);
-    &:hover .projects__overlay {
-      opacity: 1;
-      pointer-events: auto;
+    &:focus-visible {
+      outline: 3px solid #1cdae6;
+      outline-offset: 4px;
     }
+  }
 
-    &:hover .projects__actions {
-      transform: translateY(0);
-    }
+  &__card--active &__overlay {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
 
-    &:hover .projects__image {
-      transform: translateY(-50px) scale(1.6);
-    }
+  &__card--active &__actions {
+    transform: translateY(0);
+  }
+
+  &__card--active &__image {
+    transform: translateY(-50px) scale(1.6);
   }
 
   &__image {
@@ -97,8 +104,11 @@
     flex-direction: column;
     justify-content: flex-end;
     gap: clamp(2rem, 1rem + 2vw, 4rem);
-    transition: opacity 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      visibility 0s linear 0.3s;
     pointer-events: none;
+    visibility: hidden;
     position: absolute;
     inset: 0;
     opacity: 0;
@@ -165,6 +175,27 @@
   &__technologies {
     color: #70e61c;
     font-size: clamp(0.9rem, 0.6rem + 0.9vw, 1.5rem);
+  }
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+  .projects__card:hover .projects__overlay,
+  .projects__card:focus-within .projects__overlay {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+
+  .projects__card:hover .projects__actions,
+  .projects__card:focus-within .projects__actions {
+    transform: translateY(0);
+  }
+
+  .projects__card:hover .projects__image,
+  .projects__card:focus-within .projects__image {
+    transform: translateY(-50px) scale(1.6);
   }
 }
 
