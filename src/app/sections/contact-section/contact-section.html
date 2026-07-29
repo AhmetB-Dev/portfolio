@@ -157,13 +157,15 @@
               {{ text().privacySuffix }}
             </label>
           </div>
-          <div>
+          <p
+            class="contact__error contact__error--privacy"
+            [class.contact__error--visible]="isInvalid('privacy')"
+            aria-live="polite"
+          >
             @if (isInvalid('privacy')) {
-              <p class="contact__error contact__error--privacy">
-                {{ errorMessage('privacy') }}
-              </p>
+              {{ errorMessage('privacy') }}
             }
-          </div>
+          </p>
         </div>
       </div>
 

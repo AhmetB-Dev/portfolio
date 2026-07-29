@@ -168,7 +168,8 @@ $checkbox-color: #70e61c;
     color: #e61c40;
     font-size: clamp(0.75rem, 0.4rem + 0.7vw, 1rem);
 
-    &--field {
+    &--field,
+    &--privacy {
       min-height: 1.25em;
       line-height: 0;
       opacity: 0;
@@ -185,12 +186,6 @@ $checkbox-color: #70e61c;
       visibility: visible;
       transform: translateY(0);
       transition-delay: 270ms, 270ms, 0s;
-    }
-
-    &--privacy {
-      opacity: 0;
-      transform: translateY(-6px);
-      animation: errorFadeIn 260ms ease forwards;
     }
   }
 
@@ -350,12 +345,6 @@ $checkbox-color: #70e61c;
   }
 }
 
-@keyframes errorFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 @media (hover: hover) and (pointer: fine) {
   .contact__up-link:hover {
@@ -372,7 +361,8 @@ $checkbox-color: #70e61c;
 @media (prefers-reduced-motion: reduce) {
   .contact {
     &__input-wrap,
-    &__error--field {
+    &__error--field,
+    &__error--privacy {
       transition: none;
     }
 

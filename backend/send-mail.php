@@ -30,7 +30,8 @@ function getStringProperty(object $params, string $key): string
 
 $allowedOrigins = [
     'http://localhost:4200',
-];
+    'https://ahmet-balci.de',
+    ];
 
 $siteEmail = 'ahmet_ba@web.de';
 
