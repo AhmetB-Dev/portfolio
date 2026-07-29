@@ -1,4 +1,4 @@
-import { Component, HostListener, computed, inject } from '@angular/core';
+import { Component, HostListener, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -22,6 +22,7 @@ type MailResponse = {
   selector: 'app-contact-section',
   imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './contact-section.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './contact-section.scss',
 })
 export class ContactSection {

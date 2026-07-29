@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Language } from '../../core/services/language';
 
 type SkillIcon = {
@@ -11,6 +11,7 @@ type SkillIcon = {
   selector: 'app-skills-section',
   standalone: true,
   templateUrl: './skills-section.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './skills-section.scss',
 })
 export class SkillsSection {

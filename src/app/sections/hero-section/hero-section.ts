@@ -1,10 +1,11 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Language } from '../../core/services/language';
 
 @Component({
   selector: 'app-hero-section',
   imports: [],
   templateUrl: './hero-section.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './hero-section.scss',
 })
 export class HeroSection {

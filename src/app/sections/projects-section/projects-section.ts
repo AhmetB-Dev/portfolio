@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { Language } from '../../core/services/language';
 
 type ProjectId = 'join' | 'sharkie' | 'pollApp';
@@ -20,6 +20,7 @@ type ProjectView = ProjectBase & {
   selector: 'app-projects-section',
   imports: [],
   templateUrl: './projects-section.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './projects-section.scss',
 })
 export class ProjectsSection {

@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Language } from '../../core/services/language';
 import { RouterLink } from '@angular/router';
 
@@ -6,6 +6,7 @@ import { RouterLink } from '@angular/router';
   selector: 'app-legal-notice-page',
   imports: [RouterLink],
   templateUrl: './legal-notice-page.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './legal-notice-page.scss',
 })
 export class LegalNoticePage {

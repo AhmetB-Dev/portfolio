@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AboutSection } from '../../sections/about-section/about-section';
 import { HeroSection } from '../../sections/hero-section/hero-section';
 import { ContactSection } from '../../sections/contact-section/contact-section';
@@ -9,6 +9,7 @@ import { SkillsSection } from '../../sections/skills-section/skills-section';
   selector: 'app-home-page',
   imports: [HeroSection, ContactSection, AboutSection, ProjectsSection, SkillsSection],
   templateUrl: './home-page.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './home-page.scss',
 })
 export class HomePage {}

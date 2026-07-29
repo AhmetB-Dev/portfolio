@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Language } from '../services/language';
 
@@ -6,6 +6,7 @@ import { Language } from '../services/language';
   selector: 'app-footer',
   imports: [RouterLink],
   templateUrl: './footer.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './footer.scss',
 })
 export class Footer {

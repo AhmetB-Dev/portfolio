@@ -1,4 +1,4 @@
-import { Component, OnDestroy, computed, inject, signal } from '@angular/core';
+import { Component, OnDestroy, computed, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 import { Language } from '../services/language';
 
@@ -6,6 +6,7 @@ import { Language } from '../services/language';
   selector: 'app-header',
   imports: [RouterLinkActive, RouterLinkWithHref],
   templateUrl: './header.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './header.scss',
 })
 export class Header implements OnDestroy {

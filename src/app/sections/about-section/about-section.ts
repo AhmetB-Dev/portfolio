@@ -1,10 +1,11 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Language } from '../../core/services/language';
 
 @Component({
   selector: 'app-about-section',
   imports: [],
   templateUrl: './about-section.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './about-section.scss',
 })
 export class AboutSection {
