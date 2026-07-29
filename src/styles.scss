@@ -98,7 +98,6 @@ h2 {
     position: relative;
     display: inline-block;
 
-    /* Kleiner violetter Akzent im A */
     &::after {
       content: '';
       position: absolute;

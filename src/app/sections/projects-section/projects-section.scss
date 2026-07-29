@@ -180,7 +180,8 @@
 
 @media (hover: hover) and (pointer: fine) {
   .projects__card:hover .projects__overlay,
-  .projects__card:focus-within .projects__overlay {
+  .projects__card:focus-visible .projects__overlay,
+  .projects__card:has(.projects__button:focus-visible) .projects__overlay {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -188,12 +189,14 @@
   }
 
   .projects__card:hover .projects__actions,
-  .projects__card:focus-within .projects__actions {
+  .projects__card:focus-visible .projects__actions,
+  .projects__card:has(.projects__button:focus-visible) .projects__actions {
     transform: translateY(0);
   }
 
   .projects__card:hover .projects__image,
-  .projects__card:focus-within .projects__image {
+  .projects__card:focus-visible .projects__image,
+  .projects__card:has(.projects__button:focus-visible) .projects__image {
     transform: translateY(-50px) scale(1.6);
   }
 }

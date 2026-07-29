@@ -49,7 +49,7 @@
   &__label {
     display: flex;
     flex-direction: column;
-    font-size: var(--fs-text);
+    font-size: clamp(1rem, 0.8rem + 0.5vw, 1.5rem);
   }
 
   &__lead {
@@ -75,12 +75,11 @@
     }
   }
 
-  // Skill grid
   &__grid {
     grid-area: icons;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.4em;
+    gap: clamp(0rem, 1vh, 1.4rem);
     padding: 0 1em;
   }
 
@@ -96,7 +95,7 @@
   }
 
   &__icon {
-    width: clamp(48px, 5vw, 80px);
+    width: clamp(44px, 5vw, 80px);
     height: auto;
   }
 
