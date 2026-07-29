@@ -132,7 +132,7 @@ $checkbox-color: #70e61c;
   }
 
   &__input {
-    height: 2.8em;
+    height: 3em;
     font-size: clamp(0.8rem, 0.6rem + 0.6vw, 1.4rem);
   }
 
@@ -344,7 +344,6 @@ $checkbox-color: #70e61c;
     }
   }
 }
-
 
 @media (hover: hover) and (pointer: fine) {
   .contact__up-link:hover {

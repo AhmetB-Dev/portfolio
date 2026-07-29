@@ -2,13 +2,42 @@
 
 declare(strict_types=1);
 
+/*
+ * Portfolio contact endpoint.
+ *
+ * The technical sender uses the website domain. The actual destination is
+ * the private WEB.DE inbox. The visitor's address is used only as Reply-To,
+ * which avoids sending in the name of the visitor's mail provider.
+ */
+
+const RECIPIENT_EMAIL = 'ahmet_ba@web.de';
+const SENDER_EMAIL = 'contact@ahmet-balci.de';
+
+const ALLOWED_ORIGINS = [
+    'http://localhost:4200',
+    'https://ahmet-balci.de',
+    'https://www.ahmet-balci.de',
+];
+
+ini_set('display_errors', '0');
+error_reporting(E_ALL);
+
+/**
+ * Sends a JSON response and stops script execution.
+ */
 function sendJsonResponse(int $statusCode, array $data): void
 {
     http_response_code($statusCode);
-    echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    echo json_encode(
+        $data,
+        JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
+    );
     exit;
 }
 
+/**
+ * Sends a standardized JSON error response.
+ */
 function sendError(int $statusCode, string $message): void
 {
     sendJsonResponse($statusCode, [
@@ -17,116 +46,227 @@ function sendError(int $statusCode, string $message): void
     ]);
 }
 
-function getStringProperty(object $params, string $key): string
+/**
+ * Returns a UTF-8 string length without requiring the mbstring extension.
+ */
+function textLength(string $value): int
 {
-    $value = $params->{$key} ?? '';
-
-    if (!is_string($value)) {
-        return '';
+    if (function_exists('mb_strlen')) {
+        return mb_strlen($value, 'UTF-8');
     }
 
-    return trim($value);
+    return strlen($value);
 }
 
-$allowedOrigins = [
-    'http://localhost:4200',
-    'https://ahmet-balci.de',
-    ];
+/**
+ * Reads and decodes the JSON request body.
+ */
+function readJsonBody(): array
+{
+    $contentLength = (int) ($_SERVER['CONTENT_LENGTH'] ?? 0);
 
-$siteEmail = 'ahmet_ba@web.de';
+    if ($contentLength > 12000) {
+        sendError(413, 'Request body is too large');
+    }
 
-header('Content-Type: application/json; charset=utf-8');
-header('Access-Control-Allow-Methods: POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
+    $rawBody = file_get_contents('php://input');
 
-$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+    if ($rawBody === false || trim($rawBody) === '') {
+        sendError(400, 'Request body is empty');
+    }
 
-if ($origin !== '') {
-    if (!in_array($origin, $allowedOrigins, true)) {
+    try {
+        $data = json_decode($rawBody, true, 512, JSON_THROW_ON_ERROR);
+    } catch (Throwable $exception) {
+        sendError(400, 'Invalid JSON');
+    }
+
+    if (!is_array($data)) {
+        sendError(400, 'Invalid request data');
+    }
+
+    return $data;
+}
+
+/**
+ * Returns a trimmed string field from the request data.
+ */
+function getStringField(array $data, string $key): string
+{
+    $value = $data[$key] ?? '';
+
+    return is_string($value) ? trim($value) : '';
+}
+
+/**
+ * Removes line breaks from values used in mail headers.
+ */
+function sanitizeHeaderValue(string $value): string
+{
+    return trim(str_replace(["\r", "\n"], '', $value));
+}
+
+/**
+ * Validates the submitted contact data.
+ */
+function validateContactData(
+    string $name,
+    string $email,
+    string $message,
+    string $honeypot
+): void {
+    if ($honeypot !== '') {
+        sendError(400, 'Spam detected');
+    }
+
+    if ($name === '' || textLength($name) < 2 || textLength($name) > 100) {
+        sendError(400, 'Invalid name');
+    }
+
+    if (
+        textLength($email) > 255
+        || filter_var($email, FILTER_VALIDATE_EMAIL) === false
+    ) {
+        sendError(400, 'Invalid email');
+    }
+
+    if ($message === '' || textLength($message) < 10 || textLength($message) > 5000) {
+        sendError(400, 'Invalid message');
+    }
+}
+
+/**
+ * Creates the plain-text email body.
+ */
+function createMailBody(string $name, string $email, string $message): string
+{
+    return implode("\r\n", [
+        'Neue Kontaktanfrage über das Portfolio',
+        '',
+        'Name: ' . $name,
+        'E-Mail: ' . $email,
+        '',
+        'Nachricht:',
+        $message,
+        '',
+        'Gesendet am: ' . date('d.m.Y H:i:s'),
+    ]);
+}
+
+/**
+ * Hands the email to the hosting mail service.
+ */
+function sendContactMail(string $name, string $email, string $message): bool
+{
+    $sender = sanitizeHeaderValue(SENDER_EMAIL);
+    $replyTo = sanitizeHeaderValue($email);
+
+    $headers = implode("\r\n", [
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: 8bit',
+        'From: Ahmet B. | Portfolio <' . $sender . '>',
+        'Reply-To: ' . $replyTo,
+        'X-Mailer: PHP/' . PHP_VERSION,
+    ]);
+
+    $arguments = '-f' . $sender;
+    $sent = @mail(
+        RECIPIENT_EMAIL,
+        'Neue Kontaktanfrage über das Portfolio',
+        createMailBody($name, $email, $message),
+        $headers,
+        $arguments
+    );
+
+    if ($sent) {
+        return true;
+    }
+
+    // Some shared-hosting configurations reject the fifth mail() argument.
+    return @mail(
+        RECIPIENT_EMAIL,
+        'Neue Kontaktanfrage über das Portfolio',
+        createMailBody($name, $email, $message),
+        $headers
+    );
+}
+
+/**
+ * Configures CORS for the Angular application.
+ */
+function configureCors(): void
+{
+    header('Content-Type: application/json; charset=UTF-8');
+    header('Access-Control-Allow-Methods: POST, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type');
+    header('Access-Control-Max-Age: 86400');
+
+    $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+
+    if ($origin === '') {
+        return;
+    }
+
+    if (!in_array($origin, ALLOWED_ORIGINS, true)) {
         sendError(403, 'Origin not allowed');
     }
 
-    header("Access-Control-Allow-Origin: {$origin}");
+    header('Access-Control-Allow-Origin: ' . $origin);
     header('Vary: Origin');
 }
 
-switch ($_SERVER['REQUEST_METHOD']) {
-    case 'OPTIONS':
+/**
+ * Runs the contact endpoint.
+ */
+function runContactEndpoint(): void
+{
+    configureCors();
+
+    $requestMethod = $_SERVER['REQUEST_METHOD'] ?? '';
+
+    if ($requestMethod === 'OPTIONS') {
         sendJsonResponse(200, ['success' => true]);
-        break;
+    }
 
-    case 'POST':
-        $json = file_get_contents('php://input');
-        $params = json_decode($json);
-
-        if (json_last_error() !== JSON_ERROR_NONE || !is_object($params)) {
-            sendError(400, 'Invalid JSON');
-        }
-
-        $email = getStringProperty($params, 'email');
-        $name = getStringProperty($params, 'name');
-        $userMessage = getStringProperty($params, 'message');
-        $honeypot = getStringProperty($params, 'honeypot');
-
-        if ($honeypot !== '') {
-            sendError(400, 'Spam detected');
-        }
-
-        if ($name === '' || mb_strlen($name) > 100) {
-            sendError(400, 'Invalid name');
-        }
-
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email) > 255) {
-            sendError(400, 'Invalid email');
-        }
-
-        if ($userMessage === '' || mb_strlen($userMessage) > 5000) {
-            sendError(400, 'Invalid message');
-        }
-
-        if (!filter_var($siteEmail, FILTER_VALIDATE_EMAIL)) {
-            sendError(500, 'Server email is invalid');
-        }
-
-        $safeName = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
-        $safeEmail = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
-        $safeMessage = nl2br(htmlspecialchars($userMessage, ENT_QUOTES, 'UTF-8'));
-
-        $safeReplyTo = str_replace(["\r", "\n"], '', $email);
-        $safeSiteEmail = str_replace(["\r", "\n"], '', $siteEmail);
-
-        $recipient = $safeSiteEmail;
-        $subject = 'Website Contact Form';
-
-        $mailBody = "
-            <strong>Name:</strong> {$safeName}<br>
-            <strong>Email:</strong> {$safeEmail}<br><br>
-            <strong>Message:</strong><br>
-            {$safeMessage}
-        ";
-
-        $headers = [];
-        $headers[] = 'MIME-Version: 1.0';
-        $headers[] = 'Content-type: text/html; charset=utf-8';
-        $headers[] = 'From: Website Kontakt <' . $safeSiteEmail . '>';
-        $headers[] = 'Reply-To: ' . $safeReplyTo;
-        $headers[] = 'Return-Path: ' . $safeSiteEmail;
-
-        $success = mail(
-            $recipient,
-            $subject,
-            $mailBody,
-            implode("\r\n", $headers),
-            '-f ' . escapeshellarg($safeSiteEmail)
-        );
-
-        if ($success) {
-            sendJsonResponse(200, ['success' => true]);
-        }
-
-        sendError(500, 'Mail delivery failed');
-        break;
-
-    default:
+    if ($requestMethod !== 'POST') {
         sendError(405, 'Method not allowed');
+    }
+
+    if (filter_var(RECIPIENT_EMAIL, FILTER_VALIDATE_EMAIL) === false) {
+        sendError(500, 'Recipient email is invalid');
+    }
+
+    if (filter_var(SENDER_EMAIL, FILTER_VALIDATE_EMAIL) === false) {
+        sendError(500, 'Sender email is invalid');
+    }
+
+    $data = readJsonBody();
+    $name = getStringField($data, 'name');
+    $email = getStringField($data, 'email');
+    $message = getStringField($data, 'message');
+    $honeypot = getStringField($data, 'honeypot');
+
+    validateContactData($name, $email, $message, $honeypot);
+
+    if (!sendContactMail($name, $email, $message)) {
+        $lastError = error_get_last();
+        $errorDetail = $lastError['message'] ?? 'mail() returned false';
+        error_log('Portfolio contact form mail error: ' . $errorDetail);
+        sendError(500, 'Mail delivery failed');
+    }
+
+    sendJsonResponse(200, ['success' => true]);
+}
+
+try {
+    runContactEndpoint();
+} catch (Throwable $exception) {
+    error_log('Portfolio contact endpoint error: ' . $exception->getMessage());
+
+    if (!headers_sent()) {
+        header('Content-Type: application/json; charset=UTF-8');
+    }
+
+    sendError(500, 'Internal server error');
 }
