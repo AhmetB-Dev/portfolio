@@ -33,7 +33,7 @@ export class ProjectsSection {
       name: 'Join',
       technologies: 'HTML | CSS | JavaScript | Firebase',
       src: 'assets/img/portfolio/join_cover.webp',
-      liveUrl: 'https://example.com/join',
+      liveUrl: '/projects/join/',
       githubUrl: 'https://github.com/AhmetB-Dev/Join',
     },
     {
@@ -41,7 +41,7 @@ export class ProjectsSection {
       name: 'PollApp',
       technologies: 'Angular | TypeScript | SCSS | Supabase',
       src: 'assets/img/portfolio/pollApp_cover.webp',
-      liveUrl: 'https://example.com/app',
+      liveUrl: '/projects/poll-app/',
       githubUrl: 'https://github.com/AhmetB-Dev/poll-app',
     },
     {
@@ -49,7 +49,7 @@ export class ProjectsSection {
       name: 'Sharkie',
       technologies: 'HTML | CSS | JavaScript',
       src: 'assets/img/portfolio/sharkie_cover.webp',
-      liveUrl: 'https://example.com/sharkie',
+      liveUrl: '/projects/sharkie/',
       githubUrl: 'https://github.com/AhmetB-Dev/Sharkie',
     },
   ];
