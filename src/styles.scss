@@ -8,8 +8,23 @@
 html {
   scroll-behavior: smooth;
 }
+
+html.menu-open,
 body.menu-open {
   overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body.menu-open {
+  position: fixed;
+  inset-inline: 0;
+  width: 100%;
+}
+
+body.menu-open .header {
+  position: fixed;
+  inset: 0 0 auto;
+  width: 100%;
 }
 
 body {
@@ -39,7 +54,7 @@ h2 {
 }
 
 .brand-logo {
-  --logo-size: clamp(1.8rem, 1rem + 2.5vw, 4rem);
+  --logo-size: clamp(1.5rem, 2.5vw, 4rem);
   --logo-text-color: #fff;
   --logo-purple: #9747ff;
   --logo-green: rgba(112, 230, 28, 1);

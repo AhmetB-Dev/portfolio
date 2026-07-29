@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, OnDestroy, computed, effect, inject, signal } from '@angular/core';
+import { Component, OnDestroy, computed, inject, signal } from '@angular/core';
 import { RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 import { Language } from '../services/language';
 
@@ -13,7 +12,6 @@ export class Header implements OnDestroy {
   readonly lang = inject(Language);
   readonly text = computed(() => this.lang.texts().header);
 
-  private readonly document = inject(DOCUMENT);
 
   readonly menuOpen = signal(false);
   readonly menuIcon = signal('assets/icon/header/menu-open.svg');
@@ -37,15 +35,6 @@ export class Header implements OnDestroy {
 
   private readonly navTransitionDuration = 160;
   private menuTransitionTimeout?: number;
-
-  /**
-   * Creates the header and synchronizes the mobile-menu state with the document body.
-   */
-  constructor() {
-    effect(() => {
-      this.document.body.classList.toggle('menu-open', this.menuOpen());
-    });
-  }
 
   /**
    * Enables the navigation transition for the duration of a single menu state change.
@@ -157,7 +146,7 @@ export class Header implements OnDestroy {
   }
 
   /**
-   * Releases timers and removes the global menu state when the header is destroyed.
+   * Releases pending menu-animation timers when the header is destroyed.
    */
   ngOnDestroy(): void {
     this.clearAnimationTimeouts();
@@ -165,7 +154,5 @@ export class Header implements OnDestroy {
     if (this.menuTransitionTimeout) {
       window.clearTimeout(this.menuTransitionTimeout);
     }
-
-    this.document.body.classList.remove('menu-open');
   }
 }
