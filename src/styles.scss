@@ -34,6 +34,12 @@ body {
   font-family: 'Poppins', Arial, sans-serif;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.6rem, 7vh, 8rem);
+}
+
 button {
   border: unset;
   color: white;

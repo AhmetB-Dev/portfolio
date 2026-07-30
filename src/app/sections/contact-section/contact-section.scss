@@ -3,14 +3,12 @@
 $checkbox-color: #70e61c;
 
 .contact {
+  padding-bottom: 3rem;
   background-image: url('/assets/img/contact/shadow_contact.webp');
   background-repeat: no-repeat;
 
   background-position: bottom right;
   background-size: 70% 55%;
-
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 
   &__heading {
     display: grid;
