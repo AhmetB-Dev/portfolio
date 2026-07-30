@@ -1,6 +1,6 @@
 <section class="contact page-width">
   <div class="contact__heading">
-    <div class="contact__heading-content">
+    <div class="contact__heading-content" appReveal>
       <h2 class="contact__title">{{ text().title }}</h2>
     </div>
 
@@ -10,14 +10,21 @@
   </div>
 
   <div class="contact__content">
-    <div class="contact__description">
+    <div class="contact__description" appReveal revealFrom="left" [revealDelay]="100">
       <div>
         <h3 class="contact__headline">{{ text().headline }}</h3>
         <p class="contact__text">{{ text().text }}</p>
       </div>
     </div>
 
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" [attr.aria-busy]="isSending">
+    <form
+      appReveal
+      revealFrom="right"
+      [revealDelay]="180"
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+      [attr.aria-busy]="isSending"
+    >
       <div class="contact__fields">
         <div
           class="contact__field"

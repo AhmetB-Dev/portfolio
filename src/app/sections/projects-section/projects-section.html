@@ -1,7 +1,7 @@
 <section class="projects page-width">
   <div>
     <div class="projects__intro">
-      <div class="projects__heading">
+      <div class="projects__heading" appReveal revealFrom="left">
         <span class="projects__title-line" aria-hidden="true"></span>
 
         <h2 class="projects__title">
@@ -9,7 +9,7 @@
         </h2>
       </div>
 
-      <div class="projects__intro-content">
+      <div class="projects__intro-content" appReveal revealFrom="left" [revealDelay]="100">
         <p class="projects__lead">
           {{ text().lead }}
         </p>
@@ -21,6 +21,8 @@
         @for (project of projects(); track project.id) {
           <article
             class="projects__card"
+            appReveal
+            [revealDelay]="$index * 110"
             [class.projects__card--active]="activeProjectId() === project.id"
             tabindex="0"
             (click)="activateProject(project.id, $event)"

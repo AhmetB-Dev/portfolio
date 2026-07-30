@@ -1,14 +1,14 @@
 <section class="about page-width">
   <div class="about__content">
-    <h2 class="about__title">
+    <h2 class="about__title" appReveal>
       {{ text().title }}
     </h2>
 
-    <p class="about__lead">
+    <p class="about__lead" appReveal [revealDelay]="90">
       {{ text().lead }}
     </p>
 
-    <div class="about__card">
+    <div class="about__card" appReveal [revealDelay]="170">
       <img class="about__card-icon" src="assets/icon/about/location.svg" alt="" />
 
       <p class="about__card-text">
@@ -16,7 +16,7 @@
       </p>
     </div>
 
-    <div class="about__card">
+    <div class="about__card" appReveal [revealDelay]="250">
       <img class="about__card-icon" src="assets/icon/about/bulb.svg" alt="" />
 
       <p class="about__card-text">
@@ -24,7 +24,7 @@
       </p>
     </div>
 
-    <div class="about__card">
+    <div class="about__card" appReveal [revealDelay]="330">
       <img class="about__card-icon" src="assets/icon/about/puzzle.svg" alt="" />
 
       <p class="about__card-text">
@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div class="about__visual">
+  <div class="about__visual" appReveal revealFrom="right" [revealDelay]="130">
     <img class="about__portrait about__image-stack" src="assets/img/about/cover_me.webp" alt="" />
   </div>
 </section>

@@ -3,6 +3,7 @@ import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angula
 import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Language } from '../../core/services/language';
+import { RevealDirective } from '../../shared/directives/reveal/reveal.directive';
 
 type ContactField = 'name' | 'email' | 'message' | 'privacy';
 
@@ -27,7 +28,7 @@ const PUBLIC_EMAIL_PATTERN =
 
 @Component({
   selector: 'app-contact-section',
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, RevealDirective],
   templateUrl: './contact-section.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './contact-section.scss',

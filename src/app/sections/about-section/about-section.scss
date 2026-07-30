@@ -45,6 +45,20 @@
     background-repeat: no-repeat;
     background-position: 0 115%;
     background-size: 100% 34%;
+
+    &.reveal {
+      position: relative;
+      top: 1.5rem;
+      opacity: 1;
+      transform: none;
+      transition: top var(--reveal-duration) var(--reveal-easing) var(--reveal-delay);
+      will-change: top;
+    }
+
+    &.reveal--visible {
+      top: 0;
+      will-change: auto;
+    }
   }
 
   &__image-stack {
@@ -95,6 +109,18 @@
 
     &__visual {
       background-image: none;
+
+      &.reveal {
+        top: 0;
+        left: 2.25rem;
+        transition: left var(--reveal-duration) var(--reveal-easing) var(--reveal-delay);
+        will-change: left;
+      }
+
+      &.reveal--visible {
+        left: 0;
+        will-change: auto;
+      }
     }
 
     &__image-stack {
@@ -115,5 +141,13 @@
       z-index: -1;
       top: clamp(0rem, 1rem - 2vw, 1rem);
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about__visual.reveal {
+    top: 0;
+    left: 0;
+    transition: none;
   }
 }

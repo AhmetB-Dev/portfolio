@@ -1,6 +1,6 @@
 <section class="hero page-width" [attr.data-lang]="lang.current()" [attr.lang]="lang.current()">
   <div class="hero__main">
-    <div class="hero__content">
+    <div class="hero__content" appReveal revealFrom="left">
       <p class="hero__subtitle-vert">{{ text().intro }}</p>
 
       <div class="hero__title-group">
@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <div class="hero__action">
+    <div class="hero__action" appReveal revealFrom="right" [revealDelay]="140">
       <a class="hero__cta" href="#contact">
         {{ text().cta }}
       </a>
@@ -17,7 +17,7 @@
   </div>
 
   <div class="hero__meta">
-    <div class="hero__social-content">
+    <div class="hero__social-content" appReveal [revealDelay]="240">
       <div class="hero__social-links">
         <a
           class="hero__social-link"
@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <div class="hero__scroll">
+    <div class="hero__scroll" appReveal [revealDelay]="340">
       <p class="hero__scroll-text">
         {{ text().scroll }}
 

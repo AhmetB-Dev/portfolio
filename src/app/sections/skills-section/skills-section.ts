@@ -1,5 +1,6 @@
 import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Language } from '../../core/services/language';
+import { RevealDirective } from '../../shared/directives/reveal/reveal.directive';
 
 type SkillIcon = {
   src: string;
@@ -10,6 +11,7 @@ type SkillIcon = {
 @Component({
   selector: 'app-skills-section',
   standalone: true,
+  imports: [RevealDirective],
   templateUrl: './skills-section.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './skills-section.scss',
@@ -33,4 +35,5 @@ export class SkillsSection {
       labelLines: ['Material', 'Design'],
     },
   ];
+  readonly learningRevealDelay = this.skills.length * 70;
 }

@@ -147,3 +147,56 @@ h2 {
     transition: none;
   }
 }
+
+.reveal-overflow-guard {
+  overflow-x: clip;
+}
+
+.reveal {
+  --reveal-delay: 0ms;
+  --reveal-duration: 1100ms;
+  --reveal-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --reveal-x: 0;
+  --reveal-y: 2rem;
+
+  opacity: 0;
+  transform: translate3d(var(--reveal-x), var(--reveal-y), 0);
+  transition:
+    opacity var(--reveal-duration) var(--reveal-easing) var(--reveal-delay),
+    transform var(--reveal-duration) var(--reveal-easing) var(--reveal-delay);
+  will-change: opacity, transform;
+}
+
+.reveal--left {
+  --reveal-x: -2.25rem;
+  --reveal-y: 0;
+}
+
+.reveal--right {
+  --reveal-x: 2.25rem;
+  --reveal-y: 0;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+@media (max-width: 720px) {
+  .reveal--left,
+  .reveal--right {
+    --reveal-x: 0;
+    --reveal-y: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal--left,
+  .reveal--right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

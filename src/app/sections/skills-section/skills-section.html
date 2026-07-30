@@ -1,6 +1,6 @@
 <section class="skills page-width">
   <div class="skills__info">
-    <div class="skills__heading">
+    <div class="skills__heading" appReveal>
       <div>
         <h2 class="skills__title">{{ text().title }}</h2>
       </div>
@@ -9,11 +9,11 @@
       </div>
     </div>
 
-    <p class="skills__lead">
+    <p class="skills__lead" appReveal revealFrom="right" [revealDelay]="90">
       {{ text().lead }}
     </p>
 
-    <div class="skills__extra">
+    <div class="skills__extra" appReveal revealFrom="right" [revealDelay]="180">
       <h3 class="skills__extra-title">{{ text().otherSkillTitle }}</h3>
 
       <p class="skills__extra-text">
@@ -21,7 +21,7 @@
       </p>
     </div>
 
-    <div class="skills__action">
+    <div class="skills__action" appReveal revealFrom="right" [revealDelay]="260">
       <a class="skills__cta" href="#contact">
         {{ text().cta }}
       </a>
@@ -30,7 +30,7 @@
 
   <div class="skills__grid">
     @for (skill of skills; track skill.src) {
-      <div class="skills__item">
+      <div class="skills__item" appReveal [revealDelay]="$index * 70">
         <img class="skills__icon" [src]="skill.src" [alt]="skill.name" loading="lazy" />
 
         <p class="skills__label">
@@ -40,8 +40,7 @@
         </p>
       </div>
     }
-
-    <div class="skills__item skills__item--learning">
+    <div class="skills__item skills__item--learning" appReveal [revealDelay]="learningRevealDelay">
       <button
         class="skills__learning-trigger"
         type="button"
@@ -70,11 +69,7 @@
           <span>learning</span>
         </span>
 
-        <span
-          class="skills__learning-popover"
-          id="continually-learning-details"
-          role="tooltip"
-        >
+        <span class="skills__learning-popover" id="continually-learning-details" role="tooltip">
           <span class="skills__learning-message">
             {{ text().learningInterest }}
           </span>
