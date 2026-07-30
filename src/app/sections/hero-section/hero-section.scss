@@ -37,25 +37,25 @@
 
   &[data-lang='de'] {
     .hero__subtitle-vert {
-      font-size: clamp(1rem, 4vw, 5rem);
+      font-size: clamp(1.1rem, 3.6vw, 4.4rem);
     }
   }
 
   &__title-group {
     display: flex;
     flex-direction: column;
-    line-height: clamp(1.8rem, 7.8vw, 10rem);
+    line-height: clamp(2.1rem, 7vw, 9rem);
   }
 
   &__title {
     margin: 0;
-    font-size: clamp(2.5rem, 0.4rem + 8vw, 10rem);
+    font-size: clamp(2.5rem, 0.4rem + 8vw, 9rem);
   }
 
   &__role {
     margin: 0;
     color: #9747ff;
-    font-size: clamp(1.4rem, 0.4rem + 3.5vw, 5.2rem);
+    font-size: clamp(1.3rem, 0.4rem + 3.5vw, 4.4rem);
   }
 
   &__action {
