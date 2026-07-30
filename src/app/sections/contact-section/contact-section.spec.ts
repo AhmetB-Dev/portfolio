@@ -22,4 +22,16 @@ describe('ContactSection', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should reject an email without a public domain suffix', () => {
+    component.contactForm.controls.email.setValue('test@e');
+
+    expect(component.contactForm.controls.email.hasError('pattern')).toBeTrue();
+  });
+
+  it('should accept a normal public email address', () => {
+    component.contactForm.controls.email.setValue('test@example.de');
+
+    expect(component.contactForm.controls.email.valid).toBeTrue();
+  });
 });

@@ -18,6 +18,13 @@ type MailResponse = {
   error?: string;
 };
 
+/**
+ * Requires a public-looking domain with a dot and a 2-63 letter top-level domain.
+ * Angular's built-in email validator intentionally also accepts addresses such as test@e.
+ */
+const PUBLIC_EMAIL_PATTERN =
+  /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*\.[A-Za-z]{2,63}$/;
+
 @Component({
   selector: 'app-contact-section',
   imports: [ReactiveFormsModule, RouterLink],
@@ -42,7 +49,10 @@ export class ContactSection {
 
   readonly contactForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['', [Validators.required, Validators.email]],
+    email: [
+      '',
+      [Validators.required, Validators.email, Validators.pattern(PUBLIC_EMAIL_PATTERN)],
+    ],
     message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(5000)]],
     privacy: [false, [Validators.requiredTrue]],
   });
@@ -251,7 +261,7 @@ export class ContactSection {
     const errors = this.text().errors;
 
     if (control.hasError('required')) return errors.emailRequired;
-    if (control.hasError('email')) return errors.emailInvalid;
+    if (control.hasError('email') || control.hasError('pattern')) return errors.emailInvalid;
 
     return '';
   }
