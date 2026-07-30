@@ -35,6 +35,12 @@
     font-size: clamp(1.5rem, 0.4rem + 5vw, 7rem);
   }
 
+  &[data-lang='de'] {
+    .hero__subtitle-vert {
+      font-size: clamp(1rem, 4vw, 5rem);
+    }
+  }
+
   &__title-group {
     display: flex;
     flex-direction: column;
@@ -81,6 +87,7 @@
     justify-content: space-between;
     padding-right: 3rem;
     padding-left: clamp(4rem, 24vw, 14rem);
+    margin-bottom: 1rem;
   }
 
   &__social-content {
