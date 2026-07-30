@@ -20,7 +20,7 @@ export class App {
       const header = this.document.querySelector<HTMLElement>('.header');
       const headerHeight = header?.offsetHeight ?? 0;
 
-      return [0, headerHeight + 16];
+      return [0, headerHeight + 1];
     });
   }
 }

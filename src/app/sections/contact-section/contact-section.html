@@ -46,6 +46,8 @@
               formControlName="name"
               [placeholder]="text().namePlaceholder"
               autocomplete="name"
+              (focus)="onFieldFocus('name')"
+              (blur)="onFieldBlur('name')"
             />
           </div>
 
@@ -87,6 +89,8 @@
               formControlName="email"
               [placeholder]="text().emailPlaceholder"
               autocomplete="email"
+              (focus)="onFieldFocus('email')"
+              (blur)="onFieldBlur('email')"
             />
           </div>
 
@@ -126,6 +130,8 @@
               class="contact__textarea"
               formControlName="message"
               [placeholder]="text().messagePlaceholder"
+              (focus)="onFieldFocus('message')"
+              (blur)="onFieldBlur('message')"
             ></textarea>
           </div>
 

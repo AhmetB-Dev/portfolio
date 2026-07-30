@@ -46,6 +46,7 @@ export class ContactSection {
   successMessage = false;
   isSending = false;
   sendErrorMessage = '';
+  activeField: ContactField | null = null;
 
   readonly contactForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
@@ -61,6 +62,7 @@ export class ContactSection {
    * Validates the contact form and sends a mail request when all fields are valid.
    */
   onSubmit(): void {
+    this.activeField = null;
     this.submitted = true;
     this.closeStatus();
     this.contactForm.markAllAsTouched();
@@ -136,6 +138,7 @@ export class ContactSection {
     }
 
     this.contactForm.reset();
+    this.activeField = null;
     this.submitted = false;
     this.successMessage = true;
   }
@@ -152,7 +155,28 @@ export class ContactSection {
   }
 
   /**
+   * Hides validation feedback while the user is editing a text field.
+   * The result is shown again only after the field loses focus.
+   *
+   * @param field The field that currently receives keyboard input.
+   */
+  onFieldFocus(field: ContactField): void {
+    this.activeField = field;
+  }
+
+  /**
+   * Finishes editing a field and enables its validation feedback.
+   *
+   * @param field The field that has just lost focus.
+   */
+  onFieldBlur(field: ContactField): void {
+    this.activeField = null;
+    this.contactForm.controls[field].markAsTouched();
+  }
+
+  /**
    * Checks whether a form field should be displayed as invalid.
+   * Text fields stay neutral while the user is actively typing.
    * Empty fields stay neutral after blur and are only marked invalid after submit.
    *
    * @param field The contact-form field to inspect.
@@ -160,6 +184,10 @@ export class ContactSection {
    */
   isInvalid(field: ContactField): boolean {
     const control = this.contactForm.controls[field];
+
+    if (field !== 'privacy' && this.activeField === field) {
+      return false;
+    }
 
     if (this.submitted) {
       return control.invalid;
@@ -174,12 +202,18 @@ export class ContactSection {
 
   /**
    * Checks whether a non-empty form field should be displayed as valid after blur.
+   * Validation feedback stays hidden while the field is being edited.
    *
    * @param field The contact-form field to inspect.
    * @returns Whether the field should be displayed as valid.
    */
   isValid(field: ContactField): boolean {
     const control = this.contactForm.controls[field];
+
+    if (this.activeField === field) {
+      return false;
+    }
+
     return control.touched && this.hasValue(field) && control.valid;
   }
 

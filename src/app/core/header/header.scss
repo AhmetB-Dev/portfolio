@@ -197,12 +197,12 @@
     }
 
     &__language-button {
-      padding: revert;
+      padding: 0.25em 0.5em;
+      font-size: clamp(0.6rem, 1vw, 1.6rem);
       border: solid 2px #70e61c;
       border-radius: 8px;
       background-color: transparent;
       color: inherit;
-      font-size: clamp(0.6rem, 1.1vw, 2rem);
     }
 
     &__language-button:not(.header__language-button--active):hover {
