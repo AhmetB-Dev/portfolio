@@ -142,25 +142,46 @@ export class ContactSection {
   }
 
   /**
-   * Checks whether a form field is invalid after a submission attempt.
+   * Checks whether a form field should be displayed as invalid.
+   * Empty fields stay neutral after blur and are only marked invalid after submit.
    *
    * @param field The contact-form field to inspect.
    * @returns Whether the field should be displayed as invalid.
    */
   isInvalid(field: ContactField): boolean {
     const control = this.contactForm.controls[field];
-    return this.submitted && control.invalid;
+
+    if (this.submitted) {
+      return control.invalid;
+    }
+
+    if (field === 'privacy') {
+      return false;
+    }
+
+    return control.touched && this.hasValue(field) && control.invalid;
   }
 
   /**
-   * Checks whether a form field is valid after a submission attempt.
+   * Checks whether a non-empty form field should be displayed as valid after blur.
    *
    * @param field The contact-form field to inspect.
    * @returns Whether the field should be displayed as valid.
    */
   isValid(field: ContactField): boolean {
     const control = this.contactForm.controls[field];
-    return this.submitted && control.valid;
+    return control.touched && this.hasValue(field) && control.valid;
+  }
+
+  /**
+   * Checks whether a form field contains a meaningful value.
+   *
+   * @param field The contact-form field to inspect.
+   * @returns Whether the field contains a non-empty value.
+   */
+  private hasValue(field: ContactField): boolean {
+    const value = this.contactForm.controls[field].value;
+    return typeof value === 'string' ? value.trim().length > 0 : value;
   }
 
   /**
