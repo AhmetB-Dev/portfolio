@@ -11,7 +11,7 @@ export const enTranslation: TranslationModel = {
 
   hero: {
     intro: 'I am',
-    role: 'FRONTEND DEVELOPER',
+    role: 'FULLSTACK DEVELOPER',
     cta: "Let's talk",
     scroll: 'Scroll down',
   },
@@ -55,6 +55,15 @@ export const enTranslation: TranslationModel = {
       sharkie: {
         description:
           'A 2D platformer game featuring an underwater world, enemies, and collectible items.',
+      },
+      coderr: {
+        description:
+          'A REST API for a freelance marketplace with offers, orders, user profiles, and reviews.',
+      },
+
+      videoflix: {
+        description:
+          'A video streaming backend with secure authentication, HLS streaming, and background processing.',
       },
     },
   },

@@ -1,6 +1,6 @@
 export type LangCode = 'de' | 'en';
 
-type ProjectId = 'join' | 'pollApp' | 'sharkie';
+type ProjectId = 'join' | 'pollApp' | 'sharkie' | 'coderr' | 'videoflix';
 
 export type TranslationModel = {
   header: {

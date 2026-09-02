@@ -2,7 +2,7 @@ import { Component, computed, inject, signal, ChangeDetectionStrategy } from '@a
 import { Language } from '../../core/services/language';
 import { RevealDirective } from '../../shared/directives/reveal/reveal.directive';
 
-type ProjectId = 'join' | 'sharkie' | 'pollApp';
+type ProjectId = 'join' | 'sharkie' | 'pollApp' | 'coderr' | 'videoflix';
 
 type ProjectBase = {
   id: ProjectId;
@@ -54,8 +54,24 @@ export class ProjectsSection {
       liveUrl: '/projects/sharkie/',
       githubUrl: 'https://github.com/AhmetB-Dev/Sharkie',
     },
-  ];
+    {
+      id: 'coderr',
+      name: 'Coderr',
+      technologies: 'Python | Django | DRF | PostgreSQL',
+      src: 'assets/img/portfolio/coderr_cover.webp',
+      liveUrl: '/projects/coderr/',
+      githubUrl: 'https://github.com/AhmetB-Dev/Coderr-backend',
+    },
 
+    {
+      id: 'videoflix',
+      name: 'Videoflix',
+      technologies: 'Python | Django | DRF | PostgreSQL | Redis | Docker',
+      src: 'assets/img/portfolio/videoflix_cover.webp',
+      liveUrl: '/projects/videoflix/',
+      githubUrl: 'https://github.com/AhmetB-Dev/Videoflix-backend',
+    },
+  ];
 
   /**
    * Opens a project overlay on touch devices before its links become clickable.

@@ -11,7 +11,7 @@ export const deTranslation: TranslationModel = {
 
   hero: {
     intro: 'Ich bin',
-    role: 'FRONTEND ENTWICKLER',
+    role: 'FULLSTACK ENTWICKLER',
     cta: 'Lass uns reden',
     scroll: 'Runterscrollen',
   },
@@ -56,6 +56,16 @@ export const deTranslation: TranslationModel = {
       sharkie: {
         description:
           'Ein zweidimensionales Plattformspiel mit einer Unterwasserwelt, Gegnern und sammelbaren Objekten.',
+      },
+
+      coderr: {
+        description:
+          'Eine REST-API für eine Freelancer-Plattform mit Angeboten, Bestellungen, Profilen und Bewertungen.',
+      },
+
+      videoflix: {
+        description:
+          'Ein Backend für eine Videoplattform mit Authentifizierung, HLS-Streaming und Hintergrundverarbeitung.',
       },
     },
   },
