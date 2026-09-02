@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 0.7em 1em;
+  padding: 1em 1em;
   background-color: #141d2f;
   font-size: clamp(1rem, 1.6vw, 2rem);
 
@@ -154,7 +154,7 @@
 @media (min-width: 975px) {
   .header {
     padding-inline: calc((100vw - 1440px) / 2);
-
+    padding: 0.7em 1em;
     &__container {
       padding: 0rem 4rem 0rem 4rem;
     }
