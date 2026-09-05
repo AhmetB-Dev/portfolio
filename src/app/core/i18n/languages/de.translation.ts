@@ -113,8 +113,9 @@ export const deTranslation: TranslationModel = {
     imprint: {
       title: 'Impressum',
       studentNames: 'Ahmet Balci',
-      address: '[Adresse des Portfoliobetreibers]',
-      postcodeCity: '[Postleitzahl und Ort]',
+      careOf: 'c/o Online-Impressum 10794',
+      address: 'Europaring 90',
+      postcodeCity: '53757 Sankt Augustin',
       contactTitle: 'Das Board erkunden',
       emailLabel: 'Ahmet_ba@web.de',
     },

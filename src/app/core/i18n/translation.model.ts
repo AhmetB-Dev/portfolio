@@ -90,6 +90,7 @@ export type TranslationModel = {
     imprint: {
       title: string;
       studentNames: string;
+      careOf: string;
       address: string;
       postcodeCity: string;
       contactTitle: string;

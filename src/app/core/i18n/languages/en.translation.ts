@@ -111,8 +111,9 @@ export const enTranslation: TranslationModel = {
     imprint: {
       title: 'Imprint',
       studentNames: 'Ahmet Balci',
-      address: '[Address of the Portfolio operator]',
-      postcodeCity: '[Postcode and city]',
+      careOf: 'c/o Online-Impressum 10794',
+      address: 'Europaring 90',
+      postcodeCity: '53757 Sankt Augustin',
       contactTitle: 'Exploring the Board',
       emailLabel: 'Ahmet_ba@web.de',
     },
