@@ -75,7 +75,7 @@ export const deTranslation: TranslationModel = {
     headline: 'Hast du ein Problem zu lösen?',
     text: 'Du hast eine Idee für eine moderne Webanwendung oder suchst Unterstützung bei der Umsetzung? Schreib mir gerne. Ich freue mich auf deine Nachricht..',
     namePlaceholder: 'Dein Name',
-    emailPlaceholder: 'Deine Mailadresse',
+    emailPlaceholder: 'Deine E-Mail',
     messagePlaceholder: 'Deine Nachricht',
     privacyPrefix: 'Ich habe die',
     privacyLink: 'Datenschutzerklärung',

@@ -81,6 +81,7 @@ export class ContactSection {
   closeStatus(): void {
     this.successMessage = false;
     this.sendErrorMessage = '';
+    this.unlockPageScroll();
   }
 
   /**
@@ -134,6 +135,7 @@ export class ContactSection {
 
     if (!response.success) {
       this.sendErrorMessage = this.text().sendErrorMessage;
+      this.lockPageScroll();
       console.error('Mail delivery failed:', response.error);
       return;
     }
@@ -142,6 +144,7 @@ export class ContactSection {
     this.activeField = null;
     this.submitted = false;
     this.successMessage = true;
+    this.lockPageScroll();
   }
 
   /**
@@ -152,7 +155,22 @@ export class ContactSection {
   private handleMailRequestError(error: unknown): void {
     this.isSending = false;
     this.sendErrorMessage = this.text().sendErrorMessage;
+    this.lockPageScroll();
     console.error('Mail request failed:', error);
+  }
+
+  /**
+   * Prevents the page behind the status dialog from scrolling.
+   */
+  private lockPageScroll(): void {
+    document.body.style.overflow = 'hidden';
+  }
+
+  /**
+   * Restores page scrolling after the status dialog has been closed.
+   */
+  private unlockPageScroll(): void {
+    document.body.style.overflow = '';
   }
 
   /**
