@@ -124,67 +124,66 @@ export const deTranslation: TranslationModel = {
       title: 'Annahme der Bedingungen',
       firstBeforeProduct: 'Durch den Zugriff auf und die Nutzung von',
       firstAfterProduct:
-        '(Produkt) erkennen Sie die folgenden Bedingungen sowie alle Richtlinien, Leitlinien oder Änderungen an, die Ihnen von Zeit zu Zeit vorgelegt werden können, und stimmen ihnen zu.',
+        '(Produkt) erkennen Sie die folgenden Bedingungen sowie die für die Nutzung geltenden Hinweise an und stimmen diesen zu.',
       second:
-        'Wir, die aufgeführten Studierenden, können die Bedingungen von Zeit zu Zeit ohne vorherige Ankündigung aktualisieren oder ändern.',
+        'Die Inhalte und Funktionen des Projekts können im Rahmen der technischen Weiterentwicklung jederzeit angepasst, erweitert oder aktualisiert werden.',
     },
 
     scope: {
       title: 'Umfang und Eigentum am Produkt',
       firstAfterProduct:
-        'wurde im Rahmen eines studentischen Gruppenprojekts während einer Weiterbildung für Webentwicklung bei der',
+        'wurde ursprünglich im Rahmen einer Weiterbildung für Webentwicklung bei der',
       firstAfterAcademy:
-        ' entwickelt. Es dient Bildungszwecken und ist nicht für eine umfangreiche private oder geschäftliche Nutzung vorgesehen.',
+        ' entwickelt und anschließend technisch weiterentwickelt. Das Projekt wird heute als Bestandteil meines persönlichen Entwickler-Portfolios präsentiert.',
       second:
-        'Daher können wir keine durchgängige Verfügbarkeit, Zuverlässigkeit, Richtigkeit oder andere Qualitätsmerkmale dieses Produkts garantieren.',
+        'Das Projekt dient der Präsentation meiner praktischen Erfahrung und meiner Fähigkeiten in der modernen Webentwicklung. Funktionen und technische Bestandteile können im Zuge der Weiterentwicklung verändert oder erweitert werden.',
       thirdBeforeProduct: 'Das Design von',
       thirdBetweenProductAndAcademy: 'ist Eigentum der',
       thirdAfterAcademy:
-        '. Die unbefugte Nutzung, Vervielfältigung, Änderung, Verbreitung oder Nachbildung des Designs ist strengstens untersagt.',
+        '. Die entsprechenden Designrechte verbleiben beim jeweiligen Rechteinhaber.',
     },
 
     proprietaryRights: {
       title: 'Eigentumsrechte',
-      beforeAcademy: 'Abgesehen von dem Design im Eigentum der',
+      beforeAcademy: 'Abgesehen von den Designrechten der',
       betweenAcademyAndProduct:
-        ' behalten wir, die aufgeführten Studierenden, sämtliche Eigentumsrechte an',
+        'liegen die Rechte an den von mir selbst entwickelten Implementierungen, Erweiterungen und eigenen Inhalten von',
       afterProduct:
-        ', einschließlich aller damit verbundenen urheberrechtlich geschützten Materialien, Marken und sonstigen geschützten Informationen.',
+        'bei den jeweils berechtigten Urhebern. Sämtliche bestehenden Rechte Dritter bleiben hiervon unberührt.',
     },
 
     use: {
       title: 'Nutzung des Produkts',
       firstAfterProduct:
         'darf ausschließlich für rechtmäßige Zwecke und in Übereinstimmung mit allen geltenden Gesetzen und Vorschriften verwendet werden.',
-      secondBeforeProduct: 'Jede Nutzung von',
+      secondBeforeProduct: 'Eine Nutzung von',
       secondAfterProduct:
-        'für rechtswidrige Aktivitäten oder um eine andere Person zu belästigen, zu schädigen, zu bedrohen oder einzuschüchtern, ist strengstens untersagt.',
-      thirdBeforeProduct: 'Sie sind allein für Ihre Interaktionen mit anderen Nutzern von',
+        'für rechtswidrige Aktivitäten, missbräuchliche Handlungen oder zur Beeinträchtigung anderer Personen ist nicht gestattet.',
+      thirdBeforeProduct:
+        'Für die eigene Nutzung und Interaktion mit den öffentlich zugänglichen Funktionen von',
     },
 
     disclaimer: {
       title: 'Gewährleistungsausschluss und Haftungsbeschränkung',
       firstAfterProduct:
-        'wird „wie besehen“ ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt. Dies schließt insbesondere stillschweigende Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten ein.',
-      secondBeforeAcademy: 'In keinem Fall haften wir, die aufgeführten Studierenden oder die',
+        'wird als öffentlich zugängliches Portfolio- und Demonstrationsprojekt bereitgestellt. Trotz sorgfältiger Entwicklung kann keine uneingeschränkte Gewähr für dauerhafte Verfügbarkeit, Fehlerfreiheit oder Vollständigkeit übernommen werden.',
+      secondBeforeAcademy: 'Für Inhalte und Bestandteile, deren Rechte bei der',
       secondAfterAcademy:
-        ', für unmittelbare, mittelbare, zufällige, besondere Schäden, Folgeschäden oder exemplarische Schäden. Dies schließt insbesondere Schäden durch entgangenen Gewinn, Verlust von Ansehen, Nutzung, Daten oder andere immaterielle Verluste ein.',
+        'oder anderen Dritten liegen, gelten die jeweiligen rechtlichen Bestimmungen und Nutzungsrechte.',
       thirdBeforeProduct:
-        'Dies gilt selbst dann, wenn wir auf die Möglichkeit solcher Schäden hingewiesen wurden, die aus der Nutzung oder Leistung von',
+        'Eine Haftung für Schäden, die unmittelbar aus der Nutzung oder vorübergehenden Nichtverfügbarkeit von',
     },
 
     indemnity: {
       title: 'Freistellung',
-      beforeAcademy:
-        'Sie erklären sich damit einverstanden, uns, die aufgeführten Studierenden, die',
+      beforeAcademy: 'Die Rechte und geschützten Inhalte der',
       betweenAcademyAndProduct:
-        ' sowie unsere verbundenen Unternehmen, Partner, Führungskräfte, Direktoren, Vertreter und Beschäftigten von allen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen einschließlich angemessener Rechtskosten freizustellen, zu verteidigen und schadlos zu halten, die aus Ihrer Nutzung von',
-      afterProduct:
-        'und/oder Ihrem Verstoß gegen dieses Impressum entstehen oder damit zusammenhängen.',
-      contactBeforeEmail: 'Bei Fragen oder Mitteilungen kontaktieren Sie uns bitte unter',
+        'sowie anderer Rechteinhaber bleiben vollständig bestehen. Bei der Nutzung von',
+      afterProduct: 'sind geltende gesetzliche Vorschriften sowie die Rechte Dritter zu beachten.',
+      contactBeforeEmail: 'Bei Fragen oder Mitteilungen kontaktieren Sie mich bitte unter',
       contactEmail: 'Ahmet_ba@web.de',
       dateLabel: 'Datum',
-      date: '26. Juli 2025',
+      date: 'September 2026',
     },
   },
 

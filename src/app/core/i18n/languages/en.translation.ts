@@ -122,65 +122,64 @@ export const enTranslation: TranslationModel = {
       title: 'Acceptance of terms',
       firstBeforeProduct: 'By accessing and using',
       firstAfterProduct:
-        '(Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time.',
+        '(Product), you acknowledge and agree to the following terms and the applicable information regarding its use.',
       second:
-        'We, the listed students, may update or change the terms and conditions from time to time without notice.',
+        'The content and functionality of the project may be adjusted, extended, or updated at any time as part of its ongoing technical development.',
     },
 
     scope: {
       title: 'Scope and ownership of the product',
       firstAfterProduct:
-        'has been developed as part of a student group project in a web development bootcamp at the',
+        'was originally developed as part of a professional web development training program at',
       firstAfterAcademy:
-        '. It has an educational purpose and is not intended for extensive personal and business usage.',
+        ' and has since been technically developed further. The project is now presented as part of my personal developer portfolio.',
       second:
-        'As such, we cannot guarantee consistent availability, reliability, accuracy, or any other aspect of quality regarding this Product.',
+        'The project showcases my practical experience and skills in modern web development. Features and technical components may be changed or expanded as the project continues to evolve.',
       thirdBeforeProduct: 'The design of',
-      thirdBetweenProductAndAcademy: 'is owned by the',
-      thirdAfterAcademy:
-        '. Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.',
+      thirdBetweenProductAndAcademy: 'is owned by',
+      thirdAfterAcademy: '. The respective design rights remain with the applicable rights holder.',
     },
 
     proprietaryRights: {
       title: 'Proprietary rights',
-      beforeAcademy: 'Aside from the design owned by',
-      betweenAcademyAndProduct: ', we, the listed students, retain all proprietary rights in',
+      beforeAcademy: 'Aside from the design rights owned by',
+      betweenAcademyAndProduct:
+        ', the rights to implementations, extensions, and original content developed by me for',
       afterProduct:
-        ', including any associated copyrighted material, trademarks, and other proprietary information.',
+        'remain with their respective authors and rights holders. Existing third-party rights remain unaffected.',
     },
 
     use: {
       title: 'Use of the product',
       firstAfterProduct:
-        'is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations.',
+        'may only be used for lawful purposes and in accordance with all applicable laws and regulations.',
       secondBeforeProduct: 'Any use of',
       secondAfterProduct:
-        'for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited.',
-      thirdBeforeProduct: 'You are solely responsible for your interactions with other users of',
+        'for unlawful activities, abusive conduct, or actions intended to harm or interfere with other persons is prohibited.',
+      thirdBeforeProduct:
+        'Users are responsible for their own use and interaction with the publicly accessible features of',
     },
 
     disclaimer: {
       title: 'Disclaimer of warranties and limitation of liability',
       firstAfterProduct:
-        'is provided "as is" without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.',
-      secondBeforeAcademy: 'In no event will we, the listed students, or the',
+        'is provided as a publicly accessible portfolio and demonstration project. Despite careful development, uninterrupted availability, complete accuracy, and freedom from errors cannot be guaranteed.',
+      secondBeforeAcademy: 'For content and components whose rights belong to',
       secondAfterAcademy:
-        ', be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses.',
+        'or other third parties, the respective legal provisions and usage rights apply.',
       thirdBeforeProduct:
-        'This applies even if we have been advised of the possibility of such damages arising out of or in connection with the use or performance of',
+        'No liability can be assumed for damages directly resulting from the use or temporary unavailability of',
     },
 
     indemnity: {
       title: 'Indemnity',
-      beforeAcademy:
-        'You agree to indemnify, defend, and hold harmless us, the listed students, the',
-      betweenAcademyAndProduct:
-        ', and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability, including reasonable legal fees, arising out of or relating to your use of',
-      afterProduct: 'and/or your breach of this Legal Notice.',
-      contactBeforeEmail: 'For any questions or notices, please contact us at',
+      beforeAcademy: 'The rights and protected content of',
+      betweenAcademyAndProduct: 'and other rights holders remain fully protected. When using',
+      afterProduct: ', applicable laws and the rights of third parties must be respected.',
+      contactBeforeEmail: 'For any questions or notices, please contact me at',
       contactEmail: 'Ahmet_ba@web.de',
       dateLabel: 'Date',
-      date: 'July 26, 2025',
+      date: 'September 2026',
     },
   },
 
