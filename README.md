@@ -1,101 +1,99 @@
-# JOIN
+# Developer Portfolio
 
-JOIN is a responsive Kanban-based task management application for organizing tasks, contacts and workflows.
+Personal developer portfolio built with Angular, TypeScript and SCSS.
 
-The frontend communicates with a custom Django REST Framework backend through a REST API.
-
-## Project Background
-
-JOIN was originally developed as a collaborative frontend project during my web development training.
-
-I later continued the project independently by integrating it with a custom backend that I designed and developed from scratch using Python, Django and Django REST Framework.
-
-I also made additional technical and responsive improvements to the existing frontend.
+The portfolio presents my frontend and backend projects, technical skills and contact information in a responsive, bilingual interface.
 
 ## Features
 
-- User registration and login
-- Guest login
-- Kanban task board
-- Create, edit and delete tasks
-- Drag and drop tasks between board columns
-- Assign contacts to tasks
-- Create and manage contacts
-- Task priorities and due dates
-- Subtasks and progress tracking
-- Summary dashboard with task statistics
 - Responsive layout for desktop, tablet and mobile
-- Integration with a Django REST API
+- German and English language support
+- Project showcase with live-demo and GitHub links
+- Contact form with client-side validation
+- Dedicated legal notice and privacy policy pages
+- Reusable Angular components, sections and directives
+- Responsive typography using `clamp()` and shared SCSS variables
+- Reduced-motion support for improved accessibility
+- Automated component and service tests with Jasmine and Karma
 
 ## Technologies
 
-### Frontend
-
+- Angular 22
+- TypeScript 6
+- SCSS / CSS3
 - HTML5
-- CSS3
-- JavaScript
-- Fetch API
-- LocalStorage
-- SessionStorage
-- Flatpickr
+- Angular Reactive Forms
+- Angular Router
+- Angular Signals
+- RxJS
+- Jasmine
+- Karma
 
-### Backend
+## Project Structure
 
-The backend was independently designed and developed from scratch using:
-
-- Python
-- Django
-- Django REST Framework
-- REST API
-- Authentication
-- Database persistence
-
-## Backend
-
-The independently developed Django REST Framework backend is maintained in a separate repository:
-
-[JOIN Backend](https://github.com/AhmetB-Dev/join-backend)
-
-## Backend Integration
-
-The frontend communicates with the JOIN backend through the REST API.
-
-The API base URL can be configured before the API script is loaded.
-
-Example:
-
-```html
-<script>
-  window.JOIN_API_BASE_URL = "http://127.0.0.1:8000/api";
-</script>
+```text
+src/
+├── app/
+│   ├── core/        # Header, footer, translations and shared services
+│   ├── pages/       # Home, legal notice and privacy policy pages
+│   ├── sections/    # Hero, about, skills, projects and contact sections
+│   └── shared/      # Reusable directives and shared functionality
+├── styles/          # Global fonts and SCSS variables
+└── styles.scss      # Global styles
 ```
 
-For a deployed environment, the URL can be replaced with the corresponding production API address.
+## Portfolio Projects
+
+The portfolio currently highlights several practical projects across frontend and backend development:
+
+- **Join** — HTML, CSS, JavaScript, Firebase
+- **PollApp** — Angular, TypeScript, SCSS, Supabase
+- **Sharkie** — HTML, CSS, JavaScript
+- **Coderr** — Python, Django, Django REST Framework, PostgreSQL
+- **Videoflix** — Python, Django, Django REST Framework, PostgreSQL, Redis, Docker
 
 ## Run Locally
 
-The frontend can be served with VS Code Live Server or another local web server.
+### Requirements
 
-Example:
+- Node.js version compatible with Angular 22
+- npm
 
-```text
-http://127.0.0.1:5500
+### Installation
+
+```bash
+npm install
+npm start
 ```
 
-To use registration, login, contacts and task management, the JOIN backend must also be running.
+The development server will start locally and open the application in the browser.
 
-For backend installation and configuration, see the separate backend repository:
+## Build
 
-[JOIN Backend](https://github.com/AhmetB-Dev/join-backend)
+Create a production build with:
+
+```bash
+npm run build
+```
+
+## Tests
+
+Run the test suite with:
+
+```bash
+npm test
+```
+
+## Contact Form
+
+The contact section uses Angular Reactive Forms for validation and sends validated form data to a separate mail endpoint used by the deployed portfolio.
 
 ## Purpose
 
-JOIN is part of my developer portfolio and demonstrates practical experience with:
+This portfolio demonstrates practical experience with modern Angular development, TypeScript, responsive UI implementation, component architecture, form validation, accessibility-conscious styling, testing and the presentation of fullstack projects.
 
-- Working with an existing frontend codebase
-- Frontend and backend integration
-- REST API communication
-- Authentication
-- Task and contact management
-- Responsive frontend development
-- Django REST Framework backend development
+## Author
+
+**Ahmet Balci**
+
+GitHub: [AhmetB-Dev](https://github.com/AhmetB-Dev)
