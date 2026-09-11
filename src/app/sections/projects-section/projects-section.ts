@@ -31,14 +31,6 @@ export class ProjectsSection {
 
   private readonly baseProjects: ProjectBase[] = [
     {
-      id: 'join',
-      name: 'Join',
-      technologies: 'HTML | CSS | JavaScript | Firebase',
-      src: 'assets/img/portfolio/join_cover.webp',
-      liveUrl: '/projects/join/',
-      githubUrl: 'https://github.com/AhmetB-Dev/Join',
-    },
-    {
       id: 'pollApp',
       name: 'PollApp',
       technologies: 'Angular | TypeScript | SCSS | Supabase',
@@ -47,12 +39,20 @@ export class ProjectsSection {
       githubUrl: 'https://github.com/AhmetB-Dev/poll-app',
     },
     {
-      id: 'sharkie',
-      name: 'Sharkie',
-      technologies: 'HTML | CSS | JavaScript',
-      src: 'assets/img/portfolio/sharkie_cover.webp',
-      liveUrl: '/projects/sharkie/',
-      githubUrl: 'https://github.com/AhmetB-Dev/Sharkie',
+      id: 'videoflix',
+      name: 'Videoflix',
+      technologies: 'Python | Django | DRF | PostgreSQL | Redis | Docker',
+      src: 'assets/img/portfolio/videoflix_cover.webp',
+      liveUrl: '/projects/videoflix/',
+      githubUrl: 'https://github.com/AhmetB-Dev/Videoflix-backend',
+    },
+    {
+      id: 'join',
+      name: 'JOIN 360',
+      technologies: 'HTML | CSS | JavaScript | Python | Django | DRF | PostgreSQL',
+      src: 'assets/img/portfolio/join_cover.webp',
+      liveUrl: '/projects/join/',
+      githubUrl: 'https://github.com/AhmetB-Dev/Join',
     },
     {
       id: 'coderr',
@@ -62,14 +62,13 @@ export class ProjectsSection {
       liveUrl: '/projects/coderr/',
       githubUrl: 'https://github.com/AhmetB-Dev/Coderr-backend',
     },
-
     {
-      id: 'videoflix',
-      name: 'Videoflix',
-      technologies: 'Python | Django | DRF | PostgreSQL | Redis | Docker',
-      src: 'assets/img/portfolio/videoflix_cover.webp',
-      liveUrl: '/projects/videoflix/',
-      githubUrl: 'https://github.com/AhmetB-Dev/Videoflix-backend',
+      id: 'sharkie',
+      name: 'Sharkie',
+      technologies: 'HTML | CSS | JavaScript',
+      src: 'assets/img/portfolio/sharkie_cover.webp',
+      liveUrl: '/projects/sharkie/',
+      githubUrl: 'https://github.com/AhmetB-Dev/Sharkie',
     },
   ];
 

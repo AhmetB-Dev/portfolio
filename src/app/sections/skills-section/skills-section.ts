@@ -46,8 +46,11 @@ export class SkillsSection {
 
     { src: 'assets/icon/skills/git.svg', name: 'Git' },
     { src: 'assets/icon/skills/github.svg', name: 'GitHub' },
-    { src: 'assets/icon/skills/docker.svg', name: 'Docker' },
     { src: 'assets/icon/skills/linux.svg', name: 'Linux' },
+    { src: 'assets/icon/skills/docker.svg', name: 'Docker' },
+    { src: 'assets/icon/skills/cloud.svg', name: 'Cloud' },
+
+    { src: 'assets/icon/skills/scrum.svg', name: 'Scrum' },
   ];
   readonly learningRevealDelay = this.skills.length * 70;
 }
