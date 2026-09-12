@@ -97,7 +97,6 @@
     height: auto;
   }
 
-  // Continually learning item
   &__item--learning {
     position: relative;
   }
@@ -210,7 +209,6 @@
     }
   }
 
-  // Contact action
   &__action {
     grid-area: action;
     display: flex;
@@ -251,6 +249,16 @@
 
 @media (max-width: 960px), (hover: none), (pointer: coarse) {
   .skills {
+    &__learning-popover {
+      right: 0;
+      left: auto;
+
+      &::after {
+        right: clamp(1.8rem, 6vw, 2.5rem);
+        left: auto;
+      }
+    }
+
     &__learning-trigger:hover,
     &__learning-trigger:active,
     &__learning-trigger:focus-visible {
